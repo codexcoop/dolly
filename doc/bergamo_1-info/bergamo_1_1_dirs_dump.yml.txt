@@ -1,0 +1,2 @@
+"--- \noriginal_object_is_new: false\ndirname: 1659_Egisto-L\noriginal_object_id: 102\nlot_code: bergamo_1\nid: 12\ndigital_object_is_new: false\npdf_digital_object_id: \ndirpath: bergamo_1/1659_Egisto-L/Master\ntiff_digital_object_id: 146\n"
+"--- \noriginal_object_is_new: false\ndirname: 1659_Irbeno-L\noriginal_object_id: 103\nlot_code: bergamo_1\nid: 13\ndigital_object_is_new: false\npdf_digital_object_id: \ndirpath: bergamo_1/1659_Irbeno-L/Master\ntiff_digital_object_id: 154\n"
