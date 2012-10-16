@@ -1,0 +1,245 @@
+# ACTIONPACK
+
+
+it:
+  authlogic:
+    error_messages:
+      login_blank: "non può essere lasciato in bianco"
+      login_not_found: "non è valido"
+      login_invalid: "dovrebbe contenere solo lettere, numeri, spazi, punto, _, -, e @"
+      consecutive_failed_logins_limit_exceeded: "Account disabilitato per eccessivo numero di login errati"
+      email_invalid: "sembra non essere un indirizzo valido"
+      password_blank: "non può essere lasciato in bianco"
+      password_invalid: "non è valida"
+      not_active: "Il tuo account non è attivo"
+      not_confirmed: "Il tuo account non è stato confermato"
+      not_approved: "Il tuo account non è stato ancora autorizzato"
+      no_authentication_details: "Non hai fornito nessun dettaglio per l'autenticazione"
+    models:
+      user_session: "Sessione utente"
+    attributes:
+      user_session:
+        login: "Nome utente"
+        email: "Email"
+        password: "Password"
+        remember_me: "Ricordami"
+  activerecord:
+    generic_error: "Record non valido. Correggi i campi evidenziati"
+    errors:
+      # activerecord.errors.models.[model_name].attributes.[attribute_name]
+      # activerecord.errors.models.[model_name]
+      # activerecord.errors.messages
+      models:
+        project:
+          attributes:
+            email:
+              invalid: "sembra non essere un indirizzo valido"
+            url:
+              invalid: "sembra non essere un indirizzo valido"
+        institution:
+          attributes:
+            email:
+              invalid: "sembra non essere un indirizzo valido"
+            url:
+              invalid: "sembra non essere un indirizzo valido"
+      template:
+        header:
+          one:    "L'oggetto %{model} non può essere salvato a causa di un errore"
+          other:  "Alcuni errori (%{count}) non permettono di salvare l'oggetto %{model}"
+        # The variable :count is also available
+        body: "Per favore correggi i seguenti campi"
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "non risulta nella lista"
+        exclusion: "è una selezione non valida essendo un elemento riservato"
+        invalid: "non rispetta le regole di validità"
+        confirmation: "non coincide con la conferma"
+        accepted: "richiede esplicitamente accettazione"
+        empty: "non può essere lasciato vuoto"
+        blank: "non può essere lasciato in bianco"
+        too_long: "è di lunghezza eccessiva (il massimo è di %{count} caratteri)"
+        too_short: "è troppo breve (il minimo è %{count} caratteri)"
+        wrong_length: "è di lunghezza non corretta (dovrebb essere esattamente %{count} caratteri)"
+        taken: "è già presente in database"
+        not_a_number: "non è un numero"
+        greater_than: "dovrebbe essere maggiore di %{count}"
+        greater_than_or_equal_to: "dovrebbe essere maggiore o uguale a %{count}"
+        equal_to: "dovrebbe essere pari a %{count}"
+        less_than: "dovrebbe essere minore di %{count}"
+        less_than_or_equal_to: "dovrebbe essere minore o uguale a %{count}"
+        odd: "dovrebbe essere dispari"
+        even: "dovrebbe essere pari"
+        record_invalid: "Il record non è valido: %{errors}"
+        prior_to_end_date: "deve essere anteriore alla data di fine"
+        greater_than_start_date: "deve essere posteriore alla data di inizio"
+        at_least_one: "È necessario specificare un valore per le proprietà indicate"
+        # Append your own errors here or at the model/attributes scope.
+      full_messages:
+        format: "%{attribute} %{message}"
+        generic_not_blank: "Il campo %{object_name} deve contenere almeno un valore"
+      # You can define own errors for models or model attributes.
+      # The values :model, :attribute and :value are always available for interpolation.
+      #
+      # For example,
+      #   models:
+      #     user:
+      #       blank: "This is a custom blank message for %{model}: %{attribute}"
+      #       attributes:
+      #         login:
+      #           blank: "This is a custom blank message for User login"
+      # Will define custom blank validation message for User model and
+      # custom blank validation message for login attribute of User model.
+      #models:
+    # Translate model names. Used in Model.human_name().
+    #models:
+      # For example,
+      #   user: "Dude"
+      # will translate User model name to "Dude"
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%a %d-%m-%Y"
+      short: "%d %b %y"
+      long: "%d %B %Y"
+      medium: "%e %b %y"
+      long_with_full_weekday_name: "%A %d %B %Y"
+      only_full_weekday_name: "%A"
+      only_abbr_weekday_name: "%a"
+      day_number_in_month_two_digit: "%d"
+      day_number_in_month_single_digit: "%e"
+      full_month_name_and_year: "%B %Y"
+      only_day_and_fullmonth: "%d %B"
+      only_year: "%Y"
+    day_names: [Domenica, Lunedì, Martedì, Mercoledì, Giovedì, Venerdì, Sabato]
+    abbr_day_names: [Dom, Lun, Mar, Mer, Gio, Ven, Sab]
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Gennaio, Febbraio, Marzo, Aprile, Maggio, Giugno, Luglio, Agosto, Settembre, Ottobre, Novembre, Dicembre]
+    abbr_month_names: [~, Gen, Feb, Mar, Apr, Mag, Giu, Lug, Ago, Set, Ott, Nov, Dic]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      #short: "%d %b %H:%M"
+      default: "%a %d %b %Y, %H:%M:%S %z"
+      file_timestamp: "%Y-%m-%d_%H-%M"
+      #default: "%H:%M"
+      short: "%H:%M"
+      long: "%d %B %Y %H:%M"
+      medium: "%e %b %y"
+    am: 'am'
+    pm: 'pm'
+
+  # Used in array.to_sentence.
+  # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
+  datetime:
+    distance_in_words:
+      half_a_minute: "meno di un minuto"
+      less_than_x_seconds:
+        one:   "meno di un secondo"
+        other: "meno di %{count} secondi"
+      x_seconds:
+        one:   "un secondo"
+        other: "%{count} secondi"
+      less_than_x_minutes:
+        one:   "meno di un minuto"
+        other: "meno di %{count} minuti"
+      x_minutes:
+        one:   "un minuto"
+        other: "%{count} minuti"
+      about_x_hours:
+        one:   "circa un'ora"
+        other: "circa %{count} ore"
+      x_days:
+        one:   "un giorno"
+        other: "%{count} giorni"
+      about_x_months:
+        one:   "circa un mese"
+        other: "circa %{count} mesi"
+      x_months:
+        one:   "un mese"
+        other: "%{count} mesi"
+      about_x_years:
+        one:   "circa un anno"
+        other: "circa %{count} anni"
+      over_x_years:
+        one:   "oltre un anno"
+        other: "oltre %{count} anni"
+    prompts:
+      year:   "anno"
+      month:  "mese"
+      day:    "giorno"
+      hour:   "ore"
+      minute: "minuti"
+      second: "secondi"
+
+
+  number:
+    # Used in number_with_delimiter()
+    # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
+    format:
+      # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
+      separator: ","
+      # Delimets thousands (e.g. 1,000,000 is a million) (always in groups of three)
+      delimiter: "."
+      # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
+      precision: 3
+    # Used in number_to_currency()
+    currency:
+      format:
+        # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
+        format: "%n %u"
+        unit: "€"
+        # These three are to override number.format and are optional
+        separator: ","
+        delimiter: "."
+        precision: 2
+
+    # Used in number_to_percentage()
+    percentage:
+      format:
+        # These three are to override number.format and are optional
+        # separator:
+        delimiter: ""
+        # precision:
+
+    # Used in number_to_precision()
+    precision:
+      format:
+        # These three are to override number.format and are optional
+        # separator:
+        delimiter: ""
+        # precision:
+    # Used in number_to_human_size()
+    human:
+      format:
+        # These three are to override number.format and are optional
+        # separator:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Byte"
+          kb: "Kb"
+          mb: "Mb"
+          gb: "Gb"
+          tb: "Tb"
+
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: ", e "
+    select:
+      # default value for :prompt => true in FormOptionsHelper
+      prompt: "Seleziona"
+

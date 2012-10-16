@@ -1,0 +1,50 @@
+---
+en:
+  metadata_standards:
+    defaults: &defaults
+      insert_new: "New metadata standard"
+      back_link: "Back to metadata standards"
+      show_link: "Metadata standard's details"
+      edit_link: "Edit this metadata standard"
+      link_to_vocabularies: "%{count} vocabularies"
+    index:
+      page_title: "Metadata standards"
+      <<: *defaults
+    new:
+      page_title: "New metadata standard"
+      <<: *defaults
+    edit:
+      page_title: "Update metadata standard"
+      <<: *defaults
+    show:
+      page_title: "Metadata standard"
+      <<: *defaults
+    form:
+      update: "Update metadata standard..."
+      save: "Create metadata standard..."
+      <<: *defaults
+it:
+  metadata_standards:
+    defaults: &defaults
+      insert_new: "Nuovo standard di metadati"
+      back_link: "Torna alla lista standard di metadati"
+      show_link: "Anteprima standard di metadati"
+      edit_link: "Modifica standard di metadati"
+      link_to_vocabularies: "%{count} vocabolari"
+    index:
+      page_title: "Standard di metadati"
+      <<: *defaults
+    new:
+      page_title: "Nuovo standard di metadati"
+      <<: *defaults
+    edit:
+      page_title: "Modifica standard di metadati"
+      <<: *defaults
+    show:
+      page_title: "Aneprima standard di metadati"
+      <<: *defaults
+    form:
+      update: "Aggiorna standard di metadati"
+      save: "Crea standard di metadati"
+      <<: *defaults
+

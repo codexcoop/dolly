@@ -1,0 +1,28 @@
+<div id="heading">
+  <div id="links">
+    <%= link_to_by_role @digital_object, :title, :edit, t('.edit_link') %>
+  </div>
+  <h2><%= t '.page_title' %></h2>
+</div>
+
+<table class="show">
+  <%= show_row_for @digital_object,
+                  :label => t(:one, :scope => [:activerecord, :models, :original_object], :count => nil),
+                  :content => link_to(h(@digital_object.original_object.title), original_object_path(@digital_object.original_object)) %>
+  <%= show_row_for @digital_object,
+                  :label => t(:one, :scope => [:activerecord, :models, :digital_collection], :count => nil),
+                  :content => link_to(h(@digital_object.digital_collection.title_with_project), digital_collection_path(@digital_object.digital_collection)) %>
+  <%= show_row_for @digital_object, :property => "type" %>
+<%# NOTE: al momento NON utilizziamo digital_objects.source né è chiaro quale informazione debba esprimere %>
+  <%#= show_row_for @digital_object, :property => "source" %>
+  <%= show_row_for @digital_object, :property => "rights" %>
+  <%= show_row_for @digital_object, :property => "unstored" %>
+  <%= show_row_for @digital_object, :property => "completed", :content => @digital_object.completed? ? "#{statuses[1]}" : "#{statuses[0]}" %>
+</table>
+
+<%# TODO: mostrare sommario se presente + link a toggle_completed %>
+<p><strong><%= link_to "Segna il record come #{inverse_status(@digital_object.completed)}",  toggle_completed_digital_object_path(@digital_object), :method => :put %></strong></p>
+
+<div class="actions">
+  <%= link_to t('.back_link'), digital_objects_path %>
+</div>

@@ -1,0 +1,10 @@
+<div id="unimarc-text-form" class="form-area">
+  <% form_tag( {:controller => 'original_objects', :action => "initialize_with_unimarc" }, { :method => "POST" } ) do -%>
+    <div>
+      <strong><%= label_tag "unimarc_text", t('.unimarc_text') %></strong><br />
+      <%= text_area_tag "unimarc_text", "", :size => "70x16", :class => 'optional pre-textarea' %>
+    </div>
+    <div><%= submit_tag t('.go_import'), :class => "submit" %></div>
+  <% end %>
+</div>
+

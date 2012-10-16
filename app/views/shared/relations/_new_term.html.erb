@@ -1,0 +1,33 @@
+<% I18n.translate %>
+<% new_related_i18n = I18n.backend.send(:translations)[I18n.locale][:activerecord][:attributes][:term] %>
+
+<% content_tag  :div, :class => "new-related new-related-term",
+                :id => "new-#{opts[:related_model_name]}-#{opts[:unique_identifier]}",
+                :'data-new-related-common-params' => opts[:new_related_common_params].to_json,
+                :'data-new-related-controller' => opts[:new_related_controller],
+                :'data-new-related-action' => opts[:new_related_action],
+                :'data-new-related-i18n' => new_related_i18n.to_json do %>
+
+    <li class="hidden-template error-template">
+      <em><span class="attr-name"></span></em>: <span class="error-message"></span>
+    </li>
+
+  <%= content_tag :ul, nil, :class => 'hidden-template error-messages' %>
+
+  <p>
+    <%= text_field_tag  'term[it]', '',
+                        :size => default_size(:text_field),
+                        :class => 'cleanable' %>
+  </p>
+
+  <% opts[:new_related_common_params].each do |key, value| %>
+    <%= hidden_field_tag "term[#{key.to_sym}]", value %>
+  <% end %>
+
+  <p>
+    <%= content_tag :button, t('.submit_new_related'), :class => "new-related-submit" %>
+    &nbsp;
+    <%= content_tag :span, link_to(t('.close_dialog'), '#', :class => 'cancel-new-related-cmd'), :class => 'cancel-new-related' %>
+  </p>
+<% end %>
+

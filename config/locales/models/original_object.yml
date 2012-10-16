@@ -1,0 +1,56 @@
+---
+en:
+  activerecord:
+    models:
+      original_object:
+        one: "%{count} Original Object"
+        other: "%{count} Original Objects"
+    attributes:
+      original_object:
+        created_at: "Created at"
+        date: "Date"
+        description: "Description of contents"
+        physical_description: "Physical description"
+        identifier: "Identifier"
+        provenance: "Provenance"
+        rights: "Rights"
+        title: "Title"
+        digital_objects_count: "Number of digital objects "
+        unstored: "Unstored features"
+        institution_id: "Institution"
+        institution: "Institution"
+        updated_at: "Updated"
+        user_id: "User"
+        user: "User"
+        bid: "SBN ID"
+        isbn: "ISBN ID"
+        issn: "ISSN ID"
+        string_date: "Publication date"
+it:
+  activerecord:
+    models:
+      original_object:
+        one: "%{count} Oggetto originale"
+        other: "%{count} Oggetti originali"
+    attributes:
+      original_object:
+        created_at: "Creazione"
+        date: "Data"
+        description: "Descrizione contenutistica"
+        physical_description: "Descrizione fisica"
+        identifier: "Identificativo"
+        provenance: "Provenance"
+        rights: "Diritti"
+        title: "Titolo"
+        digital_objects_count: "Numero di oggetti digitali"
+        unstored: "Altre informazioni"
+        institution_id: "Istituzione"
+        institution: "Istituzione"
+        updated_at: "Modificato"
+        user_id: "Utente"
+        user: "Utente"
+        bid: "Identificativo SBN"
+        isbn: "Identificativo ISBN"
+        issn: "Identificativo ISSN"
+        string_date: "Data di pubblicazione"
+

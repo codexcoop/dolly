@@ -1,0 +1,38 @@
+<% form_for(@vocabulary) do |f| -%>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, t(:name, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :human_it, t(:human_it, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :human_it, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_it, t(:description_it, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_area :description_it, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :human_en, t(:human_en, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :human_en, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_en, t(:description_en, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_area :description_en, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :is_user_editable, t(:is_user_editable, :scope => default_i18n_views_scope), :class => 'optional' %>
+    <%= requirement_marker('optional') %><br />
+    <%= f.check_box :is_user_editable %>
+  </p>
+  <p>
+    <%= f.submit @updating ? t('.update') : t('.save') %>
+  </p>
+<% end -%>
+

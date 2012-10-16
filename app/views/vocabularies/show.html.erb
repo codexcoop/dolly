@@ -1,0 +1,12 @@
+<h2><%= t '.page_title' %></h2>
+
+<p>
+  <strong><%= t :name, :scope => default_i18n_views_scope %></strong>:
+  <%=h @vocabulary.name %>
+</p>
+
+<p>
+  <%= link_to t('.edit_link'), edit_vocabulary_path(@vocabulary) %> |
+  <%= link_to t('.back_link'), vocabularies_path %>
+</p>
+

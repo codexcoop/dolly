@@ -1,0 +1,44 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'sort_setup' %>
+  <%= javascript_include_tag 'sort_terms' %>
+<% end -%>
+
+<h2>
+  <%= t :page_title, :scope => [:terms, :index] %>
+  <q><%= t :one, :scope => [:activerecord, :models, @vocabulary.name.tableize.singularize.to_sym] %></q>
+</h2>
+
+<% if @vocabulary.is_user_editable? -%>
+  <p><%= link_to  t( :insert_new, :scope => [:terms, :index] ) +
+                  t(:one, :scope => [:activerecord, :models, @vocabulary.name.tableize.singularize.to_sym] ),
+                  new_vocabulary_term_path(@vocabulary), :class => 'new' %> </p>
+<% end -%>
+
+<p><%= link_to t(:all_vocabularies_link, :scope => [:terms, :index]), vocabularies_path %></p>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= t :code, :scope => [:activerecord, :attributes, :term] %></th>
+      <th><%= t :it, :scope => [:activerecord, :attributes, :term] %></th>
+      <th><%= t :en, :scope => [:activerecord, :attributes, :term] %></th>
+      <th><%= t :uuid, :scope => [:activerecord, :attributes, :term] %></th>
+      <th><%= t :is_native, :scope => [:activerecord, :attributes, :term] %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="sortable_terms">
+    <% @terms.each do |term| %>
+      <tr id="term_<%= term.id %>" data-handle="handle-for-sort" data-term-id="<%= term.id %>">
+        <td><%= link_to term.code, edit_vocabulary_term_path(@vocabulary, term) %></td>
+        <td><%= link_to term.it, edit_vocabulary_term_path(@vocabulary, term) %></td>
+        <td><%= link_to term.en, edit_vocabulary_term_path(@vocabulary, term) %></td>
+        <td><%=h "#{term.uuid[0..7]}..." %></td>
+        <td><%=h t( (term.is_native? ? :yes_text : :no_text ), :scope => [:application] )  %></td>
+        <td><%= delete_link([@vocabulary, term]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+

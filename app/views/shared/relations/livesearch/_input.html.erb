@@ -1,0 +1,31 @@
+<div class="fields">
+  <div class="live-search-wrap">
+    <% if opts[:search_invite] %>
+      <p>
+        <%= t('.search_invite',
+              :available_related => opts[:available_related],
+              :relation_name => t("activerecord.models.#{opts[:related_model_name]}", :count => 1).downcase) %>
+      </p>
+    <% end %>
+    <div class="search-input-area">
+      <div>
+        <span class="ui-icon ui-icon-search search-icon">&nbsp;</span>
+      </div>
+      <div class="search-input-wrap">
+        <% search_placeholder = t('.search_placeholder', :what => t("activerecord.models.#{opts[:related_model_name]}", :count => 1).downcase) if opts[:search_placeholder] %>
+        <%= text_field_tag  :related_live_search, '',
+                            :class => 'livesearch-input relation-search-input',
+                            :id => "#{opts[:related_to]}-#{opts[:variant]}",
+                            :'data-livesearch-controller' => opts[:autocompletion_controller],
+                            :'data-livesearch-action' => opts[:autocompletion_action],
+                            :'data-common-search-params' => opts[:through_hidden_fields].to_json,
+                            :'data-placeholder-text' => search_placeholder %>
+      </div>
+    </div>
+
+    <div class="interactive-list results-list">
+      <%# populated through html-ajax-response %>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,313 @@
+---
+en:
+  properties:
+    original_object:
+      coverage:
+        description: |
+          Definition:
+          The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. This may be a named place, a location, a spatial coordinate, a period, date, date range or a named administrative entity. Refined by <dcterms:spatial> and <dcterms:temporal>
+          Europeana note:
+          Coverage is the unqualified spatial or temporal coverage of the original analog or born digital object. Use of the more specific <dcterms:spatial> and <dcterms:temporal> elements is preferred where possible.
+      physical_description:
+        description: The size or duration of the resource. Refinement of <dc:format>. Size or duration of the digital object and the original object may be recorded.
+      isbn:
+        description: ""
+      title:
+        description: |-
+          Definition:
+          A name given to the resource. Typically, a Title will be a name by which the resource is formally known. Refined by: <dcterms:alternative>
+          Europeana note:
+          The title of the original analog or born digital object.
+      creator:
+        description: |-
+          Definition:
+          An entity primarily responsible for making the resource. This may be a person, an organisation or a service.
+          Europeana note:
+          This is the name of the creator of the original analog or born digital object.
+      rights:
+        description: |-
+          Definition:
+          Information about rights held in and over the resource.
+          Europeana note:
+          Information about intellectual Property Rights, access rights or license arrangements for the digital object (digitized or born digital).
+      language:
+        description: "Definition:\r\n\
+          A language of the resource.\r\n\
+          Comment:\r\n\
+          The recommended best practice is to use a controlled vocabulary such as RFC 4646 (http://www.rfc-archive.org/getrfc.php?rfc=4646) which, in conjunction with ISO 639, defines two- and three-letter primary language tags. Either a coded value or text string can be represented here. Use this element for the languages associated with the digital object. If the content is in more than one language, the element may be repeated. For example, the various languages spoken on video or in sound files. Use for text included in images (i.e. posters, newspapers etc). If there is no language aspect to the digital object (e.g. a photograph), please ignore this element.\r\n\
+          Europeana note:\r\n\
+          Use of RFC 4646 is highly recommended. This element is not for the language of the metadata of a resource, which should be described in xml:lang attribute. For example, <dc:title xml:lang=\xE2\x80\x9Den\xE2\x80\x9D>After dark</dc:title>. See <europeana:language>."
+      contributor:
+        description: |
+          Definition:
+          An entity responsible for making contributions to the resource.
+          Europeana note:
+          The name of contributors to the original analog or born digital object. This
+          could be a person, an organisation or a service.
+      subject:
+        description: |-
+          Definition:
+          The topic of the resource
+          Europeana note:
+          This is the subject of the original analog or born digital object.
+      publisher:
+        description: |-
+          Definition:
+          An entity responsible for making the resource available. Examples of a publisher include a person, an organisation and a service.
+          Europeana note:
+          The name of the publisher of the original analog or born digital object.
+      object_type:
+        description: |
+          Definition:
+          The nature or genre of the resource. Type includes terms describing general categories, functions, genres, or aggregation levels for content. The recommended best practice is to select a value from a controlled vocabulary (for example, the DC Type vocabulary is available at http://dublincore.org/documents/dcmi-type-vocabulary/). The type of the original analog or born digital object as recorded by the content provider, this element typically includes values such as photograph, painting, sculpture etc.
+          Europeana note:
+          Content providers are recommended to map the values found in <dc:type> in their metadata with four general types used in Europeana: TEXT, IMAGE, SOUND and VIDEO. See <europeana:type> below.
+      bid:
+        description: Identifier assigned by the Italian Libraries Central Unique Catalogue Institute for bibliographic informations (ICCU).
+      issn:
+        description: ""
+      description:
+        description: "An account of the resource. Refined by: <dcterms:tableOfContents>. A description of the original analog or born digital object."
+      unstored:
+        description: "Definition:\r\n\
+          This is a container element which includes all relevant information that otherwise cannot be mapped to another element in the ESE.\r\n\
+          Europeana note:\r\n\
+          The <europeana:unstored> element is provided in order to include important information for indexing purposes. All relevant information elements, which cannot be mapped to another element in the ESE, should be mapped into this element. This element is not available in \xE2\x80\x9Cfull search result display\xE2\x80\x9D."
+      tmp_unimarc_links:
+        description: See BID ID
+      identifier:
+        description: |
+          Definition:
+          An unambiguous reference to the resource within a given context.
+          Europeana note:
+          This is the identifier for the original analog or born digital object. Use <europeana:isShownBy> for the URL of the digital object. If the URL is already included in the <dc:identifier> element in the existing metadata, keep it and repeat the information in <europeana:isShownBy>.
+      string_date:
+        description: Date as written in bibliographic documents (free text, i.e. 1697 or [1832]).
+    digital_collection:
+      illustration_title:
+        description: The title of the illustration.
+      start_date:
+        description: "This is the approximate date of the earliest item in the digital collection expressed as a year. For example, this would be 1400 for collections that date from the \xE2\x80\x98Fifteenth Century\xE2\x80\x99."
+      digital_type:
+        description: "This is the general type of digital collection, for example: a collection of texts, a collection of images, a collection of interactive resources, a collection of sound files. N.B. Includes virtual collections."
+      digital_format:
+        description: The digital characteristics of the collection. More specific than the digital type.
+      size:
+        description: An evaluation of the size of the collection. This is intended to provide information for users of the MICHAEL system about the size of the digital collection.
+      content_type:
+        description: This is the type of content in the digital collection. For example, maps, music scores or manuscripts.
+      civilisation:
+        description: Culture or people that are the subject of the digital collection, for example Islamic or Jewish.
+      famous_event:
+        description: Famous (or interesting) events specially concerned with the digital collection, for example Waterloo. The aim of this field is to record outstanding events. It should not be used to record all known events that are associated with the collection.
+      title:
+        description: The title of the digital collection.The title should provide a meaningful point of reference to the digital collection, and preferably it should be unique, at least within an institution. Acronyms and abbreviations should not be used in this field.
+      legal_status:
+        description: A statement of the legal status of the digital collection.
+      accrual_periodicity:
+        description: |
+          Integer elementum dui in lacus adipiscing convallis. Donec eu ante lectus. Fusce vel justo quam, in ullamcorper dui. Vestibulum sed convallis sem. Nullam auctor, quam sit amet hendrerit molestie, metus purus vestibulum turpis, id blandit risus sapien ac leo. Phasellus blandit magna id elit vehicula suscipit. Nullam eget nunc urna? Maecenas posuere.
+      period:
+        description: The general period(s) spanned by the content of the digital collection, for example Neolithic or Bronze Age.
+      creator:
+        description: The creator or originator of the illustration, such as a photographer who captured an image.
+      accrual_policy:
+        description: A statement of accrual policy (closed, passive, active, partial/selective). This information is especially important for harvesting purposes, to foresee the evolution of aggregated resources.
+      language:
+        description: The language of the material contained in the digital collection.
+      spatial_coverage:
+        description: The spatial coverage of the items in the digital collection. An international list of countries and regions will be used in the MICHAEL system to provide the basis for multi-national searches. More detailed lists of regional and local administrative areas and places will be provided for each national instance.
+      subject:
+        description: The subject or concept of the items in the digital collection. Lists of subject keywords will be provided.
+      famous_object:
+        description: Famous objects or star items specially concerned with the digital collection. This field is particularly intended for use by small and medium cultural institutions. It should be used where there are one or two exceptional items in the collection that would not otherwise be found by subject indexing. It should not be used to provide a list of all items in the collection.
+      famous_place:
+        description: Famous (or interesting) places specially concerned with the digital collection, for example Mont Fuji. The aim of this field is to record outstanding places. It should not be confused with the spatial- coverage field and must not be used to record all known places that are associated with the collection.
+      famous_person:
+        description: Famous (or interesting) people specially concerned with the digital collection. The aim of this field is to record outstanding individuals. It should not be used to record all known people who are associated with the collection.
+      accrual_method:
+        description: A statement of the accrual method (purchase, deposit). This information is especially important for harvesting purposes, to foresee the evolution of aggregated resources.
+      access_control:
+        description: A statement of any access restrictions that are placed on the collection. This would be used where for example access to the collection is closed for a period of time or where access is restricted to a certain category of users. The information is not intended for public use, but for reference by the institution that owns or manages the collection.
+      database:
+        description: Database describing the objects in the collection.
+      description:
+        description: A free text description of the digital collection. This should add to the information provided in the title.
+      standard:
+        description: A statement of any descriptive or terminology standards that were used in creating the item level metadata associated with the digital collection.
+      end_date:
+        description: "This is the approximate date of the latest (or most recent) item in the digital collection expressed as a year. For example, this would be 1699 for collections that date from the \xE2\x80\x98Seventeenth Century\xE2\x80\x99."
+      illustration_legal_status:
+        description: A statement of the rights associated with the illustration.
+      identifier:
+        description: This is the identifier for the digital collection. This identifier plays an essential role in the MICHAEL system. All entities should have a unique identifier, and this identifier should also be unique in the scope of the European instance.
+    project:
+      start_date:
+        description: This is the approximate starting date of the project or programme. This may be expressed as a year.
+      title:
+        description: This is the title of a project or programme. This should be written in full. Acronyms and abbreviations must not be used as the aim is to provide information that is understandable to a general audience.
+      logo:
+        description: "A link to an image file that contains the project or programme\xE2\x80\x99s logo. "
+      url:
+        description: This is the URL of the home page for a project or programme.
+      digitisation_process:
+        description: This is a general indication of the technical features of the project or programme, and of the digitisation processes used. This may be direct or indirect etc.
+      acronym:
+        description: This is the acronym (or abbreviated form) of the project or programme title. This acronym should be commonly used, it must not be created simply for the MICHAEL system.
+      funding:
+        description: This is a general indication of the type of funding that supports the project or programme, for example internal, external and so on.
+      fax:
+        description: This is the contact fax number for the agent. The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      description:
+        description: This is a short description of the project or programme, which should add to the information that is provided in the title.
+      completion_date:
+        description: This is the approximate date when the project or programme ended, where this is known. This may be expressed as a year.
+      telephone:
+        description: This is the contact telephone number for the agent. The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      contact_person_email:
+        description: This is the contact email address for the agent.
+      status:
+        description: This is a general indication of the status of the project or programme, for example planned, on-going, completed.
+      identifier:
+        description: This is the identifier for the project or programme. This identifier plays an essential role in the MICHAEL system. All entities should have a unique identifier, and this identifier should also be unique in the scope of the European instance. This could consist of a country code followed by a unique identifier for the project.
+      agent_name:
+        description: This is the name of the agent.
+      email:
+        description: This is the general email address for the project or programme, for example the address for a help/information desk.
+it:
+  properties:
+    original_object:
+      coverage:
+        description: "Il riferimento spaziale o temporale della risorsa, l'applicabilit\xC3\xA0 spaziale della risorsa o la giurisdizione sotto cui la risorsa \xC3\xA8 rilevante. Pu\xC3\xB2 essere il nome di un luogo, una posizione, una coordinata spaziale, un periodo, una data, un intervallo di date o il nome di un'entit\xC3\xA0 amministrativa. Si intende un riferimento geografico o cronologico dell'oggetto origininale. \xC3\x88 preferibile specificare maggiormente l'informazione quando possibile."
+      physical_description:
+        description: "Dimensione o durata della risorsa. Pu\xC3\xB2 includere la dimensione o la durata dell'oggetto digitale o dell'oggetto originale."
+      isbn:
+        description: ""
+      title:
+        description: "Nome o titolo della risorsa (oggetto originale), quello con cui la risorsa \xC3\xA8 comunemente e formalmente identificata."
+      creator:
+        description: "Soggetto o i soggetti che hanno prodotto l'opera originale. Si pu\xC3\xB2 riferire a una persona, un'organizzazione, un servizio."
+      rights:
+        description: "Informazioni sui diritti correlati con la risorsa, quindi i diritti di propriet\xC3\xA0 intellettuale, diritti di accesso, o accordi di licenza. Possono essere riferiti sia all'oggetto originale che all'oggetto digitale."
+      language:
+        description: "Lingua associata alla risorsa (oggetto digitale), non quella dei suoi metadati. Pu\xC3\xB2 essere la lingua o le lingue presenti in un'immagine (un poster, un quotidiano...), la lingua parlata in un video o in una registrazione audio. Se non ci sono aspetti linguistici correlati con l'oggetto digitale, questo campo pu\xC3\xB2 essere ignorato."
+      contributor:
+        description: "Il soggetto o i soggetti che hanno contribuito in via secondaria alla creazione dell'opera originale. Si pu\xC3\xB2 trattare di una persona, un'organizzazione, un servizio."
+      subject:
+        description: Tema dell'opera originale.
+      publisher:
+        description: "Nome dell'editore dell'opera originale, un'entit\xC3\xA0 responsabile di rendere disponibile la risorsa. Pu\xC3\xB2 essere per esempio una persona, un'organizzazione, un servizio."
+      object_type:
+        description: "Natura o genere dell'oggetto originale. Sebbene ci si possa riferire a categorie generali, funzioni, generi, o livelli di aggregazione del contenuto (fotografia, pittura, scultura, architettura, etc.), per garantire la compatibilit\xC3\xA0 con Europeana questi termini devono poi essere riferiti alle tipologie TEXT, IMAGE, SOUND and VIDEO."
+      bid:
+        description: Identificativo assegnato dall'Istituto Centrale per il Catalogo Unico delle biblioteche italiane e per le informazioni bibliografiche (ICCU).
+      issn:
+        description: ""
+      description:
+        description: Descrizione generale dell'opera originale.
+      unstored:
+        description: Altre informazioni rilevanti ai fini dell'indicizzazione dei contenuti, per le quali non sono previsti campi specifici.
+      tmp_unimarc_links:
+        description: Ved. SBN
+      identifier:
+        description: Riferimento univoco all'opera originale, all'interno di un determinato contesto.
+      string_date:
+        description: "Data nel formato in cui \xC3\xA8 riportata nelle informazioni bibliografiche (ad es. 1697 oppure [1832])"
+    digital_collection:
+      illustration_title:
+        description: Titolo dell'illustrazione collegata alla collezione digitale.
+      start_date:
+        description: "Datazione approssimativa dell\xE2\x80\x99oggetto pi\xC3\xB9 antico riprodotto dalla collezione digitale, espressa convenzionalmente in anni. Per esempio, sar\xC3\xA0 1401 per le collezioni datate \xE2\x80\x9Cquindicesimo secolo\xE2\x80\x9C."
+      digital_type:
+        description: "Tipo generale della collezione digitale. Per esempio: una collezione di testi, di immagini, di risorse interattive o di file audio. Include le collezioni virtuali."
+      digital_format:
+        description: "Caratteristiche digitali della collezione, ovvero i formati in essa contenuti. Pi\xC3\xB9 specifico rispetto a \"Tipo di documento digitale\".\r\n"
+      size:
+        description: "Stima delle dimensioni di una collezione. Serve ad offrire agli utenti finali un\xE2\x80\x99idea approssimativa delle proporzioni di una collezione digitale."
+      content_type:
+        description: Tipo di contenuto della collezione digitale.
+      civilisation:
+        description: |
+          Cultura o popolo che costituisce il tema della collezione digitale, per esempio Islamica o Ebraica, Villanoviana o Etrusca.
+      famous_event:
+        description: "Eventi famosi (o particolarmente interessanti) implicati nella collezione digitale, per esempio Battaglia di Waterloo. Lo scopo di questo campo \xC3\xA8 di registrare gli eventi universalmente noti, non va pertanto impiegato per elencare tutti gli eventi associati alla collezione."
+      title:
+        description: "Titolo della collezione digitale. Il titolo deve offrire un riferimento significativo per la collezione digitale, e dovrebbe essere unico almeno nell\xE2\x80\x99ambito di una istituzione. In questo campo non si dovrebbero usare acronimi e abbreviazioni."
+      legal_status:
+        description: Dichiarazione della situazione dei diritti sulla collezione digitale.
+      accrual_periodicity:
+        description: "Presentazione della periodicit\xC3\xA0 di incremento (irregolare, periodico). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere\r\n\
+          l\xE2\x80\x99evoluzione delle risorse aggregate."
+      period:
+        description: "Periodo coperto dai materiali contenuti nella collezione digitale, per esempio Neolitico o Et\xC3\xA0 del bronzo.\r\n"
+      creator:
+        description: "Autore dell\xE2\x80\x99illustrazione, come ad esempio il fotografo che ha scattato un\xE2\x80\x99immagine."
+      accrual_policy:
+        description: "Presentazione della politica di incremento della collezione (chiusa, passiva, attiva, parziale/selettiva). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate.\r\n"
+      language:
+        description: Lingua dei materiali contenuti nella collezione digitale.
+      spatial_coverage:
+        description: "Copertura territoriale degli oggetti della collezione digitale. Il sistema offre un elenco internazionale di paesi e regioni in modo tale da porre le basi per ricerche multinazionali. \xC3\x88 possibile fornire un elenco pi\xC3\xB9 dettagliato di aree amministrative regionali e locali.\r\n"
+      subject:
+        description: Tema o idea comune agli oggetti della collezione digitale.
+      famous_object:
+        description: "Oggetti di particolare notoriet\xC3\xA0 o star item coinvolti nella collezione digitale. Questo campo \xC3\xA8 destinato a essere usato soprattutto da istituzioni culturali di piccole e medie dimensioni. Dovrebbe essere compilato quando la collezione comprende uno o due oggetti di eccezionale interesse, che altrimenti non emergerebbero attraverso l\xE2\x80\x99indicizzazione per soggetto. Non si deve usare il campo per fornire un elenco di tutti gli oggetti della collezione."
+      famous_place:
+        description: "Luoghi famosi (o particolarmente interessanti) che riguardano la collezione digitale, per esempio il monte Fuji. Lo scopo di questo campo \xC3\xA8 registare luoghi notevoli. Non va confuso con il campo \"Copertura geografica\" e non deve essere utilizzato per registrare tutti i luoghi conosciuti associati alla collezione.\r\n"
+      famous_person:
+        description: "Personaggi famosi (o particolarmente interessanti) coinvolti nella collezione digitale. Lo scopo di questo campo \xC3\xA8 registrare personalit\xC3\xA0 eminenti. Non va utilizzato per registrare tutti i personaggi conosciuti associati alla collezione."
+      accrual_method:
+        description: "Presentazione del metodo di incremento (acquisto, deposito). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate."
+      access_control:
+        description: "Enunciazione di ogni restrizione dell\xE2\x80\x99accesso alla collezione. Pu\xC3\xB2 essere usato quando, ad esempio, l\xE2\x80\x99accesso alla collezione \xC3\xA8 precluso per un certo periodo di tempo o laddove l\xE2\x80\x99accesso \xC3\xA8 ristretto a una particolare categoria di utenti. Questa informazione non \xC3\xA8 per uso pubblico, ma \xC3\xA8 inserita come riferimento per l\xE2\x80\x99istituzione che possiede o gestisce la collezione."
+      database:
+        description: Database che descrive gli oggetti contenuti nella collezione.
+      description:
+        description: |
+          Descrizione a testo libero della collezione digitale. Dovrebbe fornire informazioni aggiuntive rispetto a quelle contenute nel titolo.
+      standard:
+        description: |
+          Presentazione degli standard descrittivi o terminologici adottati per la creazione dei metadati associati agli oggetti della collezione digitale.
+      end_date:
+        description: "Datazione approssimativa dell\xE2\x80\x99oggetto pi\xC3\xB9 recente riprodotto dalla collezione digitale, espressa convenzionalmente in anni. Per esempio, sar\xC3\xA0 1500 per collezioni datate \xE2\x80\x9Cquindicesimo secolo\xE2\x80\x9C.\r\n"
+      illustration_legal_status:
+        description: "Dichiarazione dei diritti associati all\xE2\x80\x99illustrazione della collezione digitale."
+      identifier:
+        description: "Identificatore univoco della collezione digitale nel sistema. Gioca un ruolo fondamentale nel sistema. Tutti i record devono avere un identificatore unico, ed esso deve essere unico anche in ambito europeo. L\xE2\x80\x99identificatore \xC3\xA8 apposto automaticamente dal sistema."
+    project:
+      start_date:
+        description: Data orientativa di inizio del progetto o programma.
+      title:
+        description: "Titolo del progetto o programma. Deve essere scritto per esteso, evitando acronimi e abbreviazioni, perch\xC3\xA9 lo scopo \xC3\xA8 fornire un\xE2\x80\x99informazione comprensibile per il pubblico.\n"
+      logo:
+        description: "Link a un\xE2\x80\x99immagine che contiene il logo del progetto o programma."
+      url:
+        description: URL della home page del progetto o programma.
+      digitisation_process:
+        description: |
+          Indicazione generale delle caratteristiche tecniche del progetto o programma e dei procedimenti adottati per la digitalizzazione.
+      acronym:
+        description: Forma abbreviata del titolo del progetto o programma.
+      funding:
+        description: Indicazione generale del tipo di finanziamento di cui beneficia il progetto o programma.
+      fax:
+        description: "Numero di fax per contattare il referente. Il prefisso telefonico internazionale deve essere incluso nel numero, per consentire l\xE2\x80\x99uso del dato a livello internazionale."
+      description:
+        description: Breve descrizione del progetto o programma. Dovrebbe offrire informazioni aggiuntive rispetto a quelle contenute nel titolo.
+      completion_date:
+        description: |
+          Data orientativa o prevista per la conclusione del progetto o programma, quando nota.
+      telephone:
+        description: "Numero di telefono per contattare il referente. Il prefisso telefonico internazionale deve essere incluso nel numero, per consentire l\xE2\x80\x99uso del dato a livello internazionale.\r\n"
+      contact_person_email:
+        description: Indirizzo email per contattare il referente.
+      status:
+        description: |
+          Indicazione generale dello stato di avanzamento del progetto o programma.
+      identifier:
+        description: "Identificatore univoco del progetto o programma nel sistema. Gioca un ruolo fondamentale all\xE2\x80\x99interno del sistema."
+      agent_name:
+        description: Nome del referente
+      email:
+        description: "Indirizzo email del progetto o programma, per esempio l\xE2\x80\x99indirizzo email di un ufficio informazioni o di un helpdesk.\r\n"
+

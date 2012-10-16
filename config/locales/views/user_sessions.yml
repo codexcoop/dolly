@@ -1,0 +1,15 @@
+en:
+  user_sessions:
+    defaults: &defaults
+    new:
+      page_title: "Login"
+      retrieve_password: "Forgot password?"
+      <<: *defaults
+it:
+  user_sessions:
+    defaults: &defaults
+    new:
+      page_title: "Collegati"
+      retrieve_password: "Hai smarrito la password?"
+      <<: *defaults
+

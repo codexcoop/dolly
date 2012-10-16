@@ -1,0 +1,148 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "jquery.autocomplete_setup" %>
+  <%= javascript_include_tag "live_search" %>
+  <%= javascript_include_tag "relations" %>
+<% end %>
+
+<% form_for(@original_object) do |f| %>
+  <%= generic_error_message_for @original_object %>
+
+  <h3 class="section"><%= t('.section_description') %></h3>
+
+  <p>
+    <%= label_with_markers :property => 'title', :f => f, :requirement => 'mandatory', :help => true, :error_message => true %><br />
+    <%= f.text_area :title, :size => '70x4' %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'description', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area :description, :size => '70x4' %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'physical_description', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area :physical_description, :size => '70x4' %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'string_date', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_field :string_date %>
+  </p>
+
+  <%= render_relation_for f, :object_types, @original_object_object_types,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_object_types,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :excluded_ids => @original_object.object_type_ids,
+    :related_model_name => 'object_type',
+    :title_tooltip => t("properties.original_object.object_type.description"),
+    :variant => 'select' %>
+
+  <%= render_relation_for f, :subjects, @original_object_subjects,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'subject',
+    :title_tooltip => t("properties.original_object.subject.description"),
+    :new_related_partial => 'shared/relations/new_term' %>
+
+  <%= render_relation_for f, :creators, @original_object_creators,
+    :autocompletion_controller => "terms",
+    :selected_label_short => lambda{|entity_term| h entity_term.term.try(:code) },
+    :selected_label_full => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'creator',
+    :title_tooltip => t("properties.original_object.creator.description"),
+    :new_related_partial => 'shared/relations/new_term',
+    :variant => 'livesearch',
+    :suggested_partial => 'shared/relations/livesearch/suggested',
+    :item_partial => 'shared/relations/livesearch/item',
+    :selected_partial => 'shared/relations/livesearch/selected' %>
+
+  <%= render_relation_for f, :contributors, @original_object_contributors,
+    :autocompletion_controller => "terms",
+    :selected_label_short => lambda{|entity_term| h entity_term.term.try(:code) },
+    :selected_label_full => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'contributor',
+    :title_tooltip => t("properties.original_object.contributor.description"),
+    :new_related_partial => 'shared/relations/new_term',
+    :variant => 'livesearch',
+    :suggested_partial => 'shared/relations/livesearch/suggested',
+    :item_partial => 'shared/relations/livesearch/item',
+    :selected_partial => 'shared/relations/livesearch/selected' %>
+
+  <%= render_relation_for f, :publishers, @original_object_publishers,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'publisher',
+    :title_tooltip => t("properties.original_object.publisher.description"),
+    :new_related_partial => 'shared/relations/new_term' %>
+
+  <%= render_relation_for f, :languages, @original_object_languages,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_languages,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'language',
+    :title_tooltip => t("properties.original_object.language.description"),
+    :variant => 'select' %>
+
+  <%= render_relation_for f, :coverages, @original_object_coverages,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'coverage',
+    :title_tooltip => t("properties.original_object.coverage.description"),
+    :new_related_partial => 'shared/relations/new_term' %>
+
+  <p>
+    <%= label_with_markers :property => 'rights', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area :rights, :size => '70x2' %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'unstored', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area :unstored, :size => '70x4' %>
+  </p>
+
+  <h3 class="section"><%= t('.section_identification_codes') %></h3>
+
+  <p>
+    <%= label_with_markers :property => 'bid', :f => f, :requirement => 'optional', :help => true, :error_message => true %><br />
+    <%= f.text_field :bid, :class => "activable" %>
+    <%= field_activator_for(@original_object, :bid) %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'isbn', :f => f, :requirement => 'optional', :help => false, :error_message => true %><br />
+    <%= f.text_field :isbn, :class => "activable" %>
+    <%= field_activator_for(@original_object, :isbn) %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'issn', :f => f, :requirement => 'optional', :help => false, :error_message => true %><br />
+    <%= f.text_field :issn, :class => "activable" %>
+    <%= field_activator_for(@original_object, :issn) %>
+  </p>
+
+  <div>
+    <%= f.hidden_field :tmp_unimarc_links, :value => @original_object.tmp_unimarc_links.to_yaml %>
+  </div>
+
+  <% if action_name == 'edit' %>
+    <h3 class="section"><%= t('.section_relations') %></h3>
+    <%= render :partial => "associations_read_only" %>
+  <% end %>
+
+  <p>
+    <%= f.submit t(@original_object.new_record? ? '.save' : '.update'), :class => 'submit' %>
+  </p>
+<% end %>
+
+<div class="templates-container">
+  <%= yield :templates_container %>
+</div>
+

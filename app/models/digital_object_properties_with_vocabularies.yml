@@ -1,0 +1,167 @@
+--- 
+- !ruby/object:Property 
+  attributes: 
+    position: "1"
+    vocabulary_id: "42"
+    name: type
+    section: ""
+    entity_id: "4"
+    description_en: |-
+      Definition:
+      The general type of the resource. 
+      Europeana note:
+      This element is used for the four general types supported by Europeana: TEXT, IMAGE, SOUND and VIDEO. This information is used in Europeana interface and in searches. Search results are categorized by the four types to helps users to find what they are looking for. An icon for the general type of object is displayed with each search result. A default thumbnail for the general type of object is used in the short or full record display when a thumbnail is not otherwise available (see <europeana:object>). Content providers are requested to create a mapping from the local type terminology used in their metadata to the four types used in Europeana. The mapping is typically based on the values in <dc:type>.
+    notes: ""
+    order_terms_by: position
+    id: "111"
+    description_it: "Tipo generale della risorsa, classificato con uno dei seguenti tipi: TEXT, IMAGE, SOUND and VIDEO. Questa informazione deve essere coerente con i tipi dichiarati per l'oggetto originale."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: mandatory
+    human_en: Type
+    datatype: reference
+    cardinality: one
+    human_it: Tipo
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Type
+      created_at: 2010-01-29 00:11:58.525474
+      uuid: d8c9ba23-27ef-442e-a002-f34b34aa43f1
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.789951
+      description_it: 
+      terms_count: "4"
+      is_user_editable: f
+      id: "42"
+      human_en: 
+      human_it: Tipo
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "11"
+    vocabulary_id: "35"
+    name: format
+    section: ""
+    entity_id: "4"
+    description_en: |
+      Definition:
+      The file format, physical medium or dimensions of the resource. Refined by: <dcterms:extent> and <dcterms:medium>.
+      Europeana note:
+      The unqualified element includes file format, physical medium or dimensions of the original and/or digital object. Use this element for the file format of the digital object or born digital originals. Internet Media Types [MIME] are highly recommended (http://www.iana.org/assignments/media-types/). Use of the more specific elements <dcterms:extent> (dimensions) and <dcterms:medium> (physical medium) is preferred where appropriate.
+
+    notes: ""
+    order_terms_by: position
+    id: "102"
+    description_it: "Formato del file dell'oggetto digitale (o anche dell'oggetto originale quando questo \xC3\xA8 esso stesso di natura digitale). Per la descrizione si fa riferimento ai \"MIME types\" (Internet Media Types)."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: automatic_internal
+    human_en: Format
+    datatype: reference
+    cardinality: many
+    human_it: Formato
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Format
+      created_at: 2010-01-29 00:11:58.304432
+      uuid: a717fbb5-0dae-4ffe-a3df-960e6180907d
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.796551
+      description_it: 
+      terms_count: "447"
+      is_user_editable: f
+      id: "35"
+      human_en: 
+      human_it: Formato
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "31"
+    vocabulary_id: "40"
+    name: country
+    section: ""
+    entity_id: "4"
+    description_en: |
+      The country name is derived automatically from information held in the Europeana content providers authority file; content providers do not need to provide this information separately. Country names should conform to ISO 3166. (http://www.iso.org/iso/english_country_names_and_code_elements).
+
+    notes: ""
+    order_terms_by: position
+    id: "114"
+    description_it: "Il paese viene ricavato automaticamente dalle informazioni contenute nell'authority file dei fornitori di contenuti di Europeana. Non \xC3\xA8 richiesto che i fornitori di contenuti forniscano questa informazione separatamente. Il nome del paese dovrebbe essere conforme allo standard ISO 3166 (http://www.iso.org/iso/english_country_names_and_code_elements)."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: automatic_third_party
+    human_en: Country
+    datatype: reference
+    cardinality: one
+    human_it: Paese
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Iso3166Country
+      created_at: 2010-01-29 00:11:58.45307
+      uuid: ad87a69c-923c-41fc-8abf-2f1fa34c7a68
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.707579
+      description_it: 
+      terms_count: "247"
+      is_user_editable: f
+      id: "40"
+      human_en: 
+      human_it: Paese (ISO 3166)
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "41"
+    vocabulary_id: "41"
+    name: language
+    section: ""
+    entity_id: "4"
+    description_en: "Definition:\r\n\
+      A language assigned to the resource with reference to the content provider.\r\n\
+      Europeana note:\r\n\
+      For the Europeana prototype, <europeana:language> is the official language of the country where a content provider is located. It is derived automatically from the Europeana content providers\xE2\x80\x99 authority file. Content providers do not need to provide this information in their metadata. It is expressed using the ISO 639-1 (the two-character code) (e.g. \xE2\x80\x9Cen\xE2\x80\x9D, \xE2\x80\x9Cde\xE2\x80\x9D etc). For countries with several official languages, Europeana uses \xE2\x80\x9Cmul\xE2\x80\x9D or multilingual (ISO 639-2)."
+    notes: ""
+    order_terms_by: position
+    id: "116"
+    description_it: "Lingua ufficiale del paese di residenza del fornitore di contenuti. Viene derivata automaticamente sulla base dell'authority file. Non \xC3\xA8 necessario fornire questa informazione."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: automatic_third_party
+    human_en: Language
+    datatype: reference
+    cardinality: many
+    human_it: Lingua
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Iso6391Language
+      created_at: 2010-01-29 00:11:58.483876
+      uuid: 77e33b28-5e7e-4a40-a225-ecf8d0ba76f4
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.786649
+      description_it: 
+      terms_count: "185"
+      is_user_editable: f
+      id: "41"
+      human_en: 
+      human_it: Lingua (ISO 639-1)
+    attributes_cache: {}
+

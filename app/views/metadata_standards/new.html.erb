@@ -1,0 +1,8 @@
+<h2><%= t '.page_title' %></h2>
+
+<% form_for(@metadata_standard) do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>
+
+<%= link_to t('.back_link'), metadata_standards_path %>
+

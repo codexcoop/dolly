@@ -1,0 +1,14 @@
+---
+en:
+  activerecord:
+    models:
+      entity:
+        one: "%{count} Entity"
+        other: "%{count} Entities"
+it:
+  activerecord:
+    models:
+      entity:
+        one: "%{count} Entità"
+        other: "%{count} Entità"
+

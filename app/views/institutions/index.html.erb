@@ -1,0 +1,47 @@
+<h2><%= t '.page_title' %></h2>
+
+<% if is_owner?(:authorizable_object => Institution.new, :authorizable_action => 'new') -%>
+  <p><%= link_to t('.insert_new'), new_institution_path, :class => "new" %></p>
+<% end -%>
+
+
+<table class="list">
+  <tr>
+    <th><%= t :id, :scope => default_i18n_views_scope %></th>
+    <th><%= t :name, :scope => default_i18n_views_scope %></th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @institutions.each do |institution| %>
+  <tr>
+    <td><%=h institution.id %></td>
+    <td>
+      <%= if is_owner?(:authorizable_object => institution, :authorizable_action => 'edit')
+        link_to institution.name, edit_institution_path(institution)
+      else
+        institution.name
+      end %>
+    </td>
+    <td>
+      <%= link_to t(:project, :count =>  institution.projects.size,
+                              :scope => [:activerecord, :models]).downcase,
+                  institution_projects_path(institution) if institution.projects.size > 0 %>
+    </td>
+    <td>
+      <%= link_to t(:original_object, :count =>  institution.original_objects.size,
+                                      :scope => [:activerecord, :models]).downcase,
+                    institution_original_objects_path(institution) if institution.original_objects.size > 0 %>
+    </td>
+    <td>
+        <%= if  is_owner?(:authorizable_object => institution, :authorizable_action => 'destroy') and
+                institution.projects.size == 0 and
+                institution.original_objects.size == 0
+              delete_link(institution)
+            end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,64 @@
+---
+en:
+  activerecord:
+    models:
+      digital_collection:
+        one: "%{count} Collection"
+        other: "%{count} Collections"
+    attributes:
+      digital_collection:
+        created_at: "Created at"
+        database: "Database"
+        description: "Description"
+        digital_objects_count: "Number of digital objects"
+        end_date: "End date"
+        identifier: "Identifier"
+        content_type_id: "Content type"
+        digital_format_id: "Digital format"
+        digital_type_id: "Digital type"
+        legal_status_id: "Legal status"
+        content_type: "Content type"
+        digital_format: "Digital format"
+        digital_type: "Digital type"
+        legal_status: "Legal status"
+        project_id: "Project"
+        project: "Project"
+        start_date: "Start date"
+        title: "Title"
+        updated_at: "Updated at"
+        user_id: "User"
+        user: "User"
+        institution_id: "Institution"
+        institution: "Institution"
+it:
+  activerecord:
+    models:
+      digital_collection:
+        one: "%{count} Collezione"
+        other: "%{count} Collezioni"
+    attributes:
+      digital_collection:
+        created_at: "Creazione"
+        database: "Database"
+        description: "Descrizione"
+        digital_objects_count: "Numero di oggetti digitali"
+        end_date: "Anno dell'oggetto più recente"
+        identifier: "Identificativo"
+        content_type_id: "Tipo di contenuto"
+        digital_format_id: "Formato digitale"
+        digital_type_id: "Tipo digitale"
+        legal_status_id: "Diritti"
+        legal_status: "Diritti"
+        content_type: "Tipo di contenuto"
+        digital_format: "Formato digitale"
+        digital_type: "Tipo digitale"
+        project_id: "Progetto"
+        project: "Progetto"
+        start_date: "Anno dell'oggetto più antico"
+        title: "Titolo"
+        updated_at: "Modificata"
+        user_id: "Utente"
+        user: "Utente"
+        institution_id: "Istituzione"
+        institution: "Istituzione"
+

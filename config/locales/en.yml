@@ -1,0 +1,28 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+# TODO
+en:
+  hello: "Hello world"
+  activerecord:
+    generic_error: "Please, fix the highlighted errors"
+    errors:
+      # activerecord.errors.models.[model_name].attributes.[attribute_name]
+      # activerecord.errors.models.[model_name]
+      # activerecord.errors.messages
+      models:
+        project:
+          attributes:
+            email:
+              invalid: "should look like a valid address"
+            url:
+              invalid: "should look like a valid address"
+        institution:
+          attributes:
+            email:
+              invalid: "should look like a valid address"
+            url:
+              invalid: "should look like a valid address"
+      messages:
+        at_least_one: "At least one term is required for the property %{property}"
+

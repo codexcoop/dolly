@@ -1,0 +1,20 @@
+
+<p>
+  <strong>Name:</strong>
+  <%=h @entity.name %>
+</p>
+
+<p>
+  <strong>Metadata Standards:</strong><br />
+  <ul class="">
+    <% @entity.metadata_standards.each do |ms| -%>
+      <li> <%= ms.description %><br /> </li>
+    <% end -%>
+  </ul>
+</p>
+
+
+
+<%= link_to 'Edit', edit_entity_path(@entity) %> |
+<%= link_to 'Back', entities_path %>
+

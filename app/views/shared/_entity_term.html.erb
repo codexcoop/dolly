@@ -1,0 +1,13 @@
+<% f.fields_for :entity_terms,
+                f.object.entity_terms.build(:vocabulary_id => property.vocabulary_id,
+                                            :property_id => property.id) do |entity_term_form| %>
+  <% content_tag  :p, :class => 'terms-list', 'data-property-id' => property.id do %>
+    <%= entity_term_form.hidden_field :vocabulary_id %>
+    <%= entity_term_form.hidden_field :property_id %>
+    <%= content_with_error_for_association(
+          error_on_field,
+          terms_select_for_property(entity_term_form, @terms, property)
+        ) %>
+  <% end -%>
+<% end -%>
+

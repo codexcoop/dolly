@@ -1,0 +1,100 @@
+---
+en:
+  original_objects:
+    defaults: &defaults
+      insert_new: "New original object"
+      edit_link: "Edit original object"
+      show_link: "Original object's details"
+      back_link: "Back to original objects"
+      link_to_digital_objects: "%{count} digital objects"
+      search_catalogue: "OPAC search"
+      catalogue_search: "Import bibliographic record"
+      section_description: "Description area"
+      section_relations: "Relations area"
+      section_identification_codes: "Identity codes area"
+      new_digital_object: "New digital object"
+      new_linked_digital_object: "New linked digital object"
+      linked_digital_objects:
+        one: "%{count} linked digital object"
+        other: "%{count} linked digital objects"
+      no_linked_digital_objects: "No linked digital objects"
+    title_search:
+      <<: *defaults
+      see: "See"
+      submit_tag: "search"
+      all_records_link: "all original objects"
+      no_records_found: "No original objects correspond to the query"
+      records_found:
+        one: "%{count} original object found"
+        other: "%{count} original objects found"
+    index:
+      page_title: "Original objects"
+      list_all: "List all original objects"
+      <<: *defaults
+    new:
+      page_title: "New original object"
+      <<: *defaults
+    edit:
+      page_title: "Update original object"
+      <<: *defaults
+    show:
+      page_title: "Original object"
+      <<: *defaults
+    form:
+      update: "Update the original object..."
+      save: "Create the new original object..."
+      button_show_projects_and_original_works_for_this_institution: "Show projects and original objects from this institution"
+      button_show_digital_collections_for_this_project: "Show collections for the selected project"
+      <<: *defaults
+    side:
+      <<: *defaults
+it:
+  original_objects:
+    defaults: &defaults
+      insert_new: "Nuovo oggetto originale"
+      edit_link: "Modifica oggetto originale"
+      show_link: "Anteprima oggetto originale"
+      back_link: "Torna alla lista oggetti originali"
+      section_description: "Area della descrizione"
+      section_relations: "Area delle relazioni"
+      section_identification_codes: "Area dei codici identificativi"
+      link_to_digital_objects: "%{count} oggetti digitali"
+      search_catalogue: "OPAC"
+      catalogue_search: 'Importa record bibliografico'
+      new_digital_object: "Nuovo oggetto digitale"
+      new_linked_digital_object: "Nuovo oggetto digitale collegato"
+      linked_digital_objects:
+        one: "%{count} oggetto digitale collegato"
+        other: "%{count} oggetti digitali collegati"
+      no_linked_digital_objects: "Nessun oggetto digitale collegato"
+    title_search:
+      <<: *defaults
+      see: "Vedi"
+      submit_tag: "cerca"
+      all_records_link: "tutti gli oggetti originali"
+      no_records_found: "Nessun oggetto originale corrisponde ai criteri scelti"
+      records_found:
+        one: "Trovato %{count} oggetto originale"
+        other: "Trovati %{count} oggetti originali"
+    index:
+      page_title: "Oggetti originali"
+      list_all: "Visualizza tutti gli oggetti originali"
+      <<: *defaults
+    new:
+      page_title: "Nuovo oggetto originale"
+      <<: *defaults
+    edit:
+      page_title: "Modifica oggetto originale"
+      <<: *defaults
+    show:
+      page_title: "Anteprima oggetto originale"
+      <<: *defaults
+    form:
+      update: "Aggiorna oggetto originale"
+      save: "Crea oggetto originale"
+      button_show_projects_and_original_works_for_this_institution: "Progetti e oggetti originali di questa istituzione"
+      button_show_digital_collections_for_this_project: "Collezioni di questa istituzione"
+      <<: *defaults
+    side:
+      <<: *defaults
+

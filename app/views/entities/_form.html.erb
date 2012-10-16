@@ -1,0 +1,34 @@
+<% form_for @entity do |f| %>
+
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => default_size %>
+  </p>
+
+  <%# TODO: update the helpers to manage also the Entity model -%>
+  <p>
+    <% @entity.entity_metadata_standards.each do |entity_metadata_standard| -%>
+      <% f.fields_for :entity_metadata_standards, entity_metadata_standard do |e_ms_form| -%>
+        <%= e_ms_form.hidden_field :metadata_standard_id %>
+        <%= e_ms_form.label :_destroy, (image_tag "icons/remove.png", :alt => "Remove this element") %>
+        <%= e_ms_form.check_box :_destroy %>
+        <%= e_ms_form.label :_destroy, e_ms_form.object.metadata_standard.try(:description) %>
+        <%= f.submit "update", :name => "update_form" %><br />
+      <% end -%>
+    <% end -%>
+  <p>
+
+  </p>
+    <% f.fields_for :entity_metadata_standards, @entity.entity_metadata_standards.build do |e_ms_form| -%>
+      <%= e_ms_form.select :metadata_standard_id, options_for_select(@metadata_standards_options_for_select, selected = nil), :prompt => "-- select new standard --" %>
+      <%= f.submit "add", :name => "add_metadata_standard" %>
+    <% end -%>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
+

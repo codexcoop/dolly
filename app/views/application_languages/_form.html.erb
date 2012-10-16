@@ -1,0 +1,17 @@
+<% form_for(@application_language) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  <p>
+    <%= f.submit @application_language.new_record? ? t('.save') : t('.update') %>
+  </p>
+<% end %>
+

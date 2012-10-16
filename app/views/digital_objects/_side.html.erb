@@ -1,0 +1,29 @@
+<% if current_user_can?(:create, :digital_object) && action_name == "index" %>
+  <p>
+    <%= link_to t('.insert_new'), new_digital_object_path, :class => "new" %>
+  </p>
+<% end %>
+
+<% if ["index", "new"].not_include?(action_name) && @digital_object.try(:id) %>
+  <p>
+    <%= manage_files_or_download_link(@digital_object) %>
+  </p>
+  <p>
+    <%= link_to t('.go_to_toc_editor'), toc_index_digital_object_path(@digital_object) if check_toc_links(@digital_object) %>
+  </p>
+  <p>
+    <%= digital_object_bookreader_link(@digital_object) %>
+  </p>
+  <p>
+    <%= link_to "METS", (digital_object_path(@digital_object) + ".xml") if check_toc_links(@digital_object) %>
+  </p>
+<% end %>
+
+<% unless action_name == "index" %>
+  <%# OPTIMIZE: raffinare stile hr e farlo anche per side di altri controller %>
+  <hr />
+  <p>
+    <%= link_to t('.back_link'), digital_objects_path  %>
+  </p>
+<% end %>
+

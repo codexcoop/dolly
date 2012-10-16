@@ -1,0 +1,18 @@
+<h2><%= t '.page_title' %></h2>
+
+<table class="show">
+  <%= show_row_for @institution, :property => "name" %>
+  <%= show_row_for @institution, :property => "sbn" %>
+  <%= show_row_for @institution, :property => "address" %>
+  <%= show_row_for @institution, :property => "phone" %>
+  <%= show_row_for @institution, :property => "email" %>
+  <%= show_row_for @institution, :property => "url" %>
+</table>
+
+<div class="actions">
+  <%= link_to t('.edit_link'), edit_institution_path(@institution) %>
+  <% if is_root? -%>
+  | <%= link_to t('.back_link'), institutions_path %>
+  <% end -%>
+</div>
+

@@ -1,0 +1,77 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'relations' %>
+  <%# OPTIMIZE: in alcune pagine il file css è richiamato anche 3 volte %>
+<% end %>
+
+<% opts = finalize_relation_options(f, relation_options) %>
+
+<%# :id => "creators-selection" %>
+<%# must be a div, beacuse ERB, correctly, doesn't render other divs inside a p for example %>
+
+<% content_tag  :div,
+                :id => "#{opts[:related_to]}-selection",
+                :class => "relation-selection",
+                :'data-cardinality' => opts[:cardinality].to_json,
+                :'data-unique-identifier' => opts[:unique_identifier],
+                :'data-related-model-name' => opts[:related_model_name] do %>
+  <%# t("activerecord.models.creator" %>
+  <% error_on_field = f.object.instance_variable_get("@#{opts[:related_model_name]}_error".to_sym) ||
+                      f.object.errors.map.select{|k,v| k.match(opts[:through_association_name].to_s)}.any? %>
+
+  <%= %Q{<div class="fieldWithErrors">} if error_on_field %>
+    <% content_tag  :label,
+                    :for => "#{opts[:related_to]}-#{opts[:variant]}",
+                    :class => "relation-global-title  #{opts[:requirement]}" do %>
+        <%= t("activerecord.models.#{opts[:related_model_name]}", :count => 1) %>
+        <%= requirement_marker(opts[:requirement]) %>
+      <% if opts[:title_tooltip] %>
+        <%= content_tag(:span, '&nbsp;&nbsp;&nbsp;&nbsp;', :title => opts[:title_tooltip], :class => "tooltip ui-icon ui-icon-info") %>
+      <% end %>
+      <%# if opts[:cardinality] && opts[:cardinality] == 1 %>
+        <!--<br /><span class="other-info"><%#= t('.single_selection') %></span>-->
+      <%# end %>
+    <% end %>
+  <%= %Q{</div>} if error_on_field %>
+
+  <% locals = {:f => f, :opts => opts} %>
+
+  <%# template for new selected element %>
+  <% content_tag :div, :class => 'hidden-template' do %>
+    <table class="relation-items-list">
+      <%= render  :partial => opts[:item_partial],
+                  :locals => locals.merge(:through_record => opts[:through_record], :child_index => "_new_") %>
+    </table>
+  <% end %>
+
+  <%# already selected elements %>
+  <%= render :partial => opts[:selected_partial], :locals => locals %>
+
+  <%# select new items... %>
+  <% if opts[:available_related] && opts[:available_related].zero? %>
+    <p>
+      <%= t('.no_related_records_available',
+            :relation_name => t("activerecord.models.#{opts[:related_model_name].underscore}",
+            :count => 1).downcase) %>
+    </p>
+  <% elsif opts[:suggested_list] && opts[:suggested_threshold] > 0 && opts[:suggested_list].size <= opts[:suggested_threshold] %>
+    <%# ...from a static list %>
+    <%= render :partial => opts[:suggested_partial], :locals => locals %>
+  <% else %>
+    <%# ...with autocomplete or live search %>
+    <%= render :partial => opts[:input_partial], :locals => locals %>
+  <% end %>
+
+  <% if opts[:new_related_partial] %>
+    <% content_for :templates_container do %>
+      <%= render  :partial => opts[:new_related_partial],
+                  :locals => { :opts => opts.merge({:unique_identifier => opts[:unique_identifier]}) } %>
+    <% end %>
+    <p>
+      <%= link_to(t('.new_related_cmd'), "#", :class => "new-related-cmd") %>
+    </p>
+    <div class="new-related-placeholder">
+    </div>
+  <% end %>
+
+<% end %>
+

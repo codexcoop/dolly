@@ -1,0 +1,23 @@
+en:
+  site:
+    defaults: &defaults
+    index:
+      page_title: "Home page"
+      <<: *defaults
+    dashboard:
+      page_title: "Dashboard"
+      available_entities: "Available entities"
+      create_new: "Create"
+      <<: *defaults
+it:
+  site:
+    defaults: &defaults
+    index:
+      page_title: "Home page"
+      <<: *defaults
+    dashboard:
+      page_title: "Bacheca"
+      available_entities: "Entità disponibili"
+      create_new: "Crea"
+      <<: *defaults
+

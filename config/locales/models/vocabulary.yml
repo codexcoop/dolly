@@ -1,0 +1,54 @@
+---
+en:
+  activerecord:
+    models:
+      vocabulary:
+        one: 'Vocabulary'
+        other: 'Vocabularies'
+    attributes:
+      vocabulary:
+        id: "ID"
+        created_at: "Created at"
+        description_en: "Description (English)"
+        description_it: "Description (Italian)"
+        human_en: "English"
+        human_it: "Italian"
+        is_user_editable: "Editable by user"
+        metadata_standard_id: "Metadata standard"
+        metadata_standard: "Metadata standard"
+        name: "Name"
+        taglike: "Taglike"
+        terms_count: "Number of terms"
+        updated_at: "Updated at"
+        user_id: "User"
+        user: "User"
+        xml_element_name: "Name for XML"
+        terms: "Terms"
+        terms_with_count: "%{count} terms"
+it:
+  activerecord:
+    models:
+      vocabulary:
+        one: 'Vocabolario'
+        other: 'Vocabolari'
+    attributes:
+      vocabulary:
+        id: "ID"
+        created_at: "Creazione"
+        description_en: "Descrizione (Inglese)"
+        description_it: "Descrizione (Italiano)"
+        human_en: "Inglese"
+        human_it: "Italiano"
+        is_user_editable: "Modificabile dall'utente"
+        metadata_standard_id: "Standard di metadati"
+        metadata_standard: "Standard di metadati"
+        name: "Nome"
+        taglike: "Tag-like"
+        terms_count: "Numero di voci"
+        updated_at: "Aggiornamento"
+        user_id: "Utente"
+        user: "Utente"
+        xml_element_name: "Name XML dell'elemento"
+        terms: "Voci"
+        terms_with_count: "%{count} voci"
+

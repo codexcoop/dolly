@@ -1,0 +1,68 @@
+---
+en:
+  projects:
+    defaults: &defaults
+      insert_new: "New project"
+      show_link: "Show project"
+      edit_link: "Edit project"
+      back_link: "Projects list" # oppure un generico "Cancel"
+      new_digital_collection: "New digital collection"
+      new_linked_digital_collection: "New linked collection"
+    index:
+      page_title: "Projects"
+      no_projects: "No projects have been created by your institution yet"
+      list_all: "List all projects"
+      <<: *defaults
+    new:
+      page_title: "New project"
+      <<: *defaults
+    edit:
+      page_title: "Edit project"
+      <<: *defaults
+    show:
+      page_title: "Show project"
+      <<: *defaults
+    form:
+      save: "Create project"
+      update: "Update project"
+      <<: *defaults
+    side:
+      <<: *defaults
+it:
+  projects:
+    defaults: &defaults
+      insert_new: "Nuovo progetto"
+      show_link: "Anteprima progetto"
+      edit_link: "Modifica progetto"
+      back_link: "Lista progetti"  # oppure un generico "Annulla"
+      new_digital_collection: "Nuova collezione digitale"
+      new_linked_digital_collection: "Nuova collezione collegata"
+      linked_digital_collections:
+        one: "%{count} collezione collegata"
+        other: "%{count} collezioni collegate"
+      no_linked_digital_collections: "Nessuna collezione collegata"
+      linked_digital_objects:
+        one: "%{count} oggetto digitale collegato"
+        other: "%{count} oggetti digitali collegati"
+      no_linked_digital_objects: "Nessun oggetto digitale collegato"
+    index:
+      page_title: "Progetti"
+      no_projects: "La tua istituzione non ha nessun progetto"
+      list_all: "Visualizza tutti i progetti"
+      <<: *defaults
+    new:
+      page_title: "Nuovo progetto"
+      <<: *defaults
+    edit:
+      page_title: "Modifica progetto"
+      <<: *defaults
+    show:
+      page_title: "Anteprima progetto"
+      <<: *defaults
+    form:
+      save: "Crea progetto"
+      update: "Aggiorna progetto"
+      <<: *defaults
+    side:
+      <<: *defaults
+

@@ -1,0 +1,52 @@
+---
+en:
+  vocabularies:
+    defaults: &defaults
+      insert_new: "New vocabulary"
+      back_link: "Back to vocabularies"
+      show_link: "Vocabulary's details"
+      edit_link: "Edit this vocabulary"
+      link_to_terms: "%{count} terms"
+    index:
+      page_title: "Vocabularies"
+      for_metadata_standard: " used by the standard<q>%{standard}</q>"
+      <<: *defaults
+    new:
+      page_title: "New vocabulary"
+      <<: *defaults
+    edit:
+      page_title: "Update vocabulary"
+      <<: *defaults
+    show:
+      page_title: "Vocabulary"
+      <<: *defaults
+    form:
+      update: "Update vocabulary..."
+      save: "Create vocabulary..."
+      <<: *defaults
+it:
+  vocabularies:
+    defaults: &defaults
+      insert_new: "Nuovo vocabolario"
+      back_link: "Torna alla lista vocabolari"
+      show_link: "Anteprima vocabolario"
+      edit_link: "Modifica questo vocabolario"
+      link_to_terms: "%{count} voci"
+    index:
+      page_title: "Vocabolari"
+      for_metadata_standard: " utilizzati dallo standard <q>%{standard}</q>"
+      <<: *defaults
+    new:
+      page_title: "Nuovo vocabolario"
+      <<: *defaults
+    edit:
+      page_title: "Modifica vocabolario"
+      <<: *defaults
+    show:
+      page_title: "Anteprima vocabolario"
+      <<: *defaults
+    form:
+      update: "Aggiorno vocabolario"
+      save: "Crea vocabolario"
+      <<: *defaults
+

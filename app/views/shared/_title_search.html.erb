@@ -1,0 +1,31 @@
+<%
+  model_class = controller_name.classify.constantize
+
+  # FIXME: quando vi sono parametri come institution_id dovrebbero essere compresi nel link, altrimenti si torna a lista diversa da quella da cui si è partiti
+  # TODO: spostare in helpers
+  link_to_all_records =
+    t("#{model_class.name.tableize}.title_search.see") + " " +
+    link_to(t("#{model_class.name.tableize}.title_search.all_records_link"), polymorphic_path(model_class.new))
+%>
+
+<% if total_count.to_i > 0 %>
+  <p>
+    <% form_tag({}, {:method => :get}) do %>
+      <%= text_field_tag "title", params[:title], :size => '80', :style => "width: 350px" %>
+      <%= hidden_field_tag('status', params['status']) if params['status'].present? %>
+      <%= submit_tag t("#{model_class.name.tableize}.title_search.submit_tag"), {:name => "", :style => "width: 50px"} %>
+    <% end %>
+  </p>
+<% end %>
+
+<% if total_count.to_i > 0 && total_count != collection.total_entries && params[:title].present? %>
+  <p>
+    <% if collection.total_entries == 0 %>
+      <%= t("#{model_class.name.tableize}.title_search.no_records_found") %>.
+    <% else %>
+      <%= t("#{model_class.name.tableize}.title_search.records_found", :count => collection.total_entries) %>.
+    <% end %>
+    <%= link_to_all_records %>.
+  </p>
+<% end %>
+

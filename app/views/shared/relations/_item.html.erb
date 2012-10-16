@@ -1,0 +1,40 @@
+<%
+  item_css_class  = child_index == '_new_' ? "choice-item template" : "choice-item"
+%>
+
+<%# example: f.fields_for :rel_creator_fonds %>
+<% f.fields_for(opts[:through_association_name], through_record, :child_index => child_index) do |through_record_form| %>
+  <% content_tag  :tr, :class => item_css_class,
+                  :'data-related-id' => through_record.send(opts[:foreign_key].to_sym) do %>
+    <td class="bullet-icon-wrap">
+      <span class="ui-icon ui-icon-radio-on bullet-icon">&nbsp;</span>
+    </td>
+    <%= render(:partial => opts[:fields_before], :locals => {:through_record_form => through_record_form}) if opts[:fields_before] %>
+    <td class="choice-item-label-wrap">
+      <% content_tag :span, :class => 'choice-item-label' do %>
+        <%= opts[:selected_label].call(through_record) if opts[:selected_label] %>
+      <% end %>
+      <% unless through_record.new_record? %>
+        <%= through_record_form.hidden_field :id %>
+      <% end %>
+    </td>
+    <td class="choice-item-actions-wrap">
+      <span class="item-action-trash">
+        <%= t('.remove_item') %>
+      </span>
+      <%# example: foreign_key.to_sym # => :creator_id %>
+      <%= through_record_form.hidden_field  opts[:foreign_key].to_sym,
+                                            :class => 'related-id',
+                                            :value => through_record.send(opts[:foreign_key].to_sym) %>
+      <%= through_record_form.hidden_field  :_destroy,
+                                            :class => 'destroy-relation',
+                                            :value => through_record.marked_for_destruction? %>
+      <%# other hidden fields %>
+      <% opts[:through_hidden_fields].each do |key, value| %>
+        <%= through_record_form.hidden_field key.to_sym, :value => value %>
+      <% end %>
+    </td>
+    <%= render(:partial => opts[:fields_after], :locals => {:through_record_form => through_record_form}) if opts[:fields_after] %>
+  <% end %> <%# /tr %>
+<% end %> <%# /fields_for %>
+

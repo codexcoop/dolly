@@ -1,0 +1,23 @@
+public
+├─ tmp_digital_files
+│   ├─ Brescia
+│   └─ Voghera2 # nome identificativo della fornitura
+│       ├─ Constitutiones-Synodales # oggetto digitale
+│       │   ├─ Master
+│       │   │   ├─ IIII.PPP.OOOOO_00001_c.tif # file in sequenza
+│       │   │   ├─ IIII.PPP.OOOOO_00002_c.tif
+│       │   │   └─ IIII.PPP.OOOOO_00001_c.tif
+│       │   └─ PDF
+│       ├─ I-carteggi-delle-biblioteche-lombarde-I
+│       └─ I-carteggi-delle-biblioteche-lombarde-II
+└─ digital_files
+    ├─ 4
+    └─ 5        # institution_id
+        └─ 24   # digital_object_id
+            ├─ L
+            │   ├─ 00001.jpeg
+            │   ├─ 00002.jpeg
+            │   └─ 00003.jpeg
+            ├─ M
+            └─ S
+

@@ -1,0 +1,31 @@
+<h2>Listing entities</h2>
+
+<!--p--><%#= link_to 'New entity', new_entity_path, :class => "new" %><!--/p-->
+
+<table class="list">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Metadata Standards</th>
+    <th>Vocabularies</th>
+  </tr>
+
+<% @entities.each do |entity| %>
+  <tr>
+    <td><%= link_to entity.name, edit_entity_path(entity) %></td>
+    <td><%= link_to "#{entity.properties.size} properties", entity_properties_path(entity) %></td>
+    <td>
+      <% entity.metadata_standards.each do |metadata_standard| %>
+        - <%= metadata_standard.description %><br />
+      <% end -%>
+    </td>
+    <td>
+      <% entity.vocabularies.each do |vocabulary| %>
+        <%= vocabulary.name %>
+        <br />
+      <% end -%>
+    </td>
+  </tr>
+<% end %>
+</table>
+

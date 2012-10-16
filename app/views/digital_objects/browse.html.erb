@@ -1,0 +1,43 @@
+<% content_layout "t1" %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "jsTree/jquery.jstree.min" %>
+  <%= javascript_include_tag "browse" %>
+<% end %>
+
+<div id="heading">
+  <div id="links">
+    <%= link_to t('.link_to_digital_files', :count => @digital_object.digital_files_count), digital_object_digital_files_path(@digital_object) %>
+  </div>
+  <h2><%= t '.page_title', :related_original_object_title => truncate(h(@digital_object.original_object.title), :length => 90) %></h2>
+</div>
+
+<p id="browse-area">
+  <%= link_to t('.previous_file'), "#nogo", :id => "previous-digital-file-link" %>
+  &nbsp; | &nbsp;
+  <%= link_to t('.next_file'), "#nogo", :id => "next-digital-file-link" %>
+</p>
+
+<div id="viewer">
+  <div id="side-area">
+    <div id="toc-read-only">
+      &nbsp;
+      <%# populated by jstree %>
+    </div>
+  </div>
+  <div id="content-area">
+    <div id="image-area">
+      <%# populated through ajax %>
+    </div>
+  </div>
+</div>
+
+<div id="technical-metadata">
+  <%# populated through ajax %>
+</div>
+
+<div class="actions">
+  <%= link_to t('.link_to_digital_files', :count => @digital_object.digital_files_count), digital_object_digital_files_path(@digital_object) %>&nbsp;|&nbsp;
+  <%= link_to "#{t '.go_to_toc_editor'}", toc_index_digital_object_path(@digital_object) %>&nbsp;|&nbsp;
+  <%= link_to "#{t '.back_to_digital_objects'}", digital_objects_path %>
+</div>
+

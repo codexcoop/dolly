@@ -1,0 +1,14 @@
+# Example database configuration
+#
+# 1. Create a configuration file: config/database.yml
+# 2. Configure your database PostgreSQL 9.1
+# For more information read: http://guides.rubyonrails.org/v2.3.11/getting_started.html#configuring-a-database
+#
+# production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: dolly_production
+#  pool: 5
+#  username: your_username
+#  password: your_password
+#

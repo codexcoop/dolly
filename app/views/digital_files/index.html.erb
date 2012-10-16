@@ -1,0 +1,56 @@
+<% content_layout "t1" %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "sort_images" %>
+<% end %>
+
+<%
+    check_toc_links = (
+                        @digital_object.digital_files_count > 0 &&
+                        is_owner?(:authorizable_action => 'toc_index',
+                                  :authorizable_object => @digital_object,
+                                  :controller_name => "digital_objects")
+                      )
+%>
+
+<div id="heading">
+  <% if check_toc_links %>
+  <div id="links">
+    <%#= link_to( t('.browse'), browse_digital_object_path(@digital_object) ) %>
+    <%= link_to( t('.go_to_toc_editor'), toc_index_digital_object_path(@digital_object) ) %>&nbsp;|&nbsp;
+    <%= link_to( t('.bookreader'), bookreader_digital_object_path(@digital_object) ) %>
+<!--
+    <%#= link_to( t('.restore_positions'), restore_positions_digital_object_path(@digital_object), :confirm => t('.confirm_restore_positions') ) %>
+-->
+  </div>
+  <% end %>
+  <h2><%= t '.page_title', :related_original_object_title => truncate(h(@digital_object.original_object.title), :length => 90) %></h2>
+</div>
+
+<% unless @digital_files.size == 0 %>
+  <div id="sortable-images-list" class="clearfix">
+    <% @digital_files.sort_by(&:position).each do |digital_file| %>
+      <div class="image" id="digital_file_<%= digital_file.id %>" data-digital-file-id="<%= digital_file.id %>">
+        <%= image_tag "/images/grey.gif",
+                      :'data-original-src' => (digital_file.absolute_path :variant => 'S'),
+                      :width => digital_file.width_small,
+                      :height => digital_file.height_small %>
+        <br />
+        <%= link_to t('.digital_file_zoom'), digital_file.absolute_path(:variant => 'M'), :class => 'zoom' %>
+        <% if current_user > end_user %>
+        | <% if digital_file.key_image? %>
+            <strong>Img chiave</strong>
+          <% else %>
+            <%= link_to "Rendi chiave", toggle_key_image_digital_file_path(digital_file), :class => "mute", :method => :put %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="actions">
+  <%= link_to t('digital_objects.defaults.show_link'), @digital_object %> |
+  <%= link_to t('.back_to_digital_objects'), digital_objects_path %>
+</div>
+

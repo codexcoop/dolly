@@ -1,0 +1,48 @@
+<% content_layout "t1" if @projects.size == 0 %>
+
+<h2>
+  <%= t '.page_title' %>
+  <%= "&bull; #{@projects.first.institution.name}" if (params[:institution_id] and current_user.role.included_in? [admin, end_user]) %>
+</h2>
+
+<%= link_to_all :condition => (params[:institution_id] and current_user.role.included_in? [admin, end_user]) %>
+
+<% if @projects.size == 0 %>
+  <div id="intro">
+  <p><%= t(:generic, :scope => [:application, :intro_projects]) %></p>
+  <% if current_user_can?(:create, :project) && @projects.size == 0 %>
+    <p><%= link_to t('.insert_new'), new_project_path, :class => "new" %></p>
+  <% else %>
+    <p><%= t(:no_link, :scope => [:application, :intro_projects]) %></p>
+  <% end %>
+  </div>
+<% end %>
+
+<% unless @projects.size == 0 %>
+  <table class="list">
+    <tr>
+      <th><%= t :title, :scope => default_i18n_views_scope %></th>
+      <th><%= t :project_status, :scope => default_i18n_views_scope %></th>
+      <th>&nbsp;</th>
+      <th class="edit-cell">&nbsp;</th>
+      <th class="delete-cell">&nbsp;</th>
+    </tr>
+
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= link_to project.title, project_path(project) %>
+      <%= admin_tag :p, project.institution.name unless params[:institution_id].present? %></td>
+      <td><%= project.status.try(:translation_coalesce) %> </td>
+      <td><%= link_to_digital_collections_for_project(project) %> </td>
+      <td><%= edit_link(project) %></td>
+      <td>
+        <%= delete_link(project) do |proj|
+              current_user_can?(:destroy, :project, proj) &&
+              proj.digital_collections.size == 0
+            end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+

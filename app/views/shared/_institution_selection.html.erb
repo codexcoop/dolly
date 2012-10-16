@@ -1,0 +1,13 @@
+  <p>
+    <%= label_tag :institution_id, t(:institution_id, :scope => default_i18n_views_scope), :class => 'mandatory' %><br />
+    <%= select_tag :institution_id,
+                    options_for_select( @institutions.collect{|institution|
+                                                    [institution.name, institution.id]}.
+                                                    insert(0,['Select...', '']),
+                                        selected = @institution.try(:id) ),
+                    options = {:disabled => false} %>
+    <%= submit_tag  t('.button_show_projects_for_this_institution'),
+                    :name => "selected_institution_id",
+                    :disabled => false %>
+  </p>
+

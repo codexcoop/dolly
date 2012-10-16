@@ -1,0 +1,52 @@
+---
+en:
+  institutions:
+    defaults: &defaults
+      insert_new: "New institution"
+      edit_link: "Edit institution"
+      show_link: "Institution's details"
+      back_link: "Back to institutions"
+      link_to_original_objects: "%{count} original objects"
+      link_to_projects: "%{count} projects"
+    index:
+      page_title: "Institutions"
+      <<: *defaults
+    new:
+      page_title: "New institution"
+      <<: *defaults
+    edit:
+      page_title: "Update institution"
+      <<: *defaults
+    show:
+      page_title: "Institution"
+      <<: *defaults
+    form:
+      update: "Update institution..."
+      save: "Create institution..."
+      <<: *defaults
+it:
+  institutions:
+    defaults: &defaults
+      insert_new: "Nuova istituzione"
+      edit_link: "Modifica istituzione"
+      show_link: "Anteprima istituzione"
+      back_link: "Torna alla lista istituzioni"
+      link_to_original_objects: "%{count} oggetti originali"
+      link_to_projects: "%{count} progetti"
+    index:
+      page_title: "Istituzioni"
+      <<: *defaults
+    new:
+      page_title: "Nuova istituzione"
+      <<: *defaults
+    edit:
+      page_title: "Modifica istituzione"
+      <<: *defaults
+    show:
+      page_title: "Anteprima istituzione"
+      <<: *defaults
+    form:
+      update: "Aggiorna istituzione"
+      save: "Crea istituzione"
+      <<: *defaults
+

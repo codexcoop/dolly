@@ -1,0 +1,36 @@
+<h2>Listing elements for standard <q><%= @metadata_standard.description %></q></h2>
+
+<p> <%= link_to 'New element', new_metadata_standard_element_path(@metadata_standard), :class => 'new' %> </p>
+
+<table>
+  <tr>
+    <th>Entity</th>
+    <th>Section</th>
+    <th>Name</th>
+    <th>Cardinality</th>
+    <th>Requirement</th>
+    <th>Vocabulary</th>
+    <th>Human en</th>
+    <th>Human it</th>
+    <th>Is user editable</th>
+    <th></th>
+  </tr>
+
+<% @elements.each do |element| %>
+  <tr>
+    <td><%=h element.entity.name %></td>
+    <td><%=h element.section %></td>
+    <td><%= link_to element.name, edit_metadata_standard_element_path(@metadata_standard, element)  %></td>
+    <td><%=h element.cardinality %></td>
+    <td><%=h element.requirement %></td>
+    <td><%=h element.vocabulary.try(:name) %></td>
+    <td><%=h element.human_en %></td>
+    <td><%=h element.human_it %></td>
+    <td><%=h element.is_user_editable %></td>
+    <td><%= delete_link [@metadata_standard, element] if element.property_elements.size == 0 %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

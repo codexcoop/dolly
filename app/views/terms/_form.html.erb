@@ -1,0 +1,35 @@
+<% content_for :javascripts do -%>
+  <%= javascript_include_tag 'jquery.searchabledropdown-1.0.7.min' %>
+<% end -%>
+
+<% form_for [@vocabulary, @term]  do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :code, t(:code, :scope => [:activerecord, :attributes, :term]), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :code, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :it, t(:it, :scope => [:activerecord, :attributes, :term]), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :it, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :en, t(:en, :scope => [:activerecord, :attributes, :term]), :class => 'optional' %>
+    <%= requirement_marker('optional') %><br />
+    <%= f.text_field :en, :size => default_size(:text_field) %>
+  </p>
+  <p>
+
+  <p>
+    <%= f.label :uuid, t(:uuid, :scope => [:activerecord, :attributes, :term]), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :uuid, :value => (@term.uuid || t(:automatic, :scope => [:application]) ), :disabled => true, :size => 37, :class => 'mandatory' %>
+  </p>
+
+  <p>
+    <%= f.submit t( (@term.new_record? ? :save : :update), :scope => [:terms, :form] ) %>
+  </p>
+<% end %>
+

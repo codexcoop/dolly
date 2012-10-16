@@ -1,0 +1,24 @@
+<h2><%= t '.page_title' %><%= t('.for_metadata_standard', :standard => @metadata_standard.description) if @metadata_standard %></h2>
+
+<!--p--><%#= link_to t('.insert_new'), new_vocabulary_path, :class => "new" %><!--/p-->
+
+<table class="list">
+  <tr>
+    <th><%= t :id, :scope => default_i18n_views_scope %></th>
+    <th><%= t :name, :scope => default_i18n_views_scope %></th>
+    <th><%= t :human_it, :scope => default_i18n_views_scope %></th>
+    <th><%= t :is_user_editable, :scope => default_i18n_views_scope %></th>
+    <th><%= t :other, :scope => [:activerecord, :models, :term] %></th>
+  </tr>
+
+<% @vocabularies.each do |vocabulary| %>
+  <tr>
+    <td><%=h vocabulary.id %></td>
+    <td><%= link_to vocabulary.name, edit_vocabulary_path(vocabulary) %></td>
+    <td><%=h vocabulary.human_it %></td>
+    <td><%=h t((if vocabulary.is_user_editable? then :yes_text else :no_text end), :scope => [:application]) %></td>
+    <td> <%= link_to t(:terms_with_count, :scope => default_i18n_views_scope, :count => vocabulary.terms.size), vocabulary_terms_path(vocabulary) %> </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,34 @@
+  <div>
+    <h3>Associated elements:</h3>
+    <% @metadata_standards.each do |metadata_standard| -%>
+      <p>
+        <strong><%= metadata_standard.description %></strong><br />
+        <%# elements_for_select = metadata_standard.elements.select{|e| e.entity_id == @entity.id}.sort_by(&:name_with_section) -%>
+        <% elements_for_select = metadata_standard.elements.sort_by(&:name_with_section) -%>
+
+        <% @property_elements.select{|pe| pe.element && pe.element.metadata_standard_id == metadata_standard.id}.each do |property_element| -%>
+          <% f.fields_for :property_elements, property_element do |p_e_form| -%>
+            <%= p_e_form.hidden_field :element_id %>
+            <%= p_e_form.label :_destroy, (image_tag "icons/remove.png", :alt => "Remove this element") %>
+            <%= p_e_form.check_box :_destroy %>
+            <%= p_e_form.label :_destroy, p_e_form.object.element.name_with_section %>
+            <%= f.submit "update", :name => "update_form" %>
+            <br />
+          <% end -%>
+        <% end -%>
+
+        <% f.fields_for :property_elements, @property.property_elements.build do |p_e_form| -%>
+          <%= p_e_form.collection_select  :element_id,
+                                          elements_for_select,
+                                          :id,
+                                          :name_with_section,
+                                          options={:include_blank => "-- select element --"},
+                                          html_options={:selected => ''} %>
+          <%= f.submit "add", :name => "add_metadata_standard_element" %>
+          <br />
+        <% end -%>
+    </p>
+    <% end -%>
+  </div>
+  <%# .delete_if{|e| @property_elements.map(&:element_id).include? e.id } -%>
+

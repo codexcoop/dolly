@@ -1,0 +1,29 @@
+<h2><%= t '.page_title' %></h2>
+
+<!--p--><%#= link_to 'New metadata_standard', new_metadata_standard_path, :class => "new" %><!--/p-->
+
+<table class="list">
+  <tr>
+    <th><%= t :description, :scope => default_i18n_views_scope %></th>
+    <th><%#= t :elements_count, :scope => default_i18n_views_scope %></th>
+    <th><%#= t :vocabularies_count, :scope => default_i18n_views_scope %></th>
+  </tr>
+
+<% @metadata_standards.each do |metadata_standard| %>
+  <tr>
+    <td>
+      <%= link_to "#{metadata_standard.description} (#{metadata_standard.name})",
+                  edit_metadata_standard_path(metadata_standard) %>
+    </td>
+    <td>
+      <%= link_to t(:elements, :count => metadata_standard.elements.size, :scope => default_i18n_views_scope), metadata_standard_elements_path(metadata_standard) %>
+    </td>
+    <td>
+    <% if metadata_standard.vocabularies.size > 0 -%>
+      <%= link_to t(:vocabularies, :scope => default_i18n_views_scope, :count => metadata_standard.vocabularies.size), vocabularies_path({:metadata_standard_id => metadata_standard.id})  %></td>
+      <%# metadata_standard_vocabularies_path(metadata_standard)  -%>
+    <% end -%>
+  </tr>
+<% end %>
+</table>
+

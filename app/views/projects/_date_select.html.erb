@@ -1,0 +1,15 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'progressive_date_select' %>
+<% end %>
+
+  <p>
+    <%= f.hidden_field :start_date_format %>
+    <%= label_with_markers :property => 'start_date', :f => f, :requirement => 'optional', :help => true, :error_message => true  %><br />
+    <%= f.date_select :start_date, {:order => [:year, :month, :day], :prompt => true, :start_year => (Time.now.year - 10), :end_year => (Time.now.year + 10)}, {:class => 'optional progressive_date_select'} %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :completion_date_format %>
+    <%= label_with_markers :property => 'completion_date', :f => f, :requirement => 'optional', :help => true, :error_message => true  %><br />
+    <%= f.date_select :completion_date, {:order => [:year, :month, :day], :prompt => true, :start_year => (Time.now.year - 10), :end_year => (Time.now.year + 10)}, {:class => 'optional progressive_date_select'} %>
+  </p>

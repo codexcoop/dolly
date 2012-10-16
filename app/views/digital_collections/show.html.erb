@@ -1,0 +1,46 @@
+<div id="heading">
+  <div id="links">
+    <%= link_to_by_role @digital_collection, :title, :edit, t('.edit_link') %>
+  </div>
+  <h2><%= t '.page_title' %></h2>
+</div>
+
+<h3 class="section"><%= t('.section_identification') %></h3>
+<table class="show">
+  <%= show_row_for @digital_collection,
+                  :label => t(:one, :scope => [:activerecord, :models, :project], :count => nil),
+                  :content => link_to(@digital_collection.project.title, project_path(@digital_collection.project)) %>
+  <%= show_row_for @digital_collection, :property => "title" %>
+</table>
+
+<h3 class="section"><%= t('.section_description') %></h3>
+<table class="show">
+  <%= show_row_for @digital_collection,
+                  :property => "description",
+                  :content => textilize(@digital_collection.description),
+                  :css_class => "formatted-text" %>
+  <%= show_row_for_property :language %>
+  <%= show_row_for_property :digital_format %>
+  <%= show_row_for_property :digital_type %>
+  <%= show_row_for_property :content_type %>
+  <%= show_row_for_property :accrual_method %>
+  <%= show_row_for_property :accrual_periodicity %>
+  <%= show_row_for_property :accrual_policy %>
+  <%= show_row_for_property :standard %>
+  <%= show_row_for @digital_collection, :property => "legal_status" %>
+  <%= show_row_for @digital_collection, :property => "database" %>
+</table>
+
+<h3 class="section"><%= t('.section_subject') %></h3>
+<table class="show">
+  <%= show_row_for_property :subject %>
+  <%= show_row_for_property :spatial_coverage %>
+  <%= show_row_for_property :period %>
+  <%= show_row_for @digital_collection, :property => "start_date" %>
+  <%= show_row_for @digital_collection, :property => "end_date" %>
+</table>
+
+<div class="actions">
+  <%= link_to t('.back_link'), digital_collections_path %>
+</div>
+

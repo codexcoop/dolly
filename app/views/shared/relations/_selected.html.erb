@@ -1,0 +1,13 @@
+<% content_tag :table,  :id => "selected-#{opts[:related_to]}", # => "selected-creators"
+                        :class => 'interactive-list selected-list' do %>
+  <% opts[:related_through].each_with_index do |through_record, child_index| %>
+    <%= render  :partial => opts[:item_partial],
+                :locals => {
+                  :f => f,
+                  :opts => opts,
+                  :through_record => through_record,
+                  :child_index => child_index
+                } %>
+  <% end %>
+<% end %>
+

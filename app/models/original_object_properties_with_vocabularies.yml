@@ -1,0 +1,286 @@
+--- 
+- !ruby/object:Property 
+  attributes: 
+    position: "1"
+    vocabulary_id: "39"
+    name: type
+    section: ""
+    entity_id: "10"
+    description_en: |
+      Definition:
+      The nature or genre of the resource. Type includes terms describing general categories, functions, genres, or aggregation levels for content. The recommended best practice is to select a value from a controlled vocabulary (for example, the DC Type vocabulary is available at http://dublincore.org/documents/dcmi-type-vocabulary/). The type of the original analog or born digital object as recorded by the content provider, this element typically includes values such as photograph, painting, sculpture etc.
+      Europeana note:
+      Content providers are recommended to map the values found in <dc:type> in their metadata with four general types used in Europeana: TEXT, IMAGE, SOUND and VIDEO. See <europeana:type> below.
+
+    notes: ""
+    order_terms_by: position
+    id: "91"
+    description_it: "Natura o genere dell'oggetto originale. Sebbene ci si possa riferire a categorie generali, funzioni, generi, o livelli di aggregazione del contenuto (fotografia, pittura, scultura, architettura, etc.), per garantire la compatibilit\xC3\xA0 con Europeana questi termini devono poi essere riferiti alle tipologie TEXT, IMAGE, SOUND and VIDEO."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Type
+    datatype: reference
+    cardinality: many
+    human_it: Tipo
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: OriginalType
+      created_at: 2010-01-29 00:11:58.411517
+      uuid: 0d6a601f-381b-4d0d-80e3-19a732dfb91d
+      description_en: ""
+      updated_at: 2010-07-02 14:08:32.141282
+      description_it: ""
+      terms_count: "54"
+      is_user_editable: f
+      id: "39"
+      human_en: ""
+      human_it: Tipo
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "11"
+    vocabulary_id: "38"
+    name: subject
+    section: ""
+    entity_id: "10"
+    description_en: |-
+      Definition:
+      The topic of the resource
+      Europeana note:
+      This is the subject of the original analog or born digital object.
+    notes: ""
+    order_terms_by: position
+    id: "92"
+    description_it: Tema dell'opera originale.
+    vocabulary_is_user_editable: t
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Subject
+    datatype: reference
+    cardinality: many
+    human_it: Soggetto (Tema)
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Subject
+      created_at: 2010-01-29 00:11:58.390196
+      uuid: 6d7e7345-b042-452f-ab9b-65b9b33f2bf0
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.682181
+      description_it: 
+      terms_count: "81"
+      is_user_editable: t
+      id: "38"
+      human_en: 
+      human_it: Tema (Soggetto)
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "21"
+    vocabulary_id: "34"
+    name: creator
+    section: ""
+    entity_id: "10"
+    description_en: |-
+      Definition:
+      An entity primarily responsible for making the resource. This may be a person, an organisation or a service.
+      Europeana note:
+      This is the name of the creator of the original analog or born digital object.
+    notes: ""
+    order_terms_by: position
+    id: "99"
+    description_it: "Soggetto o i soggetti che hanno prodotto l'opera originale. Si pu\xC3\xB2 riferire a una persona, un'organizzazione, un servizio."
+    vocabulary_is_user_editable: t
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Creator
+    datatype: reference
+    cardinality: many
+    human_it: Autore
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: &id001 !ruby/object:Vocabulary 
+    attributes: 
+      name: Author
+      created_at: 2010-01-29 00:11:58.262558
+      uuid: 6e0c0758-dd01-4dd7-ac79-03023d3938a6
+      description_en: ""
+      updated_at: 2010-05-11 14:03:33.532426
+      description_it: ""
+      terms_count: "31869"
+      is_user_editable: t
+      id: "34"
+      human_en: ""
+      human_it: Autore
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "31"
+    vocabulary_id: "34"
+    name: contributor
+    section: Description
+    entity_id: "10"
+    description_en: |
+      Definition:
+      An entity responsible for making contributions to the resource. 
+      Europeana note: 
+      The name of contributors to the original analog or born digital object. This
+      could be a person, an organisation or a service.
+
+    notes: ""
+    order_terms_by: position
+    id: "90"
+    description_it: "Il soggetto o i soggetti che hanno contribuito in via secondaria alla creazione dell'opera originale. Si pu\xC3\xB2 trattare di una persona, un'organizzazione, un servizio."
+    vocabulary_is_user_editable: t
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Contributor
+    datatype: reference
+    cardinality: many
+    human_it: Responsabile secondario
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: *id001
+- !ruby/object:Property 
+  attributes: 
+    position: "41"
+    vocabulary_id: "36"
+    name: publisher
+    section: Description
+    entity_id: "10"
+    description_en: |-
+      Definition:
+      An entity responsible for making the resource available. Examples of a publisher include a person, an organisation and a service.
+      Europeana note:
+      The name of the publisher of the original analog or born digital object.
+    notes: ""
+    order_terms_by: position
+    id: "100"
+    description_it: "Nome dell'editore dell'opera originale, un'entit\xC3\xA0 responsabile di rendere disponibile la risorsa. Pu\xC3\xB2 essere per esempio una persona, un'organizzazione, un servizio."
+    vocabulary_is_user_editable: t
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Publisher
+    datatype: reference
+    cardinality: many
+    human_it: Editore
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Publisher
+      created_at: 2010-01-29 00:11:58.3279
+      uuid: 08a68370-3a15-44e8-9771-a43e60fc45c5
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.679103
+      description_it: 
+      terms_count: "601"
+      is_user_editable: t
+      id: "36"
+      human_en: 
+      human_it: Editore
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "51"
+    vocabulary_id: "14"
+    name: language
+    section: Description
+    entity_id: "10"
+    description_en: "Definition:\r\n\
+      A language of the resource.\r\n\
+      Comment:\r\n\
+      The recommended best practice is to use a controlled vocabulary such as RFC 4646 (http://www.rfc-archive.org/getrfc.php?rfc=4646) which, in conjunction with ISO 639, defines two- and three-letter primary language tags. Either a coded value or text string can be represented here. Use this element for the languages associated with the digital object. If the content is in more than one language, the element may be repeated. For example, the various languages spoken on video or in sound files. Use for text included in images (i.e. posters, newspapers etc). If there is no language aspect to the digital object (e.g. a photograph), please ignore this element.\r\n\
+      Europeana note:\r\n\
+      Use of RFC 4646 is highly recommended. This element is not for the language of the metadata of a resource, which should be described in xml:lang attribute. For example, <dc:title xml:lang=\xE2\x80\x9Den\xE2\x80\x9D>After dark</dc:title>. See <europeana:language>."
+    notes: ""
+    order_terms_by: position
+    id: "94"
+    description_it: "Lingua associata alla risorsa (oggetto digitale), non quella dei suoi metadati. Pu\xC3\xB2 essere la lingua o le lingue presenti in un'immagine (un poster, un quotidiano...), la lingua parlata in un video o in una registrazione audio. Se non ci sono aspetti linguistici correlati con l'oggetto digitale, questo campo pu\xC3\xB2 essere ignorato."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Language
+    datatype: reference
+    cardinality: many
+    human_it: Lingua
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Iso6393Language
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: edcc49f6-0296-49f6-868f-b6ff989110e9
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.907622
+      description_it: 
+      terms_count: "471"
+      is_user_editable: f
+      id: "14"
+      human_en: 
+      human_it: Lingua (ISO 639-3)
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "61"
+    vocabulary_id: "33"
+    name: coverage
+    section: Description
+    entity_id: "10"
+    description_en: |
+      Definition:
+      The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. This may be a named place, a location, a spatial coordinate, a period, date, date range or a named administrative entity. Refined by <dcterms:spatial> and <dcterms:temporal>
+      Europeana note:
+      Coverage is the unqualified spatial or temporal coverage of the original analog or born digital object. Use of the more specific <dcterms:spatial> and <dcterms:temporal> elements is preferred where possible.
+
+    notes: ""
+    order_terms_by: position
+    id: "93"
+    description_it: "Il riferimento spaziale o temporale della risorsa, l'applicabilit\xC3\xA0 spaziale della risorsa o la giurisdizione sotto cui la risorsa \xC3\xA8 rilevante. Pu\xC3\xB2 essere il nome di un luogo, una posizione, una coordinata spaziale, un periodo, una data, un intervallo di date o il nome di un'entit\xC3\xA0 amministrativa. Si intende un riferimento geografico o cronologico dell'oggetto origininale. \xC3\x88 preferibile specificare maggiormente l'informazione quando possibile."
+    vocabulary_is_user_editable: t
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Coverage
+    datatype: reference
+    cardinality: many
+    human_it: Copertura spazio-temporale
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Coverage
+      created_at: 2010-01-29 00:11:58.179109
+      uuid: 90bd16aa-e365-4f11-a635-84bb075e1bf3
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.685222
+      description_it: 
+      terms_count: "254"
+      is_user_editable: t
+      id: "33"
+      human_en: 
+      human_it: Copertura
+    attributes_cache: {}
+

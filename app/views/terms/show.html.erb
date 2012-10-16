@@ -1,0 +1,48 @@
+<h2>
+  <%= t '.page_title' %>
+  <q><%= t :one, :scope => [:activerecord, :models, @vocabulary.name.tableize.singularize.to_sym] %></q>
+</h2>
+
+<p>
+  <strong><%= t :vocabulary_id, :scope => [:activerecord, :attributes, :term] %></strong>:
+  <%=h @vocabulary.name %>
+</p>
+
+<p>
+  <strong><%= t :code, :scope => [:activerecord, :attributes, :term] %></strong>:
+  <%=h @term.code %>
+</p>
+
+<p>
+  <% if @term.it.present? -%>
+    <strong><%= t :it, :scope => [:activerecord, :attributes, :term] %></strong>:
+    <%=h @term.it %>
+  <% end -%>
+</p>
+
+<p>
+  <% if @term.en.present? -%>
+    <strong><%= t :en, :scope => [:activerecord, :attributes, :term] %></strong>:
+    <%=h @term.en %>
+  <% end -%>
+</p>
+
+<p>
+  <strong><%= t :is_native, :scope => [:activerecord, :attributes, :term] %></strong>:
+  <%=h @term.is_native %>
+</p>
+
+<p>
+  <strong><%= t :uuid, :scope => [:activerecord, :attributes, :term] %></strong>:
+  <%=h @term.uuid %>
+</p>
+
+<p>
+  <%= link_to t(:edit_link, :scope => [:terms, :show] ), edit_vocabulary_term_path(@vocabulary, @term) %> |
+  <%= link_to t(:back_link, :scope => [:terms, :show] ), vocabulary_terms_path(@vocabulary) %>
+</p>
+
+<p>
+  <%= link_to t(:insert_new_generic, :scope => [:terms, :show]), new_vocabulary_term_path(@vocabulary) %>
+</p>
+

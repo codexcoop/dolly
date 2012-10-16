@@ -1,0 +1,79 @@
+---
+en:
+  activerecord:
+    errors:
+      messages:
+        models:
+          project:
+            attributes:
+              email:
+                invalid: "should look like an email address"
+    models:
+      project:
+        one: "%{count} Project"
+        other: "%{count} Projects"
+    attributes:
+      project:
+        acronym: "Acronym"
+        agent_id: "Agent"
+        agent: "Agent"
+        completion_date: "Completion date"
+        created_at: "Created at"
+        description: "Description"
+        digital_collections_count: "Number of digital collections"
+        email: "Project's email"
+        identifier: "Identifier"
+        institution_id: "Institution"
+        institution: "Institution"
+        logo: "Logo"
+        digitisation_process_id: "Digitization process"
+        digitisation_process: "Digitization process"
+        project_status_id: "Status"
+        project_status: "Status"
+        proposer_id: "Proposer"
+        proposer: "Proposer"
+        start_date: "Start date"
+        title: "Title"
+        updated_at: "Updated at"
+        url: "Project's URL"
+        user_id: "User"
+        user: "User"
+it:
+#activerecord.errors.messages.models.user.attributes.name.blank
+  activerecord:
+    models:
+      project:
+        one: "%{count} Progetto"
+        other: "%{count} Progetti"
+    attributes:
+      project:
+        acronym: "Titolo breve"
+        agent_id: "Referente"
+        agent: "Referente"
+        completion_date: "Data di conclusione"
+        created_at: "Creazione"
+        description: "Descrizione"
+        digital_collections_count: "Numero di collezioni digitali"
+        email: "Email del progetto"
+        identifier: "Identificativo"
+        institution_id: "Istituzione"
+        institution: "Istituzione"
+        logo: "Logo"
+        digitisation_process_id: "Processo di digitalizzazione"
+        digitisation_process: "Processo di digitalizzazione"
+        project_status_id: "Stato"
+        project_status: "Stato"
+        proposer_id: "Proponente"
+        proposer: "Proponente"
+        start_date: "Data di inizio"
+        title: "Titolo"
+        updated_at: "Modificato"
+        url: "URL del progetto"
+        user_id: "Utente"
+        user: "Utente"
+      errors:
+        messages:
+          attributes:
+            email:
+              invalid: "sembra non essere un indirizzo valido"
+

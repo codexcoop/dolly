@@ -1,0 +1,67 @@
+---
+it:
+  controllers:
+    catalogue_search:
+      catalogue_connection_error: "Errore nella connessione al server del catalogo"
+      positive_date_error: "L'anno di pubblicazione deve essere maggiore di zero"
+      only_digits_date_error: "L'anno di pubblicazione deve essere espresso solo con cifre"
+      at_least_one_parameter: "Inserire almeno un parametro di ricerca"
+      generic_date_error: "Data di pubblicazione non valida"
+    digital_collections:
+      created_successfully: "Nuova collezione creata con successo"
+      updated_successfully: "Collezione aggiornata con successo"
+      deleted_successfully: "Collezione eliminata con successo"
+    projects:
+      created_successfully: "Nuovo progetto creato con successo"
+      updated_successfully: "Progetto aggiornato con successo"
+      deleted_successfully: "Progetto eliminato con successo"
+    digital_objects:
+      created_successfully: "Nuovo oggetto digitale creato con successo"
+      updated_successfully: "Oggetto digitale aggiornato con successo"
+      deleted_successfully: "Oggetto digitale eliminato con successo"
+      files_processed: "I file sono stati processati"
+      toc_updated_successfully: "Struttura del sommario aggiornata con successo"
+      position_successfully_restored: "Posizioni originarie dei file correttamente ripristinate"
+      error_in_restoring_positions: "Errore nel ripristino delle posizioni originarie dei file"
+      assets_deleted_successfully: "L'oggetto digitale è stato eliminato, insieme a tutti i suoi file e al sommario"
+    original_objects:
+      created_successfully: "Nuovo oggetto originale creato con successo"
+      updated_successfully: "Oggetto originale aggiornato con successo"
+      deleted_successfully: "Oggetto originale eliminato con successo"
+      provide_unimarc: "È necessario fornire dati in formato UNIMARC per proseguire"
+      unimarc_format_error: "Formato UNIMARC non riconosciuto"
+    digital_files:
+      created_successfully: "Nuovo file creato con successo"
+      updated_successfully: "File aggiornato con successo"
+      deleted_successfully: "File eliminato con successo"
+    vocabularies:
+      created_successfully: "Nuovo vocabolario creato con successo"
+      updated_successfully: "Vocabolario aggiornato con successo"
+      deleted_successfully: "Vocabolario eliminato con successo"
+    metadata_standards:
+      created_successfully: "Nuovo standard di metadati creato con successo"
+      updated_successfully: "Standard di metadati aggiornato con successo"
+      deleted_successfully: "Standard di metadati eliminato con successo"
+    users:
+      created_successfully: "Nuovo account utente creato con successo"
+      updated_successfully: "Account utente aggiornato con successo"
+      deleted_successfully: "Account utente eliminato con successo"
+    institutions:
+      created_successfully: "Nuova istituzione creata con successo"
+      updated_successfully: "Istituzione aggiornata con successo"
+      deleted_successfully: "Istituzione eliminata con successo"
+    termslists:
+      created_successfully: "Nuovo termine creato con successo"
+      updated_successfully: "Termine aggiornato con successo"
+      generic_error: "Il termine proposto non è valido. Riprova"
+      deleted_successfully: "Termine eliminato con successo"
+    terms:
+      created_successfully: "Nuovo termine creato con successo"
+      updated_successfully: "Termine aggiornato con successo"
+      generic_error: "Il termine proposto non è valido. Riprova"
+      deleted_successfully: "Termine eliminato con successo"
+    entities:
+      created_successfully: "Nuova tipologia di entità creata con successo"
+      updated_successfully: "Tipologia di entità aggiornata con successo"
+      deleted_successfully: "Tipologia di entità eliminata con successo"
+

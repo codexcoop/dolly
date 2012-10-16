@@ -1,0 +1,14 @@
+---
+en:
+  activerecord:
+    application_language:
+      entity:
+        one: "Language"
+        other: "Languages"
+it:
+  activerecord:
+    models:
+      application_language:
+        one: "Lingua"
+        other: "Lingue"
+

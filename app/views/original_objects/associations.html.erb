@@ -1,0 +1,96 @@
+<%# TODO: I18n in tutta la pagina%>
+<h2>Gestisci le relazioni</h2>
+
+<p><strong>Oggetto originale</strong>: <%= @original_object.title %></p>
+
+<%# OPTIMIZE: si può fare a meno di span nascosto ? %>
+<span data-current-id="<%= @original_object.id %>" style="display:none;"></span>
+
+<% if @original_object.related.present? %>
+ <%# OPTIMIZE: class="section" provvisoria, fare stile specifico per questo h3 + h4 %>
+ <%# OPTIMIZE: tabelle di associations dovrebbero avere classe list (NON show). Sfrondare css di conseguenze %>
+  <h3 class="section">Relazioni presenti</h3>
+  <table class="show">
+    <% @associations_to.each_with_index do |association, index| %>
+    <tr>
+      <% if index == 0 %>
+        <th rowspan="<%= @associations_to.size %>">Titoli collegati:</th>
+      <% end %>
+      <td>
+        <%= "[#{association.qualifier.description}]" %>
+        <%= link_to("#{association.related_original_object.title}", original_object_path(association.related_original_object)) %>
+        <%= "[#{association.related_original_object.bid}]" if association.related_original_object.bid? %>
+      </td>
+      <td class="link-cell">
+        <%= link_to( "- scollega", destroy_association_original_object_path( @original_object, :association_id => association.id ), :confirm => "Stai per rimuovere un collegamento tra oggetti originali, sei sicuro?", :method => 'DELETE' ) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<h3 class="section">Crea nuove relazioni</h3>
+<p>
+  <%= label_tag "original-objects-ajax-search", "Cerca oggetto originale per titolo" %><br />
+  <%= text_field_tag 'search_related[title]', nil, :id => "original-objects-ajax-search", :size => '70' %>
+</p>
+
+<div id="original-object-search-results" style="margin-bottom:18px;">
+  <%# filled by ajax html response with _preview_list.html.erb partial %>
+</div>
+
+<% if @original_object.pendent_unimarc_links? %>
+  <h4>Relazioni del record UNIMARC non salvate nel database</h4>
+  <% @original_object.pendent_unimarc_links.each do |pendent_unimarc_link| %>
+    <% form_tag({:controller => 'original_objects', :action => 'create_association', :id => @original_object.id}, {:method => 'PUT'}) do %>
+      <table class="show">
+        <tr>
+          <td>
+            <%= "[#{pendent_unimarc_link.qualifier.description(I18n.locale)}] " %>
+            <%= pendent_unimarc_link.title_and_bid %>
+          </td>
+          <td>
+            <%= submit_tag "+ collega", :class => 'submit', :style => "margin-top:0px;" %>
+            <%= hidden_field_tag("association[qualifier]", pendent_unimarc_link.qualifier) %>
+            <%= hidden_field_tag("association[original_object_id]", pendent_unimarc_link.original_object.id) %>
+            <%= hidden_field_tag("association[related_original_object_id]", pendent_unimarc_link.linked_original_object.try(:id)) %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if @original_object.missing_unimarc_links? %>
+  <h4>Relazioni del record UNIMARC con oggetti non ancora presenti nel database</h4>
+  <table class="show">
+    <% @original_object.missing_unimarc_links.each do |missing_unimarc_link| %>
+      <tr>
+        <td>
+          <%= "[#{missing_unimarc_link.qualifier.description(I18n.locale)}] " %>
+          <%= missing_unimarc_link.title_and_bid %>
+        </td>
+        <td><%= link_to "cerca nell'OPAC", search_z3950_catalogue_search_path("search[bid]" => missing_unimarc_link.bid), :method => 'POST' %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<!--
+<%# if @original_object.missing_unimarc_links? %>
+  <h4>Altre relazioni con record non ancora presenti nel database</h4>
+  <ul class="list">
+  <%# @original_object.missing_unimarc_links.group_by{|unimarc_link| unimarc_link.qualifier}.each_pair do |qualifier, links| %>
+    <li><%#= links.first.qualifier.description(I18n.locale) %></li>
+    <ul class="list">
+    <%# links.each do |link| %>
+      <li>
+        <%#= link_to link.title_and_bid, search_z3950_catalogue_search_path("search[bid]" => link.bid), :method => 'POST' %>
+      </li>
+    <%# end %>
+    </ul>
+  <%# end %>
+  </ul>
+<%# end %>
+-->
+

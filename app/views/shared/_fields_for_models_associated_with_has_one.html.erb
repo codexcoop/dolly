@@ -1,0 +1,31 @@
+<% error_on_field = f.object.send(:"#{property.name}_error") -%>
+<% entity_term_form_object =  if entity_terms.any?
+                                entity_terms.first
+                              else
+                                f.object.entity_terms.
+                                         build(
+                                           :vocabulary_id => property.vocabulary_id,
+                                           :property_id => property.id
+                                         )
+                              end -%>
+<p>
+  <% f.fields_for :entity_terms, entity_term_form_object do |entity_term_form| -%>
+    <%  terms_array = @terms.select{|term| term.vocabulary_id == property.vocabulary_id}.
+                            sort_by(&:translation_coalesce).
+                            map{|term| [term.translation_coalesce, term.id]}
+        options_list = options_for_select(terms_array, selected = entity_terms.first.try(:term_id) ) -%>
+    <%= content_with_error_for_association error_on_field, (entity_term_form.label :term_id, t("activerecord.models.#{property.name}", :count => 1), :class => property.requirement) %>
+    <%= requirement_marker property.requirement %>
+    <%= help_marker :property => property.name.to_sym %>
+    <br />
+    <% prompt = if property.requirement == 'mandatory' && !f.object.new_record?
+                  nil
+                else
+                  t(:please_select, :scope => [:application])
+                end %>
+    <%= entity_term_form.select(:term_id, options_list, {:prompt => prompt}, {:class => property.requirement}) %>
+    <%= entity_term_form.hidden_field :vocabulary_id %>
+    <%= entity_term_form.hidden_field :property_id %>
+  <% end -%>
+</p>
+

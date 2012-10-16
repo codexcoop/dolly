@@ -1,0 +1,46 @@
+<% form_for(@digital_object) do |f| %>
+  <%= generic_error_message_for @digital_object %>
+
+  <p>
+    <%= label_with_markers :property => 'original_object_id', :f => f, :requirement => 'mandatory' %><br />
+    <%= original_object_select_for_digital_object(f, 'mandatory', @original_object) %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'digital_collection_id', :f => f, :requirement => 'mandatory' %><br />
+    <%= digital_collection_select_for_digital_object(f, @digital_collections, 'mandatory', @digital_collection) %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'type', :f => f, :requirement => 'mandatory', :help => true %><br />
+    <%= f.select(:record_type, DigitalObject::RECORD_TYPES.map { |rt| [rt, rt] }, { :selected => @digital_object.record_type }, { :class => "mandatory" }) %>
+  </p>
+
+<%# NOTE: al momento NON utilizziamo digital_objects.source né è chiaro quale informazione debba esprimere %>
+<!--
+  <p>
+    <%#= label_with_markers :property => 'source', :f => f, :requirement => 'optional', :help => true  %><br />
+    <%#= f.text_area :source, :size => "70x2" %>
+  </p>
+-->
+
+  <p>
+    <%= label_with_markers :property => 'rights', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area(:rights, :size => "70x2") %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'unstored', :f => f, :requirement => 'optional', :help => true %><br />
+    <%= f.text_area :unstored, :size => "70x4" %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'completed', :f => f, :requirement => 'mandatory', :help => false %><br />
+    <%= f.select :completed, options_for_select(statuses_array, @digital_object.completed) %>
+  </p>
+
+  <p>
+    <%= f.submit((if @digital_object.new_record? then t('.save') else t('.update') end), :class => "submit") %>
+  </p>
+<% end %>
+

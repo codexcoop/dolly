@@ -1,0 +1,67 @@
+<div id="heading">
+  <div id="links">
+    <%= link_to_by_role @original_object, :title, :edit, t('.edit_link') %>
+  </div>
+  <h2><%= t '.page_title' %></h2>
+</div>
+
+<h3 class="section"><%= t('.section_description') %></h3>
+<table class="show">
+  <%= show_row_for @original_object, :property => "title" %>
+
+  <%= show_row_for @original_object,
+                   :property => "description",
+                   :content =>  (if @original_object.description.present?
+                                  simple_format(@original_object.description)
+                                else
+                                  content_tag(:span, "[#{t(:blank_record, :scope => :application)}]", :class => "blank-record")
+                                end) %>
+
+  <%= show_row_for  @original_object,
+                    :property => "physical_description",
+                    :content => (if @original_object.physical_description.present?
+                                  simple_format(@original_object.physical_description)
+                                else
+                                  content_tag(:span, "[#{t(:blank_record, :scope => :application)}]", :class => "blank-record")
+                                end) %>
+
+  <%= show_row_for @original_object, :property => "string_date" %>
+
+  <%= show_row_for_property :type %>
+
+  <%= show_row_for_property :subject %>
+
+  <%= show_row_for_property :creator %>
+
+  <%= show_row_for_property :contributor %>
+
+  <%= show_row_for_property :publisher %>
+
+  <%= show_row_for_property :language %>
+
+  <%= show_row_for_property :coverage %>
+
+  <%= show_row_for @original_object, :property => "rights" %>
+
+  <%= show_row_for @original_object, :property => "unstored" %>
+</table>
+
+<h3 class="section"><%= t('.section_identification_codes') %></h3>
+<table class="show">
+  <%= show_row_for @original_object, :property => "bid" %>
+  <%= show_row_for @original_object, :property => "isbn" %>
+  <%= show_row_for @original_object, :property => "issn" %>
+</table>
+
+<%# TODO: I18n %>
+<h3 class="section">
+  <%= t('.section_relations') %>
+  <span><%= link_to "Gestisci le relazioni &raquo;", associations_original_object_path(@original_object) %></span>
+</h3>
+
+<%= render :partial => "associations_read_only" %>
+
+<div class="actions">
+  <%= link_to t('.back_link'), original_objects_path %>
+</div>
+

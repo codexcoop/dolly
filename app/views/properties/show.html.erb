@@ -1,0 +1,65 @@
+  <p>
+    Name: <%= @property.name %>
+  </p>
+
+  <p>
+    In use? <%=h @property.in_use? ? "YES" : "NO" %>
+  </p>
+
+  <div>
+    <strong>Associated elements:</strong>
+    <% @metadata_standards.each do |metadata_standard| -%>
+      <p>
+        <strong><%= metadata_standard.description %></strong><br />
+        <% @property_elements.
+            select{|pe| pe.element && pe.element.metadata_standard_id == metadata_standard.id}.
+            each do |property_element| -%>
+          - <%= property_element.element.name_with_section %> <br />
+        <% end -%>
+      </p>
+    <% end -%>
+  </div>
+
+  <p>
+    Vocabulary: <%=h @property.vocabulary_id %>
+  </p>
+  <p>
+    Position: <%=h @property.position %>
+  </p>
+  <p>
+    Section: <%=h @property.section %>
+  </p>
+  <p>
+    English: <%=h @property.human_en %>
+  </p>
+  <p>
+    English description: <%=h @property.description_en %>
+  </p>
+  <p>
+    Italian: <%=h @property.human_it %>
+  </p>
+  <p>
+    Italian description: <%=h @property.description_it %>
+  </p>
+  <p>
+    Cardinality: <%=h @property.cardinality %>
+  </p>
+  <p>
+    Datatype: <%=h @property.datatype %>
+  </p>
+  <p>
+    Form field type: <%=h @property.form_field_type %>
+  </p>
+  <p>
+    Requirement: <%=h @property.requirement %>
+  </p>
+  <p>
+    Visibiliy (user role):  <%=h Role.find(@property.visibility_id).name if @property.visibility_id? %>
+  </p>
+  <p>
+    Notes: <%=h @property.notes %>
+  </p>
+
+<%= link_to 'Edit', edit_entity_property_path(@entity, @property) %> |
+<%= link_to 'Back', entity_properties_path(@entity) %>
+

@@ -1,0 +1,31 @@
+<% content_layout "t1" %>
+
+<% digital_object_title = truncate(@digital_object.original_object.title, :length => 120) %>
+
+<h2><%= t '.page_title', :digital_object_title => digital_object_title %></h2>
+
+<div id="intro">
+  <p>
+    <%= t '.confirmation_request', :digital_object_title => digital_object_title %>
+  </p>
+</div>
+
+<% unless @digital_files.size == 0 %>
+<div class="images-list">
+  <% @digital_files.sort_by(&:position).each do |digital_file| %>
+    <% content_tag :div, :id => "digital_file_#{digital_file.id}"do %>
+      <%= image_tag digital_file.absolute_path(:variant => "S") %>
+    <% end %>
+  <% end %>
+  <br />
+</div>
+<% end %>
+
+<div class="actions">
+  <% form_for @digital_object, :url => { :action => "perform_destroy_with_assets" }, :html => { :method => "post" } do |f| %>
+    <%= f.submit t('.confirm_submit'), :name => 'confirm', :class => "submit" %>
+    &nbsp;|&nbsp;
+    <%= link_to t('.cancel'), digital_object_path(@digital_object) %>
+  <% end %>
+</div>
+

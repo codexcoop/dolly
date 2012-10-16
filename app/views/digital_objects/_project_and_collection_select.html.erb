@@ -1,0 +1,20 @@
+  <p>
+    <%= label_with_markers :property => 'project_id', :f => f, :requirement => 'mandatory'  %><br />
+    <%= select_tag :project_id,
+                    options_for_select(@projects.collect{|project| [project.title, project.id]}.
+                                                insert(0, [t(:please_select, :scope => [:application]), '']),
+                                      (@project.id if @project)), :class => 'mandatory' %>
+    <%= submit_tag  t('.button_show_digital_collections_for_this_project'),
+                    :name => 'select_project',
+                    :disabled => @projects.size == 0 %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'digital_collection_id', :f => f, :requirement => 'mandatory'  %><br />
+    <%= f.select :digital_collection_id,
+                  options_for_select(@digital_collections.collect{|digital_collection| [digital_collection.title, digital_collection.id]}, (@digital_collection.id if @digital_collection)),
+                  {:include_blank => t(:please_select, :scope => [:application])},
+                  {:disabled => @project.blank?,
+                  :class => 'mandatory'} %>
+  </p>
+

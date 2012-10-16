@@ -1,0 +1,31 @@
+<div id="heading">
+  <div id="links">
+    <%= link_to_by_role @project, :title, :edit, t('.edit_link') %>
+  </div>
+  <h2><%= t '.page_title' %></h2>
+</div>
+
+<table class="show">
+  <%= show_row_for @project, :property => "institution", :content => h(@project.institution.name) %>
+  <%= show_row_for @project, :property => "title" %>
+  <%= show_row_for @project, :property => "acronym" %>
+  <% logo_url = if @project.logo_file_name
+                  image_tag(@project.logo.url(:medium))
+                else
+                  content_tag(:span, "[#{t(:blank_record, :scope => :application)}]", :class => "blank-record")
+                end %>
+  <%= show_row_for @project, :property => "logo", :content => logo_url %>
+  <%= show_row_for @project, :property => "description", :content => textilize(@project.description), :css_class => "formatted-text" %>
+  <% @entity_terms_grouped.sort_by{|prop, ets| prop.position.to_i }.each do |prop, ets| %>
+    <%= show_row_for_property(prop.name) %>
+  <% end %>
+  <%= show_row_for @project, :property => "start_date", :content => formatted_localized_partial_date(@project, :start_date) unless @project.start_date.blank? || @project.start_date.year < 1970 %>
+  <%= show_row_for @project, :property => "completion_date", :content => formatted_localized_partial_date(@project, :completion_date) unless @project.completion_date.blank? || @project.completion_date.year < 1970 %>
+  <%= show_row_for @project, :property => "email" %>
+  <%= show_row_for @project, :property => "url" %>
+</table>
+
+<div class="actions">
+  <%= link_to t('.back_link'), projects_path %>
+</div>
+

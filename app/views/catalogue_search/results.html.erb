@@ -1,0 +1,39 @@
+<% content_layout "t1" %>
+
+<%# TODO: i18n in tutta la pagina %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "catalogue_search_form" %>
+  <%= javascript_include_tag "catalogue_search_results" %>
+<% end %>
+
+<div id="heading">
+  <div id="links"><%= link_to "Torna alla lista oggetti originali", original_objects_path %></div>
+  <h2><%= t('.page_title') %></h2>
+</div>
+
+<% if @results.nil? || @results.empty? %>
+  <p id="no-results-message"><%= t '.no_results' %></p>
+<% else %>
+  <p><%= t '.refine_search_message', :class => 'refine-search' %></p>
+<% end %>
+
+<div id="catalogue-search">
+  <%= render :partial => 'form' %>
+</div>
+
+<% if @results && @results.any? %>
+  <ol class="catalogue-records">
+    <% @results.each_with_index do |result, result_index| %>
+      <% result_index += 1 %>
+      <li data-result-index="<%= result_index %>">
+        <p><%= z3950_result_label(result.render)  %></p>
+        <p><a href="#nogo" data-result-index="<%= result_index %>">+ Dettaglio UNIMARC</a></p>
+
+        <% form_tag( {:controller => 'original_objects', :action => "initialize_with_unimarc" }, { :method => "POST", 'data-result-index' => result_index } ) do %>
+          <p><%= hidden_field_tag :unimarc_text, "<pre>#{result.render}</pre>", 'data-result-index' => result_index %></p>
+          <p><%= submit_tag "Importa", :class => "submit"  %></p>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>

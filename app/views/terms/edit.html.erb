@@ -1,0 +1,17 @@
+<h2>
+  <%= t :page_title, :scope => [:terms, :edit] %>
+  <q><%= t :one, :scope => [:activerecord, :models, @vocabulary.name.tableize.singularize.to_sym] %></q>
+</h2>
+
+<%= render :partial => "form" %>
+
+<%= link_to   t(:show_link, :scope => [:terms, :edit]),
+              url_for(:controller => "#{controller.controller_name}",
+                      :action => 'show',
+                      :id => @term.id,
+                      :only_path => true ) %> |
+<%= link_to   t(:back_link, :scope => [:terms, :edit]),
+              url_for(:controller => "#{controller.controller_name}",
+                      :action => 'index',
+                      :only_path => true ) %>
+

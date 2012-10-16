@@ -1,0 +1,99 @@
+/* TODO:
+- controller: fare composite title dinamico
+- vedi OPTIMIZE in custom_bookreader.js ==> Luca
+- BRpager: decidere se mantenere default o alleggerirlo alla maniera di Google Books
+  Nell'ipotesi 2, quali info presentare (1 / n e anche capitolo ??) ?
+- BRpager: migliorare stile 
+  NB: per i colori dei bordi del chapter marker vedi:
+    - BookReader.prototype.addChapter nel js
+    - images/marker_chap-off.png e simili
+- NB: in BRpager i numeri visualizzati non sono la pagina, ma la posizione del file
+- BRtree: forse aggiungere icona di chiusura X (?)
+- viewer: fixare posizione sballata quando si fa zoom 1 page (sembra essere
+  problema anche di archive.org)
+==> test IE
+*/
+
+body {
+  font: 12px/18px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* BACKGROUND - default: #e2dcc5
+----------------------------------------------------- */
+#BRtoolbar {
+  background: #ccc url(/images/overlay.png) repeat-x;
+}
+div#BRnav, div#BRfiller, div#BRzoomer button, .BRnavCntl {
+  background-color: #ccc;
+}
+
+/* TOOLBAR - top
+----------------------------------------------------- */
+#BRreturn {
+  text-align: center;
+}
+#BRreturn a {
+  text-decoration: none;
+  margin: 0 180px;
+  font-size: 14px;
+  color: #ba1820;
+}
+#BRreturn a:hover {
+  text-decoration: underline;
+}
+.BRicon.index {
+  background-image: url(/images/BRindex.png);
+  background-position: 0 0;
+}
+.BRicon.index:hover {
+  background-position: -40px 0;
+}
+
+/* NAV - bottom
+----------------------------------------------------- */
+div#BRpage {
+  width: 240px; /* default: 280px */
+}
+div#BRnavpos {
+  margin-right: 240px;
+}
+
+/* BRtree - custom element
+----------------------------------------------------- */
+/* TODO: resizable + aumentare default width-height */
+#BRtree {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 320px;
+  height: 430px;
+  overflow: auto;
+  padding: 6px 0 18px 0;
+  -webkit-box-shadow: 0 1px 3px #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  background: #e5e5e5;
+}
+#BRtree .jstree-clicked {
+  border-color: transparent;
+  background: transparent;
+}
+/* Prove text wrap. Esito insoddisfacente */
+/*
+#BRtree ul {
+  margin-right: 18px;
+}
+#BRtree a {
+  white-space: normal !important;
+  height: auto;
+  padding: 1px 2px;
+}
+#BRtree li > ins {
+  vertical-align: top;
+}
+#BRtree .jstree-hovered, #BRtree .jstree-clicked {
+  border: 0;
+}
+*/

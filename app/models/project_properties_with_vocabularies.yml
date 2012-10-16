@@ -1,0 +1,119 @@
+--- 
+- !ruby/object:Property 
+  attributes: 
+    position: "1"
+    vocabulary_id: "20"
+    name: status
+    section: Progress
+    entity_id: "2"
+    description_en: This is a general indication of the status of the project or programme, for example planned, on-going, completed.
+    notes: ""
+    order_terms_by: position
+    id: "77"
+    description_it: |
+      Indicazione generale dello stato di avanzamento del progetto o programma.
+
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: mandatory
+    human_en: Project status
+    datatype: reference
+    cardinality: one
+    human_it: Stato del progetto
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: ProjectStatus
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: a01ab0d3-d4f1-4287-9cc0-0d1dcf991131
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.92696
+      description_it: 
+      terms_count: "3"
+      is_user_editable: f
+      id: "20"
+      human_en: 
+      human_it: Stato di avanzamento del progetto
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "11"
+    vocabulary_id: "11"
+    name: digitisation_process
+    section: Description
+    entity_id: "2"
+    description_en: This is a general indication of the technical features of the project or programme, and of the digitisation processes used. This may be direct or indirect etc.
+    notes: ""
+    order_terms_by: position
+    id: "71"
+    description_it: |
+      Indicazione generale delle caratteristiche tecniche del progetto o programma e dei procedimenti adottati per la digitalizzazione.
+
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Digitisation process
+    datatype: reference
+    cardinality: one
+    human_it: Procedimento di digitalizzazione
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: DigitisationProcess
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 2d575802-73bc-4661-a2a3-34cba7d8b302
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.897994
+      description_it: 
+      terms_count: "2"
+      is_user_editable: f
+      id: "11"
+      human_en: 
+      human_it: Procedimento di digitalizzazione
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "21"
+    vocabulary_id: "12"
+    name: funding
+    section: Description
+    entity_id: "2"
+    description_en: This is a general indication of the type of funding that supports the project or programme, for example internal, external and so on.
+    notes: ""
+    order_terms_by: position
+    id: "72"
+    description_it: Indicazione generale del tipo di finanziamento di cui beneficia il progetto o programma.
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Funding type
+    datatype: reference
+    cardinality: many
+    human_it: Tipo di finanziamento
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Funding
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: b2fc0cd1-1897-4711-8c13-a1b28646d91a
+      description_en: Funding
+      updated_at: 2010-08-06 13:52:35.12067
+      description_it: Tipo di finanziamento
+      terms_count: "6"
+      is_user_editable: f
+      id: "12"
+      human_en: Funding
+      human_it: Tipo di finanziamento
+    attributes_cache: {}
+

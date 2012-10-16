@@ -1,0 +1,114 @@
+#templates-container {
+  display: none;
+}
+.other-info {
+  font-size: 10px;
+  font-weight: normal;
+}
+.hidden-template {
+  display: none;
+}
+/*
+.relation-global-title {
+  font-size: 0.98em;
+}
+*/
+.search-icon {
+  float: left;
+  display: inline;
+  margin: 5px 0 0 0;
+}
+.search-input-area {
+  margin: 7px 0 0 0;
+}
+.search-input-wrap {
+  margin-left: 16px;
+  padding-left: 10px;
+}
+.relation-search-input {
+  width: 505px;
+}
+.choice-item.template {
+  display: none;
+}
+.relation-items-list,
+.relation-selection .selected-list,
+.relation-selection .results-list,
+.relation-selection .suggested-list {
+  width: 540px;
+}
+.selected-list {
+  margin: 6px 0 0 0;
+}
+.relation-selection {
+  position: relative;
+  margin: 1px 0 10px 0;
+}
+.relation-selection p {
+  line-height: 1em;
+}
+.relation-selection table.livesearch-results {
+  width: 100%;
+}
+.choice-item-label-wrap {
+  padding-top: 2px;
+}
+/*
+.choice-item-label-short,
+.choice-item-label-full {
+}
+*/
+.choice-item-label {
+/*  width: 70px;*/
+  padding-left: 0;
+  text-align: right;
+}
+.choice-item-actions-wrap {
+  width: 70px;
+  padding: 2px 6px 2px 12px;
+  text-align: right;
+}
+.item-action-trash {
+  cursor: pointer;
+  font-size: 10px;
+  color: red;
+}
+.bullet-icon-wrap {
+  width: 22px;
+  padding-top: 2px;
+}
+.bullet-icon {
+  display: inline;
+  float: left;
+}
+.item-action-add-suggested {
+  cursor: pointer;
+  font-size: 10px;
+  color: green;
+}
+.hide-livesearch-results {
+  margin: 6px 0 0 13px;
+}
+.ui-menu .ui-menu-item {
+  font-size: 10px;
+}
+
+/* WARNING: this properties are strictly required to properly animate the elements */
+.new-related-placeholder {
+  border: 1px solid white;
+  overflow: auto;
+  padding: 0px;
+  position: relative;
+}
+.new-related {
+  position: absolute;
+  width: 500px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px dashed #bbb;
+  background: #ddd;
+}
+.new-related .error-messages {
+  color: red;
+}
+/* END OF WARNING */

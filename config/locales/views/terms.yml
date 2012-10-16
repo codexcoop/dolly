@@ -1,0 +1,52 @@
+---
+en:
+  terms:
+    defaults: &defaults
+      insert_new: "New term for vocabolary "
+      insert_new_generic: "New term for this vocabolary"
+      edit_link: "Edit term"
+      show_link: "Terms's details"
+      back_link: "Back to terms for this vocabulary"
+      all_vocabularies_link: "Back to all vocabularies"
+    index:
+      page_title: "Terms for vocabulary "
+      <<: *defaults
+    new:
+      page_title: "New term for vocabulary "
+      <<: *defaults
+    edit:
+      page_title: "Update term for vocabulary "
+      <<: *defaults
+    show:
+      page_title: "Term"
+      <<: *defaults
+    form:
+      update: "Update term"
+      save: "Create term"
+      <<: *defaults
+it:
+  terms:
+    defaults: &defaults
+      insert_new: "Nuova voce per il vocabolario "
+      insert_new_generic: "Nuova voce per questo vocabolario"
+      edit_link: "Modifica voce"
+      show_link: "Anteprima voce"
+      back_link: "Torna alle voci di questo vocabolario"
+      all_vocabularies_link: "Torna alla lista vocabolari"
+    index:
+      page_title: "Voci del vocabolario "
+      <<: *defaults
+    new:
+      page_title: "Nuova voce per il vocabolario "
+      <<: *defaults
+    edit:
+      page_title: "Modifica voce per il vocabolario "
+      <<: *defaults
+    show:
+      page_title: "Anteprima voce per il vocabolario "
+      <<: *defaults
+    form:
+      update: "Aggiorna voce"
+      save: "Crea voce"
+      <<: *defaults
+

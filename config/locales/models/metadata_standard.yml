@@ -1,0 +1,36 @@
+---
+en:
+  activerecord:
+    models:
+      metadata_standard:
+        one: 'Metadata standard'
+        other: 'Metadata standard'
+    attributes:
+      metadata_standard:
+        id: "ID"
+        created_at: "Created at"
+        description: "Description"
+        name: "Name"
+        updated_at: "Updated at"
+        vocabularies_count: "Number of vocabularies"
+        vocabularies: "%{count} vocabularies"
+        elements_count: "Number of elements"
+        elements: "%{count} elements"
+it:
+  activerecord:
+    models:
+      metadata_standard:
+        one: 'Standard di metadati'
+        other: 'Standard di metadati'
+    attributes:
+      metadata_standard:
+        id: "ID"
+        created_at: "Creazione"
+        description: "Descrizione"
+        name: "Nome"
+        updated_at: "Aggiornamento"
+        vocabularies_count: "Numero di vocabolari"
+        vocabularies: "%{count} vocabolari"
+        elements_count: "Numero di elementi"
+        elements: "%{count} elementi"
+

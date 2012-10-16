@@ -1,0 +1,56 @@
+---
+en:
+  activerecord:
+    models:
+      digital_file:
+        one: "%{count} File"
+        other: "%{count} Files"
+    attributes:
+      digital_file:
+        name: "Name"
+        extension: "Extension"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        user_id: "User"
+        user: "User"
+        technical_metadata: "Technical metadata"
+        michael_digital_type_id: "Type (MICHAEL)"
+        michael_digital_type: "Type (MICHAEL)"
+        full_basename: "Full name"
+        dc_format_id: "Format (Dublin Core)"
+        dc_format: "Format (Dublin Core)"
+        status_for_original: "Status of the original"
+        status_for_modified_copies: "Status of derivatives"
+        digital_object_id: "Digital object"
+        digital_object: "Digital object"
+        error_on_original: "Errors in the original"
+        error_on_modified_copies: "Errors in derivatives"
+        technically_valid: "Valid"
+it:
+  activerecord:
+    models:
+      digital_file:
+        one: "%{count} File"
+        other: "%{count} File"
+    attributes:
+      digital_file:
+        name: "Nome"
+        extension: "Estensione"
+        created_at: "Creazione"
+        updated_at: "Aggiornamento"
+        user_id: "Utente"
+        user: "Utente"
+        technical_metadata: "Metadati tecnici"
+        michael_digital_type_id: "Tipo (MICHAEL)"
+        michael_digital_type: "Tipo (MICHAEL)"
+        full_basename: "Nome completo dell'originale"
+        dc_format_id: "Formato (Dublin Core)"
+        dc_format: "Formato (Dublin Core)"
+        status_for_original: "Stato dell'originale"
+        status_for_modified_copies: "Stato dei derivati"
+        digital_object_id: "Oggetto digitale"
+        digital_object: "Oggetto digitale"
+        error_on_original: "Errori nell'originale"
+        error_on_modified_copies: "Errori nei derivati"
+        technically_valid: "Valido"
+

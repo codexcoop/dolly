@@ -1,0 +1,79 @@
+<% form_for [@entity, @property] do |f| %>
+<%= generic_error_message_for @property %>
+
+  <% prompt_text = '-- choose one --' -%>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => default_size(:text_field) %>
+  </p>
+
+  <p>
+    <%= f.check_box :in_use %> <%= f.label :in_use %>
+  </p>
+
+  <%= render :partial => "associated_elements_form", :locals => {:f => f} %>
+
+  <p>
+    <%= f.label :vocabulary_id %><br />
+    <%= f.collection_select :vocabulary_id, @vocabularies, :id, :name, options = {:include_blank => 'Select'}, html_options = {} %>
+  </p>
+  <p>
+    <%= f.label :section %><br />
+    <%= f.text_field :section, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :human_en %><br />
+    <%= f.text_field :human_en, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_en %><br />
+    <%= f.text_area :description_en, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :human_it %><br />
+    <%= f.text_field :human_it, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_it %><br />
+    <%= f.text_area :description_it, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :cardinality %><br />
+    <%= f.select :cardinality, options_for_select(Property.cardinalities, @property.cardinality), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :datatype %><br />
+    <%= f.select :datatype, options_for_select(Property.data_types, @property.datatype), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :form_field_type %><br />
+    <%= f.select :form_field_type, options_for_select(Property.form_field_types, @property.form_field_type), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :requirement %><br />
+    <%= f.select :requirement, options_for_select(Property.requirements, @property.requirement), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position, :size => default_size(:text_field) %>
+  </p>
+  <% if @property.vocabulary_id.present? -%>
+    <p>
+      <%= f.label :order_terms_by %><br />
+      <%= f.select :order_terms_by, options_for_select(Property.order_terms_by, @property.order_terms_by), :include_blank => prompt_text %>
+    </p>
+  <% end -%>
+  <p>
+    <%= f.label :visibility_id, 'Visibility (user role)' %><br />
+    <%= f.select :visibility_id, options_for_select(Role.all.map{|r| [r.name, r.id]}, @property.visibility_id), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+

@@ -1,0 +1,52 @@
+---
+en:
+  activerecord:
+    models:
+      term:
+        one: 'Term'
+        other: 'Terms'
+    attributes:
+      term:
+        code: "Code"
+        created_at: "Created at"
+        en: "English"
+        it: "Italian"
+        is_active: "Active"
+        is_approved: "Approved"
+        is_native: "Native"
+        proposer_id: "Proposer"
+        proposer: "Proposer"
+        updated_at: "Updated at"
+        user_id: "User"
+        user: "User"
+        uuid: "Identifier"
+        vocabulary_id: "Vocabulary"
+        vocabulary: "Vocabulary"
+        metadata_standard_id: "Metadata standard"
+        metadata_standard: "Metadata standard"
+it:
+  activerecord:
+    models:
+      term:
+        one: 'Voce'
+        other: 'Voci'
+    attributes:
+      term:
+        code: "Codice"
+        created_at: "Creazione"
+        en: "Inglese"
+        it: "Italiano"
+        is_active: "Attivo"
+        is_approved: "Approvato"
+        is_native: "Standard"
+        proposer_id: "Proponente"
+        proposer: "Proponente"
+        updated_at: "Aggiornamento"
+        user_id: "Utente"
+        user: "Utente"
+        uuid: "Identificativo"
+        vocabulary_id: "Vocabolario"
+        vocabulary: "Vocabolario"
+        metadata_standard_id: "Standard di metadati"
+        metadata_standard: "Standard di metadati"
+

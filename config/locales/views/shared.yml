@@ -1,0 +1,112 @@
+---
+en:
+  shared:
+    institution_selection:
+      button_show_projects_for_this_institution: "Show projects from this institution"
+    relations:
+      defaults: &defaults
+        search_invite: "%{available_related} <em>%{relation_name}</em> records available. Search the one you need:"
+        add_invite: "Add:"
+        no_related_records_available: "No <em>%{relation_name}</em> records available."
+        remove_item: "[delete]"
+        add_item: "[add]"
+        single_selection: "(only one selection)"
+        no_results: "no results"
+        link_item: "[+ link]"
+        detach_item: "[- detach]"
+        clear_results: "clear search"
+        submit_new_related: "create"
+        close_dialog: 'close'
+        new_related_cmd: "[create new]"
+        search_placeholder: "search %{what}"
+      input:
+        <<: *defaults
+      item:
+        <<: *defaults
+      selected:
+        <<: *defaults
+      suggested:
+        <<: *defaults
+      relation:
+        <<: *defaults
+      autocomplete:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+        suggested:
+          <<: *defaults
+        selected:
+          <<: *defaults
+      select:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+      livesearch:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+        results:
+          <<: *defaults
+        selected:
+          <<: *defaults
+      new_term:
+          <<: *defaults
+it:
+  shared:
+    institution_selection:
+      button_show_projects_for_this_institution: "Progetti di questa istituzione"
+    relations:
+      defaults: &defaults
+        search_invite: "Sono presenti %{available_related} schede <em>%{relation_name}</em>. Cerca quella di tuo interesse:"
+        add_invite: "Aggiungi:"
+        no_related_records_available: "Non sono presenti schede <em>%{relation_name}</em>."
+        remove_item: "[rimuovi]"
+        add_item: "[aggiungi]"
+        single_selection: "(una sola selezione)"
+        no_results: "nessun risultato"
+        link_item: "[+ collega]"
+        detach_item: "[- scollega]"
+        clear_results: "cancella risultati"
+        submit_new_related: "crea"
+        close_dialog: 'chiudi'
+        new_related_cmd: "[crea nuovo]"
+        search_placeholder: "cerca %{what}"
+      input:
+        <<: *defaults
+      item:
+        <<: *defaults
+      selected:
+        <<: *defaults
+      suggested:
+        <<: *defaults
+      relation:
+        <<: *defaults
+      autocomplete:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+        suggested:
+          <<: *defaults
+        selected:
+          <<: *defaults
+      select:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+      livesearch:
+        item:
+          <<: *defaults
+        input:
+          <<: *defaults
+        results:
+          <<: *defaults
+        selected:
+          <<: *defaults
+      new_term:
+          <<: *defaults
+

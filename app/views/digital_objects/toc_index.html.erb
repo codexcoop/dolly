@@ -1,0 +1,75 @@
+<% content_layout "t1" %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "jsTree/jquery.jstree.min" %>
+  <%= javascript_include_tag "toc_index" %>
+<% end %>
+
+
+<div id="heading">
+  <div id="links">
+  <% if @digital_object.digital_files_count > 0 %>
+    <%= link_to t('activerecord.attributes.digital_object.original_content_type.images', :count => @digital_object.digital_files_count), digital_object_digital_files_path(@digital_object) %> |
+    <%= link_to t('.bookreader'), bookreader_digital_object_path(@digital_object) %>
+  <% end %>
+  </div>
+  <h2><%= t '.page_title', :related_original_object_title => truncate(h(@digital_object.original_object.title), :length => 90) %></h2>
+</div>
+
+<p style="float: right; margin: 0;">
+<% if is_owner?(:authorizable_object => @digital_object, :authorizable_action => "toggle_completed") %>
+    <em>Stato</em>: <%= @digital_object.completed? ? "#{statuses[1]}" : "#{statuses[0]}" %>
+    | <%= link_to "Segna il record come #{inverse_status(@digital_object.completed)}",  toggle_completed_digital_object_path(@digital_object), :method => :put %>
+<% end %>
+</p>
+
+<p id="tree_actions">
+  <input type="button" id="create" value="<%= t('.create') %>" class="button" />
+  <input type="button" id="delete-node" value="<%= t('.remove') %>" class="button" />
+</p>
+
+<div id="toc_editor">
+  <div id="toc-wrapper">
+    <div id="toc">
+      <%# filled by jsTree %>
+    </div>
+    <%# OPTIMIZE: maybe that class="ui-resizable-handle ui-resizable-e" is not needed (check) %>
+    <%# the resize handle must be inside the resized element %>
+    <div id="handle" class="ui-resizable-handle ui-resizable-e">&nbsp;</div>
+  </div>
+
+  <div id="images-list">
+  <% if @digital_object.digital_files_count > 0 %>
+    <% @digital_files.each do |digital_file| %>
+      <div class="associated-nodes-container">
+        <ul class="associated-nodes" data-digital-file="<%= digital_file.id %>">
+          <% digital_file.nodes.each do |node| %>
+            <%= render  :partial => 'node_description',
+                        :locals => {:node_id => node.id,
+                                    :parent_id => node.parent_id,
+                                    :text => node.description } %>
+          <% end %>
+        </ul>
+      </div>
+      <%= image_tag "/images/grey.gif",
+                    :'data-original-src' => (digital_file.absolute_path :variant => 'S'),
+                    :class => 'jstree-draggable jstree-drop',
+                    :id => "digital_file_#{digital_file.id}",
+                    :'data-digital-file' => digital_file.id,
+                    :width => digital_file.width_small,
+                    :height => digital_file.height_small %>
+      <br />
+      <%= link_to t('.digital_file_zoom'), digital_file.absolute_path(:variant => 'M'), :class => 'zoom' %>
+      <hr />
+      <div class="toc-images-clear-both"></div>
+    <% end %>
+  <% else %>
+    <p><%= t('.no_digital_files') %></p>
+  <% end %>
+  </div>
+</div>
+
+<div class="actions">
+  <%= link_to t('.show_link'), @digital_object %> |
+  <%= link_to t('.back_to_digital_objects'), digital_objects_path %>
+</div>
+

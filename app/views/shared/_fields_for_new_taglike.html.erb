@@ -1,0 +1,18 @@
+
+<% if property.vocabulary_is_user_editable? %>
+  <% f.fields_for :entity_terms, f.object.entity_terms.build(:vocabulary_id => property.vocabulary_id, :property_id => property.id) do |entity_term_form| %>
+    <p>
+      <a href="#nogo" class="add-value" data-property-id="<%= property.id %>">+ crea e associa un nuovo termine</a>
+    </p>
+    <p class="new-value" data-property-id="<%= property.id %>">
+      <%= entity_term_form.hidden_field :vocabulary_id %>
+      <%= entity_term_form.hidden_field :property_id %>
+      <% entity_term_form.fields_for :term, entity_term_form.object.build_term(:vocabulary_id => vocabulary_id) do |term_form| %>
+        <%= term_form.hidden_field :user_id, :value => current_user.id %>
+        <%= term_form.hidden_field :vocabulary_id %>
+        <%= term_form.text_field :it %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+

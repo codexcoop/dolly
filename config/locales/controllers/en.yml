@@ -1,0 +1,66 @@
+---
+en:
+  controllers:
+    catalogue_search:
+      catalogue_connection_error: "Catalogue server connection error, please try again"
+      positive_date_error: "Publication date should be a positive number"
+      only_digits_date_error: "Publication date should contain of only digits"
+      at_least_one_parameter: "Please fill at least one field"
+      generic_date_error: "Invalid publication date"
+    digital_collections:
+      created_successfully: "New collection was successfully created"
+      updated_successfully: "Collection was successfully updated"
+      deleted_successfully: "Collection was successfully deleted"
+    projects:
+      created_successfully: "New project was successfully created"
+      updated_successfully: "Project was successfully updated"
+      deleted_successfully: "Project was successfully deleted"
+    digital_objects:
+      created_successfully: "New digital object was successfully created"
+      updated_successfully: "Digital object was successfully updated"
+      deleted_successfully: "Digital object was successfully deleted"
+      toc_updated_successfully: "TOC's structure successfully updated"
+      position_successfully_restored: "Original positions successfully restored"
+      error_in_restoring_positions: "Error in restoring original positions"
+      assets_deleted_successfully: "Digital object and its assets - files and TOC - have been destroyed"
+    original_objects:
+      created_successfully: "New original object was successfully created"
+      updated_successfully: "Original object was successfully updated"
+      deleted_successfully: "Original object was successfully deleted"
+      provide_unimarc: "Please provide UNIMARC data"
+      unimarc_format_error: "UNIMARC format not recognized"
+    digital_files:
+      created_successfully: "New digital file was successfully created"
+      updated_successfully: "Digital file was successfully updated"
+      deleted_successfully: "Digital file was successfully deleted"
+    vocabularies:
+      created_successfully: "New vocabulary was successfully created"
+      updated_successfully: "Vocabulary was successfully updated"
+      deleted_successfully: "Vocabulary was successfully deleted"
+    metadata_standards:
+      created_successfully: "New metadata standard was successfully created"
+      updated_successfully: "Metadata standard was successfully updated"
+      deleted_successfully: "Metadata standard was successfully deleted"
+    users:
+      created_successfully: "New account successfully created"
+      updated_successfully: "Account was successfully updated"
+      deleted_successfully: "Account was successfully deleted"
+    institutions:
+      created_successfully: "New institution was successfully created"
+      updated_successfully: "Institution was successfully updated"
+      deleted_successfully: "Institution was successfully deleted"
+    termslists:
+      created_successfully: "New term was successfully created"
+      updated_successfully: "Term was successfully updated"
+      generic_error: "The supplied term was not valid, please retry"
+      deleted_successfully: "Term was successfully deleted"
+    terms:
+      created_successfully: "New term was successfully created"
+      updated_successfully: "Term was successfully updated"
+      generic_error: "The supplied term was not valid, please retry"
+      deleted_successfully: "Term was successfully deleted"
+    entities:
+      created_successfully: "New entity was successfully created"
+      updated_successfully: "Entity was successfully updated"
+      deleted_successfully: "Entity was successfully deleted"
+

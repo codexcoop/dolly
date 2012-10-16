@@ -1,0 +1,50 @@
+---
+en:
+  users:
+    defaults: &defaults
+      insert_new: "New user"
+      edit_link: "Edit user"
+      show_link: "User's details'"
+      back_link: "Back to users"
+      please_select: "Select"
+    index:
+      page_title: "Users"
+      <<: *defaults
+    new:
+      page_title: "New user"
+      <<: *defaults
+    edit:
+      page_title: "Update user"
+      <<: *defaults
+    show:
+      page_title: "User"
+      <<: *defaults
+    form:
+      update: "Update user"
+      save: "Create user"
+      <<: *defaults
+it:
+  users:
+    defaults: &defaults
+      insert_new: "Nuovo utente"
+      edit_link: "Modifica utente"
+      show_link: "Anteprima utente"
+      back_link: "Torna alla lista utenti"
+      please_select: "Seleziona"
+    index:
+      page_title: "Utenti"
+      <<: *defaults
+    new:
+      page_title: "Nuovo utente"
+      <<: *defaults
+    edit:
+      page_title: "Modifica utente"
+      <<: *defaults
+    show:
+      page_title: "Anteprima utente"
+      <<: *defaults
+    form:
+      update: "Aggiorna utente"
+      save: "Crea utente"
+      <<: *defaults
+

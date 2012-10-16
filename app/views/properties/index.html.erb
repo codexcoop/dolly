@@ -1,0 +1,47 @@
+<h2><%= @entity.name %>'s properties</h2>
+
+<p><%= link_to "New property", new_entity_property_path(@entity), :class => "new" %></p>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th>In use?</th>
+    <th>Name</th>
+    <th>Italian</th>
+    <th>Cardinality</th>
+    <th>Datatype</th>
+    <th>Requirement</th>
+    <th>Position</th>
+    <th>Vocabulary</th>
+    <th>Elements</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @properties.each do |property| %>
+  <tr>
+    <td><%=h property.section %></td>
+    <td><%=h property.in_use? ? "YES" : "NO" %></td>
+    <td><%= link_to property.name, edit_entity_property_path(@entity, property) %></td>
+    <td>
+      <span class="tooltip ui-icon ui-icon-info" title="<%=h property.description_en %>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <%=h property.human_it %>
+    </td>
+    <td><%=h property.cardinality %></td>
+    <td><%=h property.datatype %></td>
+    <td><%=h property.requirement %></td>
+    <td><%=h property.position %></td>
+    <td><%=h property.vocabulary.try(:name) %></td>
+    <td>
+      <% if property.elements.any? -%>
+        <% property.elements.each do |e| %>
+          <%=h("#{e.name} (#{e.metadata_standard.name})" + (" - #{e.vocabulary.name}" if e.vocabulary).to_s) + tag(:br) %>
+        <% end -%>
+      <% else -%>
+          <%=h t '.no_associated_element', :default => "-- no associated elements --" %>
+      <% end -%>
+    </td>
+    <td><%= delete_link [@entity, property] %></td>
+  </tr>
+<% end %>
+</table>
+

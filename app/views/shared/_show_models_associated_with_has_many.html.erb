@@ -1,0 +1,17 @@
+<% property_name = property.name.tableize.singularize %>
+<%# entity_term = entity_terms.first %>
+<% current_object = instance_variable_get :"@#{controller_name.singularize}" %>
+
+<tr>
+  <th><%= t("activerecord.models.#{property.name}", :count => 1) %>:</th>
+  <td>
+  <% if entity_terms.any? %>
+    <% entity_terms.compact.each do |entity_term| %>
+    - <%= h entity_term.term_translation_coalesce %><br />
+    <% end %>
+  <% else %>
+    <span class="blank-record">[<%= t(:blank_record, :scope => :application) %>]</span>
+  <% end %>
+  </td>
+</tr>
+

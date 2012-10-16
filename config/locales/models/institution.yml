@@ -1,0 +1,48 @@
+---
+en:
+  activerecord:
+    models:
+      institution:
+        one: "%{count} Institution"
+        other: "%{count} Institutions"
+    attributes:
+      institution:
+        id: "ID"
+        address: "Address"
+        created_at: "Created at"
+        email: "E-mail"
+        is_active: "Active"
+        name: "Name"
+        original_objects_count: "Number of original objects"
+        phone: "Phone number"
+        projects_count: "Number of projects"
+        updated_at: "Updated at"
+        url: "URL"
+        user_id: "User"
+        user: "User"
+        uuid: "Identifier"
+        sbn: "SBN identifier"
+it:
+  activerecord:
+    models:
+      institution:
+        one: "%{count} Istituzione"
+        other: "%{count} Istituzioni"
+    attributes:
+      institution:
+        id: "ID"
+        address: "Indirizzo"
+        created_at: "Creazione"
+        email: "E-mail"
+        is_active: "Attivo"
+        name: "Nome"
+        original_objects_count: "Numero di oggetti originali"
+        phone: "Telefono"
+        projects_count: "Numero di progetti"
+        updated_at: "Aggiornamento"
+        url: "URL"
+        user_id: "Utente"
+        user: "Utente"
+        uuid: "Identificativo"
+        sbn: "Anagrafe SBN"
+

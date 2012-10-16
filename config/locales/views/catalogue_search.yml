@@ -1,0 +1,80 @@
+---
+en:
+  catalogue_search:
+    defaults: &defaults
+      go_import: "Import"
+      unimarc_text: "Paste UNIMARC record here"
+      paste_unimarc_text: "Paste UNIMARC record"
+      use_search_form: "Back to search form"
+      refine_search: "Refine search"
+      no_results: "No records found or too generic search, refine your search."
+      refine_search_message: "If you didn't find what you're looking for, refine your search."
+      back_to_original_objects: "Back to original objects' list"
+    new:
+      page_title: "Import bibliographic record"
+      intro: "Interroga il catalogo OPAC SBN attraverso il protocollo Z39-50 oppure, se disponi di un record in formato UNIMARC, importa il record direttamente."
+      <<: *defaults
+    form:
+      bid: "SBN ID"
+      bid_hint: "( i.e. IT\\ICCU\\SBL\\0063593 )"
+      isbn: "ISBN"
+      author: "Author"
+      title: "Title"
+      date: "Date"
+      date_publication: "Publication date"
+      date_publication_hint: "(only digits, i.e. 1844)"
+      publisher: "Publisher"
+      institution_directory_id: "Institution"
+      only_your_institution: "only your institution (%{institution_code})"
+      all_institutions: "all institutions"
+      specify_an_institution_id: "specify the institution code"
+      server: "Server"
+      submit: "Search"
+      searching: "Search in progress"
+      cancel: "Cancel"
+      <<: *defaults
+    text_form:
+      <<: *defaults
+    results:
+      page_title: "SBN search results"
+      <<: *defaults
+it:
+  catalogue_search:
+    defaults: &defaults
+      go_import: "Importa"
+      unimarc_text: "Incolla il record UNIMARC"
+      paste_unimarc_text: "Incolla il record UNIMARC"
+      use_search_form: "Torna al modulo di ricerca"
+      refine_search: "Raffina la ricerca"
+      no_results: "Nessun risultato o ricerca troppo generica, raffina la ricerca."
+      refine_search_message: "Se non hai trovato il record che stavi cercando, <a href=\"#nogo\" class=\"refine-search\">raffina la ricerca</a>."
+      back_to_original_objects: "Torna alla lista oggetti originali"
+    new:
+      page_title: "Importa record bibliografico"
+      intro: "Interroga il catalogo OPAC SBN attraverso il protocollo Z39-50 oppure, se disponi di un record in formato UNIMARC, importa il record direttamente."
+      <<: *defaults
+    form:
+      bid: "Identificativo SBN"
+      bid_hint: "( es. IT\\ICCU\\SBL\\0063593 )"
+      isbn: "ISBN"
+      author: "Autore"
+      title: "Titolo"
+      date: "Data"
+      date_publication: "Data di pubblicazione"
+      date_publication_hint: "(solo cifre, es. 1844)"
+      publisher: "Editore"
+      institution_directory_id: "Istituzione"
+      only_your_institution: "solo nella tua istituzione (%{institution_code})"
+      all_institutions: "in tutte le istituzioni"
+      specify_an_institution_id: "specifica il codice SBN dell'istituzione"
+      server: "Server"
+      submit: "Cerca"
+      searching: "Ricerca in corso"
+      cancel: "Annulla"
+      <<: *defaults
+    text_form:
+      <<: *defaults
+    results:
+      page_title: "Risultati della ricerca nel catalogo SBN"
+      <<: *defaults
+

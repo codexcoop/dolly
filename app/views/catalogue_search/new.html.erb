@@ -1,0 +1,24 @@
+<% content_layout "t1" %>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'catalogue_search_form' %>
+<% end -%>
+
+<div id="heading">
+  <div id="links"><%= link_to t('.back_to_original_objects'), original_objects_path%></div>
+  <h2><%= t('.page_title') %></h2>
+</div>
+
+<%= generic_error_message flash[:alert] %>
+
+<p><%= t('.intro') %></p>
+
+<div id="catalogue-search">
+  <p class="toggler">
+    <a href="#nogo" class="toggle-catalogue-form first"><%= t('.paste_unimarc_text') %></a>
+    <a href="#nogo" class="toggle-catalogue-form second"><%= t('.use_search_form') %></a>
+  </p>
+  <%= render :partial => 'text_form' %>
+  <%= render :partial => 'form' %>
+</div>
+

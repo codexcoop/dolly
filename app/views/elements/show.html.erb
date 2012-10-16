@@ -1,0 +1,119 @@
+<p>
+  <b>Name:</b>
+  <%=h @element.name %>
+</p>
+
+<p>
+  <b>Metadata standard:</b>
+  <%=h @element.metadata_standard_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @element.name %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%=h @element.section %>
+</p>
+
+<p>
+  <b>Section description:</b>
+  <%=h @element.section_description %>
+</p>
+
+<p>
+  <b>Entity:</b>
+  <%=h @element.entity_id %>
+</p>
+
+<p>
+  <b>Cardinality:</b>
+  <%=h @element.cardinality %>
+</p>
+
+<p>
+  <b>Requirement:</b>
+  <%=h @element.requirement %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @element.position %>
+</p>
+
+<p>
+  <b>Datatype:</b>
+  <%=h @element.datatype %>
+</p>
+
+<p>
+  <b>Vocabulary:</b>
+  <%=h @element.vocabulary_id %>
+</p>
+
+<p>
+  <b>Human en:</b>
+  <%=h @element.human_en %>
+</p>
+
+<p>
+  <b>Description en:</b>
+  <%=h @element.description_en %>
+</p>
+
+<p>
+  <b>Human it:</b>
+  <%=h @element.human_it %>
+</p>
+
+<p>
+  <b>Description it:</b>
+  <%=h @element.description_it %>
+</p>
+
+<p>
+  <b>Is user editable:</b>
+  <%=h @element.is_user_editable %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%=h @element.visibility_id %>
+</p>
+
+<p>
+  <b>Example:</b>
+  <%=h @element.example %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @element.notes %>
+</p>
+
+<p>
+  <b>Italian version notes:</b>
+  <%=h @element.italian_version_notes %>
+</p>
+
+<p>
+  <b>Official vocabulary lists:</b>
+  <%=h @element.official_vocabulary_lists %>
+</p>
+
+<p>
+  <b>Other suggested lookups:</b>
+  <%=h @element.other_suggested_lookups %>
+</p>
+
+<p>
+  <b>User tags:</b>
+  <%=h @element.user_tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_metadata_standard_element_path(@metadata_standard, @element) %> |
+<%= link_to 'Back', metadata_standard_elements_path(@metadata_standard) %>
+

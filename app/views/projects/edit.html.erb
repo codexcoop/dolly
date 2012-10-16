@@ -1,0 +1,9 @@
+<h2><%= t '.page_title' %></h2>
+
+<%= render :partial => "form" %>
+
+<div class="actions">
+  <%= link_to t('.show_link'), @project %> |
+  <%= link_to t('.back_link'), projects_path %>
+</div>
+

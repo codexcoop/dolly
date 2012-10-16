@@ -1,0 +1,173 @@
+--- 
+it: 
+  help: 
+    institution: 
+      name: The name of the institution. The name of the institution should be provided in full. Acronyms and abbreviations must not be used.
+      contact_person_name: This is the name of the agent or service (for example a department within an organisation).
+      region: "Region is a general concept, and can be any administrative area that is larger than a locality but smaller than a country. In the United Kingdom, region may include a devolved administration, a government region or a county. In France it may include a region or a d\xC3\xA9partement and in Italy a region or province."
+      pobox: This is the PO box number.
+      country: This is the country part of the address.
+      institution_type: This is the general activity or sector in which an institution operates, for example archive, museum, library, local community and other.
+      postal_code: This is the post-code., for example in the United Kingdom W1A 1AA.
+      url: This is the URL of the home page for an institution.
+      logo: "A link to an image file that contains the Institution\xE2\x80\x99s logo."
+      administrative_status: The general administrative status of the institution, for example public, commercial or non-profit making.
+      street: This is a generic field used for the street, the name of a building, the name of a department, room number etc.
+      acronym: "This is the acronym (or abbreviated form of an institution\xE2\x80\x99s name) that is commonly used to identify an institution. For example, the \xE2\x80\x98Museums, Libraries and Archives Council\xE2\x80\x99 is commonly abbreviated to the acronym \xE2\x80\x98MLA\xE2\x80\x99. Acronyms should be recorded where they exist and are commonly used. They should not be created for the purpose of entering data in the MICHAEL system. Acronyms may or may not form part of the Institution Identifier."
+      jurisdictions: The organisation the institution is affiliated to or sponsored by. For example, the ministry that funds an institution.
+      contact_person_fax: This is the contact fax number for the agent or service (for example a department within an organisation). The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      locality: The locality is the smallest administrative area, which is usually a town, city, ward, village or a commune, etc.
+      fax: This is the general fax number for the institution, for example the number of the switchboard or for a help/information desk. The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      contact_person_telephone: This is the contact telephone number for the agent or service (for example a department within an organisation). The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      telephone: This is the general telephone number for the institution, for example the number of the switchboard or for a help/information desk. The international dialling code must be included in the telephone number to support international use of the MICHAEL system.
+      contact_person_email: This is the contact email address for the agent or service (for example a department within an organisation).
+      identifier: This is the identifier for the institution. This identifier plays an essential role in the MICHAEL system. All entities should have a unique identifier, and this identifier should also be unique in the scope of the European instance.
+      email: Indirizzo email generale dell'istituzione, per esempio quello dei rapporti con il pubblico.
+    service: 
+      title: "This is the name of a service or product. This should provide reference to the type of service or product that is being provided. It may consist of: - title by which the service is known, e.g. the title of a website, or - the name of the collection plus the type of access that is being provided, for example: \xE2\x80\x98The works of Caravaggio: CD-ROM\xE2\x80\x99, or - the type of access, for example a print on demand service."
+      legal_status: A statement of the legal status of the product or service.
+      comment_access_condition: This is a brief note, or comments, providing more information about conditions for access to the service or product.
+      accessibilities: A statement of the characteristics of the service or product that make it accessible to users. For example the availability of a speech enabled browser (for an offline service).
+      technical_requirement: This is a brief description on the technical requirements for accessing a service or product. For example the plug-ins that a user would require to use a service.
+      access_condition: This is a general indication of any conditions on access to the service or products, for example free, charged for, restricted etc.
+      access_location_description: This is a short description of the means of accessing a service or product. In the case of an analogue product or an off-line service, it is recommended that all of the relevant information should be provided in this field.
+      audiences: The intended audience for whom the product or service has been designed.
+      protocols: This is the communication protocol, for example Z39.50, OAI-PMH, ZING, etc.
+      languages: The language(s) in which the product or service is made available.
+      technical_description: "This is a link to an external description that provides information about how a remote access service is configured, such as the available inputs and outputs. For example, a link to the specification for an institution\xE2\x80\x99s Z target."
+      description: "This is a short description of the content of a product or service and the functions that are being provided. It should add to the information provided in the title. For example \xE2\x80\x9Cthis web-site allows users to search and browse the collections database of the Museum\xE2\x80\x9D. It should not replicate the description of the content of the collection."
+      access_types: This is the general type of service or product that is available. This should include online, offline, hard-copy, print-on-demand and so on.
+      outputs: This is the output format from a service, for example the output format of an OAI target might be XML.
+      access_location_locator: A locator, such as an URL, of the access-point for the service or product.
+      identifier: This is the identifier for the service or product. This identifier plays an essential role in the MICHAEL system. All entities should have a unique identifier, and this identifier should also be unique in the scope of the European instance. The identifier could consist of a country code followed by a unique identifier for the product or service.
+      wai: This is the level of conformance to WAI specifications of the service or product, for example A, AA, AAA.
+      maintenance: This is a general indication of the maintenance status of the product or service, for example ongoing (live), complete, regular update and so on.
+    digital_collection: 
+      periods: "Periodo coperto dai materiali contenuti nella collezione digitale, per esempio Neolitico o Et\xC3\xA0 del bronzo.\r\n"
+      start_date: "Datazione approssimativa dell\xE2\x80\x99oggetto pi\xC3\xB9 antico riprodotto dalla collezione digitale, espressa convenzionalmente in anni. Per esempio, sar\xC3\xA0 1401 per le collezioni datate \xE2\x80\x9Cquindicesimo secolo\xE2\x80\x9C."
+      illustration_title: Titolo dell'illustrazione collegata alla collezione digitale.
+      famous_events: "Eventi famosi (o particolarmente interessanti) implicati nella collezione digitale, per esempio Battaglia di Waterloo. Lo scopo di questo campo \xC3\xA8 di registrare gli eventi universalmente noti, non va pertanto impiegato per elencare tutti gli eventi associati alla collezione."
+      digital_formats: "Caratteristiche digitali della collezione, ovvero i formati in essa contenuti. Pi\xC3\xB9 specifico rispetto a \"Tipo di documento digitale\".\r\n"
+      size: "Stima delle dimensioni di una collezione. Serve ad offrire agli utenti finali un\xE2\x80\x99idea approssimativa delle proporzioni di una collezione digitale."
+      accrual_periodicities: "Presentazione della periodicit\xC3\xA0 di incremento (irregolare, periodico). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere\r\n\
+        l\xE2\x80\x99evoluzione delle risorse aggregate."
+      content_types: Tipo di contenuto della collezione digitale.
+      legal_status: Dichiarazione della situazione dei diritti sulla collezione digitale.
+      title: "Titolo della collezione digitale. Il titolo deve offrire un riferimento significativo per la collezione digitale, e dovrebbe essere unico almeno nell\xE2\x80\x99ambito di una istituzione. In questo campo non si dovrebbero usare acronimi e abbreviazioni."
+      accrual_policies: "Presentazione della politica di incremento della collezione (chiusa, passiva, attiva, parziale/selettiva). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate.\r\n"
+      accrual_methods: "Presentazione del metodo di incremento (acquisto, deposito). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate."
+      standards: |
+        Presentazione degli standard descrittivi o terminologici adottati per la creazione dei metadati associati agli oggetti della collezione digitale.
+
+      civilisations: |
+        Cultura o popolo che costituisce il tema della collezione digitale, per esempio Islamica o Ebraica, Villanoviana o Etrusca.
+
+      access_control: "Enunciazione di ogni restrizione dell\xE2\x80\x99accesso alla collezione. Pu\xC3\xB2 essere usato quando, ad esempio, l\xE2\x80\x99accesso alla collezione \xC3\xA8 precluso per un certo periodo di tempo o laddove l\xE2\x80\x99accesso \xC3\xA8 ristretto a una particolare categoria di utenti. Questa informazione non \xC3\xA8 per uso pubblico, ma \xC3\xA8 inserita come riferimento per l\xE2\x80\x99istituzione che possiede o gestisce la collezione."
+      famous_objects: "Oggetti di particolare notoriet\xC3\xA0 o star item coinvolti nella collezione digitale. Questo campo \xC3\xA8 destinato a essere usato soprattutto da istituzioni culturali di piccole e medie dimensioni. Dovrebbe essere compilato quando la collezione comprende uno o due oggetti di eccezionale interesse, che altrimenti non emergerebbero attraverso l\xE2\x80\x99indicizzazione per soggetto. Non si deve usare il campo per fornire un elenco di tutti gli oggetti della collezione."
+      creators: "Autore dell\xE2\x80\x99illustrazione, come ad esempio il fotografo che ha scattato un\xE2\x80\x99immagine."
+      famous_places: "Luoghi famosi (o particolarmente interessanti) che riguardano la collezione digitale, per esempio il monte Fuji. Lo scopo di questo campo \xC3\xA8 registare luoghi notevoli. Non va confuso con il campo \"Copertura geografica\" e non deve essere utilizzato per registrare tutti i luoghi conosciuti associati alla collezione.\r\n"
+      database: Database che descrive gli oggetti contenuti nella collezione.
+      languages: Lingua dei materiali contenuti nella collezione digitale.
+      description: |
+        Descrizione a testo libero della collezione digitale. Dovrebbe fornire informazioni aggiuntive rispetto a quelle contenute nel titolo.
+
+      famous_people: "Personaggi famosi (o particolarmente interessanti) coinvolti nella collezione digitale. Lo scopo di questo campo \xC3\xA8 registrare personalit\xC3\xA0 eminenti. Non va utilizzato per registrare tutti i personaggi conosciuti associati alla collezione."
+      spatial_coverages: "Copertura territoriale degli oggetti della collezione digitale. Il sistema offre un elenco internazionale di paesi e regioni in modo tale da porre le basi per ricerche multinazionali. \xC3\x88 possibile fornire un elenco pi\xC3\xB9 dettagliato di aree amministrative regionali e locali.\r\n"
+      digital_types: "Tipo generale della collezione digitale. Per esempio: una collezione di testi, di immagini, di risorse interattive o di file audio. Include le collezioni virtuali."
+      end_date: "Datazione approssimativa dell\xE2\x80\x99oggetto pi\xC3\xB9 recente riprodotto dalla collezione digitale, espressa convenzionalmente in anni. Per esempio, sar\xC3\xA0 1500 per collezioni datate \xE2\x80\x9Cquindicesimo secolo\xE2\x80\x9C.\r\n"
+      illustration_legal_status: "Dichiarazione dei diritti associati all\xE2\x80\x99illustrazione della collezione digitale."
+      identifier: "Identificatore univoco della collezione digitale nel sistema. Gioca un ruolo fondamentale nel sistema. Tutti i record devono avere un identificatore unico, ed esso deve essere unico anche in ambito europeo. L\xE2\x80\x99identificatore \xC3\xA8 apposto automaticamente dal sistema."
+      subjects: Tema o idea comune agli oggetti della collezione digitale.
+    project: 
+      fundings: Indicazione generale del tipo di finanziamento di cui beneficia il progetto o programma.
+      start_date: Data orientativa di inizio del progetto o programma.
+      title: "Titolo del progetto o programma. Deve essere scritto per esteso, evitando acronimi e abbreviazioni, perch\xC3\xA9 lo scopo \xC3\xA8 fornire un\xE2\x80\x99informazione comprensibile per il pubblico.\n"
+      logo: "Link a un\xE2\x80\x99immagine che contiene il logo del progetto o programma."
+      url: URL della home page del progetto o programma.
+      acronym: Forma abbreviata del titolo del progetto o programma.
+      digitisation_process: |
+        Indicazione generale delle caratteristiche tecniche del progetto o programma e dei procedimenti adottati per la digitalizzazione.
+
+      fax: "Numero di fax per contattare il referente. Il prefisso telefonico internazionale deve essere incluso nel numero, per consentire l\xE2\x80\x99uso del dato a livello internazionale."
+      description: Breve descrizione del progetto o programma. Dovrebbe offrire informazioni aggiuntive rispetto a quelle contenute nel titolo.
+      telephone: "Numero di telefono per contattare il referente. Il prefisso telefonico internazionale deve essere incluso nel numero, per consentire l\xE2\x80\x99uso del dato a livello internazionale.\r\n"
+      contact_person_email: Indirizzo email per contattare il referente.
+      completion_date: |
+        Data orientativa o prevista per la conclusione del progetto o programma, quando nota.
+
+      status: |
+        Indicazione generale dello stato di avanzamento del progetto o programma.
+
+      agent_name: Nome del referente
+      identifier: "Identificatore univoco del progetto o programma nel sistema. Gioca un ruolo fondamentale all\xE2\x80\x99interno del sistema."
+      email: "Indirizzo email del progetto o programma, per esempio l\xE2\x80\x99indirizzo email di un ufficio informazioni o di un helpdesk.\r\n"
+    original_object: 
+      physical_description: "Dimensione o durata della risorsa. Pu\xC3\xB2 includere la dimensione o la durata dell'oggetto digitale o dell'oggetto originale."
+      isbn: ""
+      title: "Nome o titolo della risorsa (oggetto originale), quello con cui la risorsa \xC3\xA8 comunemente e formalmente identificata."
+      rights: "Informazioni sui diritti correlati con la risorsa, quindi i diritti di propriet\xC3\xA0 intellettuale, diritti di accesso, o accordi di licenza. Possono essere riferiti sia all'oggetto originale che all'oggetto digitale."
+      publishers: "Nome dell'editore dell'opera originale, un'entit\xC3\xA0 responsabile di rendere disponibile la risorsa. Pu\xC3\xB2 essere per esempio una persona, un'organizzazione, un servizio."
+      contributors: "Il soggetto o i soggetti che hanno contribuito in via secondaria alla creazione dell'opera originale. Si pu\xC3\xB2 trattare di una persona, un'organizzazione, un servizio."
+      coverages: "Il riferimento spaziale o temporale della risorsa, l'applicabilit\xC3\xA0 spaziale della risorsa o la giurisdizione sotto cui la risorsa \xC3\xA8 rilevante. Pu\xC3\xB2 essere il nome di un luogo, una posizione, una coordinata spaziale, un periodo, una data, un intervallo di date o il nome di un'entit\xC3\xA0 amministrativa. Si intende un riferimento geografico o cronologico dell'oggetto origininale. \xC3\x88 preferibile specificare maggiormente l'informazione quando possibile."
+      creators: "Soggetto o i soggetti che hanno prodotto l'opera originale. Si pu\xC3\xB2 riferire a una persona, un'organizzazione, un servizio."
+      issn: ""
+      bid: Identificativo assegnato dall'Istituto Centrale per il Catalogo Unico delle biblioteche italiane e per le informazioni bibliografiche (ICCU).
+      types: "Natura o genere dell'oggetto originale. Sebbene ci si possa riferire a categorie generali, funzioni, generi, o livelli di aggregazione del contenuto (fotografia, pittura, scultura, architettura, etc.), per garantire la compatibilit\xC3\xA0 con Europeana questi termini devono poi essere riferiti alle tipologie TEXT, IMAGE, SOUND and VIDEO."
+      languages: "Lingua associata alla risorsa (oggetto digitale), non quella dei suoi metadati. Pu\xC3\xB2 essere la lingua o le lingue presenti in un'immagine (un poster, un quotidiano...), la lingua parlata in un video o in una registrazione audio. Se non ci sono aspetti linguistici correlati con l'oggetto digitale, questo campo pu\xC3\xB2 essere ignorato."
+      unstored: Altre informazioni rilevanti ai fini dell'indicizzazione dei contenuti, per le quali non sono previsti campi specifici.
+      description: Descrizione generale dell'opera originale.
+      subjects: Tema dell'opera originale.
+      identifier: Riferimento univoco all'opera originale, all'interno di un determinato contesto.
+      string_date: "Data nel formato in cui \xC3\xA8 riportata nelle informazioni bibliografiche (ad es. 1697 oppure [1832])"
+    physical_collection: 
+      size: An evaluation of the size of the collection. This is intended to provide information for users of the MICHAEL system about the size of the physical collection.
+      physical_formats: The physical characteristics of the collection.
+      title: The title of the physical collection. The title should provide a meaningful point of reference to the physical collection, and preferably it should be unique, at least within an institution. Acronyms and abbreviations should not be used in this field.
+      accrual_periodicity: ""
+      standards: A statement of any descriptive or terminology standards that were used in creating the item level metadata associated with the physical collection.
+      accrual_policy: ""
+      abstract: A free text description of the physical collection. This should add to the information provided in the title.
+      accrual_method: ""
+      languages: The language of the material contained in the physical collection.
+      identifier: This is the identifier for the physical collection. This identifier plays an essential role in the MICHAEL system. All entities should have a unique identifier, and this identifier should also be unique in the scope of the European instance.
+    digital_object: 
+      uri: "URI univoca per identificare la risorsa all'interno del sistema. \r\n\
+        Nell'ambito di Europeana questo \xC3\xA8 anche l'identificativo del record riferito all'oggetto, e viene ricavato sulla base dei metadati."
+      is_shown_at: "URL della pagina informativa dell'oggetto digitale, all'interno del sito web del fornitore di contenuti. \xC3\x88 la pagina completa di tutto il contesto informativo, per esempio la visualizzazione di una scheda.\r\n\
+        Sar\xC3\xA0 attiva nell'interfaccia di Europeana.\r\n\
+        Obbligatorio fornire almeno una delle due URL (tra la URL diretta e la URL della pagina informativa)."
+      years: "Anno o intervallo di alcuni anni associato con un evento che ha interessato l'opera originale. Normalmente derivato da dc:date, ma non \xC3\xA8 possibile derivarlo automaticamente (a causa delle diverse modalit\xC3\xA0 in cui \xC3\xA8 espressa la dimensione temporale per gli oggetti temporali). \xC3\x88 importante specificarlo affinch\xC3\xA9 l'oggetto digitale compaia nelle serie temporale."
+      country: "Il paese viene ricavato automaticamente dalle informazioni contenute nell'authority file dei fornitori di contenuti di Europeana. Non \xC3\xA8 richiesto che i fornitori di contenuti forniscano questa informazione separatamente. Il nome del paese dovrebbe essere conforme allo standard ISO 3166 (http://www.iso.org/iso/english_country_names_and_code_elements)."
+      rights: "Informazioni sui diritti correlati con la risorsa, quindi i diritti di propriet\xC3\xA0 intellettuale, diritti di accesso, o accordi di licenza. Possono essere riferiti sia all'oggetto originale che all'oggetto digitale."
+      formats: "Formato del file dell'oggetto digitale (o anche dell'oggetto originale quando questo \xC3\xA8 esso stesso di natura digitale). Per la descrizione si fa riferimento ai \"MIME types\" (Internet Media Types)."
+      type: "Tipo generale della risorsa, classificato con uno dei seguenti tipi: TEXT, IMAGE, SOUND and VIDEO. Questa informazione deve essere coerente con i tipi dichiarati per l'oggetto originale."
+      is_shown_by: "URL diretta dell'oggetto digitale, nella versione a massima risoluzione/qualit\xC3\xA0. Si intende l'indirizzo dell'oggetto digitale stesso, in modo che sia ragionevolmente indipendente da qualsiasi pagina web. Verr\xC3\xA0 utilizzato per incorporare l'oggetto in pagine diverse da quelle del sito del fornitore di contenuti (embedding). \xC3\x88 obbligatorio fornire almeno una delle due URL (tra la URL diretta e la URL della pagina informativa)."
+      languages: "Lingua ufficiale del paese di residenza del fornitore di contenuti. Viene derivata automaticamente sulla base dell'authority file. Non \xC3\xA8 necessario fornire questa informazione."
+      thumbnail_url: "URL non ambigua (non URI) di un'immagine di anteprima generata dal sistema quando l'oggetto digitale \xC3\xA8 composto per esempio di TIFF, JPEG o PDF, utile per identificare la risorsa (l'oggetto digitale)."
+      unstored: Altre informazioni rilevanti ai fini dell'indicizzazione dei contenuti, per le quali non sono previsti campi specifici.
+      identifier: Riferimento univoco dell'oggetto digitale all'interno di questa applicazione.
+      source: "Risorse dalle quali l'oggetto digitale in questione \xC3\xA8 stato derivato in tutto o in parte. Possono essere riferimenti, o i nomi dei proprietari dei contenuti."
+      provider: "Nome dell'organizzazione che conserva l'oggetto digitale, e che quindi invia i dati a Europeana. Non \xC3\xA8 n\xC3\xA9 l'istituzione che possiede l'oggetto originale, n\xC3\xA9 l'istituzione che conserva l'oggetto originale.\r\n\
+        Nell'ambito di Europeana \xC3\xA8 un elemento per uso interno, i valori sono controllati dall'authority file di Europeana.  "
+    right: 
+      rights_basis: ""
+      statute_information_determination_date: The date that the determination was made that the statute authorized the permission(s) noted. The permission in question may be the subject of some interpretation. These assessments are made within a specific context and at a specific time. At another time the context, and therefore the assessment, could change. For this reason it can be important to record the date of the decision.
+      linking_object_identifiers: The identifier on an object associated with the rights statement. Rights statements must be associated with the objects to which they pertain, either by linking from the rights statement to the object(s) or by linking from the object(s) to the rights statement. This provides the mechanism for the link from the rights statement to an object.  linkingObjectIdentifier is optional because in some cases it will be more practical to link from the object(s) to the rights statement; for example, a repository may have a single rights statement covering thousands of public domain objects.
+      copyright_status: Information about the copyright status of the object(s).
+      statute_note: "Additional information about the statute. Example: Applicability to web-published content sent for review by general counsel 9/19/2008."
+      restriction: "A condition or limitation on the act. Examples: No more than three Allowed only after one year of archival retention has elapsed Rightsholder must be notified after completion of act"
+      license_term: 
+      term_of_grant_end_date: The time period for the permissions granted (end)
+      copyright_note: "Examples: Copyright expiration expected in 2010 unless renewed. Copyright statement is embedded in file header."
+      statute_jurisdiction: The country or other political body enacting the statute. The connection between the object and the rights granted is based on jurisdiction. Data constraint Values should be taken from a controlled vocabulary.
+      rights_statement_identifier: to be system generated no global scheme or standard for these identifiers not repeatable unique within the repository
+      term_of_grant_start_date: The time period for the permissions granted (beginning)
+      act: The action the preservation repository is allowed to take. It is up to the preservation repository to decide how granular the controlled vocabulary should be. It may be useful to employ the same controlled values that the repository uses for eventType.
+      copyright_jurisdiction: ""
+      linking_agent_identifiers: Identification of one or more agents associated with the rights statement. Rights statements may be associated with related agents, either by linking from the rights statement to the agent(s) or by linking from the agents(s) to the rights statement. This provides the mechanism for the link from the rights statement to the agent.  linkingAgentIdentifier is optional because a relevant agent may be unknown, or in no agent may be relevant. The latter is likely when the rights basis is statute.
+      license_identifier: This semantic unit is intended to refer to a document recording the granting of permission. For some repositories this may be a formal signed contract with a customer. If the granting agreement is verbal, this could point to a memo by the repository documenting the verbal agreement.  The identifier is optional because the agreement may not be stored in a repository with an identifier. In the case of a verbal agreement, for example, the entire agreement may be included or described in the licenseTerms.
+      statute_citation: "An identifying designation for the statute. Examples: Legal Deposit (Jersey) Law 200- National Library of New Zealand (Te Puna M\xC4\x81tauranga o Aotearoa) Act 2003 no 19 part 4 s 34"
+      copyright_status_determination_date: The date that the copyright status recorded in copyrightStatus was determined.
+      license_note: Information about the terms of the license should go in licenseTerms. licenseNotes is intended for other types of information related to the license, such as contact persons, action dates, or interpretations. The note may also indicate the location of the license, for example, if it is available online or embedded in the object itself.
+      linking_agent_role: The role of the agent in relation to the rights statement.
+      rights_granted_note: This semantic unit may include a statement about risk assessment, for example, when a repository is not certain about what permissions have been granted.

@@ -1,0 +1,53 @@
+<% form_for @user do |f| %>
+
+<%= generic_error_message_for @user %>
+
+      <p>
+        <%= label_with_markers :property => 'institution_id', :f => f, :requirement => 'mandatory' %><br />
+        <%= institution_select_for_user(f, @user, @institutions, 'mandatory') %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'role_id', :f => f, :requirement => 'mandatory' %><br />
+        <%= role_select_for_user(f, @user, @roles, 'mandatory') %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'login', :f => f, :requirement => 'mandatory', :error_message => true %><br />
+        <%= f.text_field :login %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'first_name', :f => f, :requirement => 'mandatory' %><br />
+        <%= f.text_field :first_name %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'last_name', :f => f, :requirement => 'mandatory' %><br />
+        <%= f.text_field :last_name %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'email', :f => f, :requirement => 'mandatory', :error_message => true %><br />
+        <%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'password', :f => f, :requirement => 'mandatory', :error_message => true %><br />
+        <%= f.password_field :password %>
+      </p>
+
+      <p>
+        <%= label_with_markers :property => 'password_confirmation', :f => f, :requirement => 'mandatory' %><br />
+        <%= f.password_field :password_confirmation %>
+      </p>
+
+      <p>
+        <%= f.submit t(@user.new_record? ? '.save' : '.update'), :class => "submit" %>
+      </p>
+
+<% end %>
+
+<% if is_admin? -%>
+  <div class="actions"><%= link_to t('.back_link'), users_path %></div>
+<% end -%>

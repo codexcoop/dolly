@@ -1,0 +1,32 @@
+<%# Partial rendered via response to ajax call %>
+<%# TODO: I18n %>
+<% if @original_objects_preview_list.empty? %>
+  <p>Nessun risultato</p>
+<% else %>
+  <% @original_objects_preview_list.each do |original_object| %>
+    <%# FIXME: one table per form, a table cannot contain elements other than table elements %>
+    <% form_tag({:controller => 'original_objects', :action => 'create_association', :id => @current_original_object.id}, {:method => 'PUT'}) do %>
+      <table class="show">
+        <tr>
+          <th>
+            <%= select_tag("association[qualifier]", options_for_select(Unimarc::UNIMARC_LINK_FIELDS.map{|field, field_hash| [field_hash[:description][I18n.locale.to_sym], field]}.sort_by{|opt|opt[1]}, selected = nil)) %>
+          </th>
+          <td>
+            <%= "#{original_object.title}" %>
+            <%= "[#{original_object.bid}]" if original_object.bid? %>
+            <% if original_object.main_association_qualifier.present? %>
+              <br /><em><%= original_object.main_association_qualifier.description(I18n.locale) %></em>:
+              <%= original_object.main_related_title %>
+            <% end %>
+          </td>
+          <td class="link-cell">
+              <%= submit_tag "+ collega", :class => 'submit', :style => "margin-top: 0px;" %>
+              <%= hidden_field_tag("association[original_object_id]", @current_original_object.id) %>
+              <%= hidden_field_tag("association[related_original_object_id]", original_object.id) %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  <% end %>
+<% end %>
+

@@ -1,0 +1,46 @@
+
+<% if current_user_can?(:create, :original_object) && action_name == "index" %>
+  <p>
+    <%= link_to t('.insert_new'), new_original_object_path, :class => "new" %>
+  </p>
+<!--
+    <span><%#= t :or_text, :scope => :application %></span>
+-->
+  <p>
+    <%= link_to t('.catalogue_search'), new_catalogue_search_path, :class => "new" %>
+  </p>
+<% end %>
+
+<% if action_name == 'associations' %>
+  <%= link_to "Torna all'oggetto originale", original_object_path(@original_object) %>
+<% end %>
+
+<% if ["index", "new"].not_include?(action_name) %>
+  <% if @digital_objects_count && @digital_objects_count > 0 %>
+    <p>
+      <%= link_to_digital_objects_for(@original_object) %>
+      <%#= auth_nested_link  t('.linked_digital_objects', :count => @original_object.digital_objects.size),
+                            @original_object,
+                            :digital_object,
+                            :index %>
+    </p>
+  <% elsif @digital_objects_count && @digital_objects_count == 0 %>
+    <p><%= t '.no_linked_digital_objects' %></p>
+  <% end %>
+
+  <% if action_name == "show" && @digital_collections_count && @digital_collections_count > 0 && @original_object.is_not_top_level? %>
+    <p>
+      <%= auth_nested_link  t('.new_linked_digital_object'),
+                            @original_object,
+                            :digital_object,
+                            :new %>
+    </p>
+  <% end %>
+<% end %>
+
+<% unless action_name == "index" %>
+  <p>
+    <%= link_to t('.back_link'), original_objects_path  %>
+  </p>
+<% end %>
+

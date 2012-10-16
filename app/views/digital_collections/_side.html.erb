@@ -1,0 +1,46 @@
+
+<% if current_user_can?(:create, :digital_collection) && action_name == "index" %>
+  <p>
+    <%= link_to t('.insert_new'), new_digital_collection_path, :class => "new" %>
+  </p>
+<% end %>
+
+<% if ["index", "new"].not_include?(action_name) && @digital_collection %>
+  <% if @digital_objects_count && @digital_objects_count > 0 %>
+    <p>
+      <%= auth_nested_link  t('.linked_digital_objects', :count => @digital_objects_count),
+                            @digital_collection,
+                            :digital_object,
+                            :index %>
+    </p>
+  <% elsif @digital_objects_count && @digital_objects_count == 0 %>
+    <p><%= t '.no_linked_digital_objects' %></p>
+  <% end %>
+
+  <% if @original_objects_count && @original_objects_count > 0 %>
+    <p>
+      <%= auth_nested_link  t('.linked_original_objects', :count => @original_objects_count),
+                            @digital_collection,
+                            :original_objects,
+                            :index %>
+    </p>
+  <% elsif @original_objects_count && @original_objects_count == 0 %>
+    <p><%= t '.no_linked_original_objects' %></p>
+  <% end %>
+
+  <% if action_name == "show" && current_user.institution.original_objects.size > 0 %>
+    <p>
+      <%= auth_nested_link  t('.new_linked_digital_object'),
+                            @digital_collection,
+                            :digital_object,
+                            :new %>
+    </p>
+  <% end %>
+<% end %>
+
+<% unless action_name == "index" %>
+  <p>
+    <%= link_to t('.back_link'), digital_collections_path  %>
+  </p>
+<% end %>
+

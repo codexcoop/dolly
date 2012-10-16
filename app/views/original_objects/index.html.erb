@@ -1,0 +1,68 @@
+<% content_layout "t1" if @original_objects.size == 0 %>
+
+<div id="heading">
+  <div id="links">
+    <%= link_to_all :condition => (params[:institution_id].present? || params[:digital_collection_id].present?) && current_user.role.included_in?(admin, end_user) %>
+  </div>
+  <h2>
+    <%= t '.page_title' %>
+    <%# FIXME: errore quando @original_objects.blank? %>
+    <%#= "&bull; #{@original_objects.first.institution.name}" if params[:institution_id].present? && current_user.role.included_in?(admin, end_user) %>
+    <%= "&bull; #{@digital_collection.title}" if params[:digital_collection_id].present? %>
+  </h2>
+</div>
+
+<% if @original_objects.size == 0 && params[:title].blank? %>
+  <div id="intro">
+    <p><%= t(:generic, :scope => [:application, :intro_original_objects]) %></p>
+  </div>
+<% end %>
+
+<% if current_user_can?(:create, :original_object) && @original_objects.size == 0 && params[:title].blank? %>
+  <p>
+    <%= link_to t('.insert_new'), new_original_object_path, :class => "new" %>
+    <span><%= t :or_text, :scope => :application %></span>
+    <%= link_to t('.catalogue_search'), new_catalogue_search_path, :class => "new" %>
+  </p>
+<% end %>
+
+<div id="original-objects-search">
+  <%= render :partial => "shared/title_search", :locals => {:collection => @original_objects, :total_count => @total_count} %>
+</div>
+
+<% unless @original_objects.size == 0 %>
+  <table class="list">
+    <tr>
+      <th><%= sort_link_to :ordering_title, t(:title, :scope => default_i18n_views_scope), :default => true %></th>
+      <th class="updated-cell"><%= sort_link_to :updated_at, t(:updated_at, :scope => default_i18n_views_scope) %></th>
+      <th class="edit-cell">&nbsp;</th>
+      <th class="delete-cell">&nbsp;</th>
+    </tr>
+  <% @original_objects.each do |original_object| %>
+    <tr>
+      <td>
+      <p class="item-title"><%= original_object_row_title(original_object) %></p>
+      <%= original_object_row_association(original_object) %>
+      <%= admin_tag :p, original_object.institution.name unless params[:institution_id].present? %>
+      <p class="item-links"><%= link_to_digital_objects_for(original_object) %></p>
+      </td>
+      <td class="updated-cell">
+        <%= l original_object.updated_at, :format => :medium %>
+      </td>
+      <td><%= edit_link(original_object) %></td>
+      <td>
+      <%= delete_link(original_object) do |orig_obj|
+          current_user_can?(:destroy, :original_object, orig_obj) && orig_obj.dynamic_digital_objects_count == 0
+          end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<% if @original_objects.total_entries > 0 || params[:title] %>
+  <p>
+    <%= will_paginate @original_objects, :previous_label => "&laquo; precedente", :next_label => "successiva &raquo;" %>
+  </p>
+<% end %>
+

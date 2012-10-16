@@ -1,0 +1,233 @@
+---
+it:
+  activerecord:
+    models:
+      contributor:
+        one: "Responsabile secondario"
+        other: "Responsabili secondari"
+      coverage:
+        one: "Copertura spazio-temporale"
+        other: "Copertura spazio-temporale"
+      creator:
+        one: "Autore"
+        other: "Autori"
+      creator_contributor:
+        one: "Autore o collaboratore"
+        other: "Autori o collaboratori"
+      author:
+        one: "Autore o collaboratore"
+        other: "Autori o collaboratori"
+      format:
+        one: "Formato"
+        other: "Formati"
+      publisher:
+        one: "Editore"
+        other: "Editori"
+      language:
+        one: Lingua
+        other: "Lingue"
+      subject:
+        one: Soggetto (Tema)
+        other: Soggetti (Temi)
+      country:
+        one: "Paese"
+        other: "Paesi"
+      iso3166_country:
+        one: "Paese (ISO 3166)"
+        other: "Paesi (ISO 3166)"
+      object_type:
+        one: "Tipo"
+        other: "Tipi"
+      type:
+        one: "Tipo"
+        other: "Tipi"
+      user_tag:
+        one: "Tag utente"
+        other: "Tag utente"
+      accrual_method:
+        one: Metodo di incremento
+        other: "Metodi di incremento"
+      accrual_periodicity:
+        one: "Periodicit\xC3\xA0 di incremento"
+        other: "Periodicit\xC3\xA0 di incremento"
+      accrual_policy:
+        one: Politica di incremento
+        other: "Politiche di incremento"
+      civilisation:
+        one: "Civilt\xC3\xA0"
+        other: "Civilt\xC3\xA0"
+      culture:
+        one: "Cultura"
+        other: "Culture"
+      content_type:
+        one: Tipologia del contenuto
+        other: Tipologie del contenuto
+      digital_format:
+        one: Formato digitale
+        other: "Formati digitali"
+      digital_type:
+        one: Tipo di documento digitale
+        other: Tipi di documento digitale
+      digitisation_process:
+        one: Procedimento di digitalizzazione
+        other: Procedimenti di digitalizzazione
+      funding:
+        one: Tipo di finanziamento
+        other: Tipi di finanziamento
+      iso6393_language:
+        one: "Lingua (ISO-639-3)"
+        other: "Lingue (ISO-639-3)"
+      legal_status:
+        one: "Stato legale"
+        other: "Stati legali"
+      period:
+        one: Periodo
+        other: Periodi
+      status:
+        one: "Stato del progetto"
+        other: "Stati del progetto"
+      spatial_coverage:
+        one: Copertura geografica
+        other: Coperture geografiche
+      standard:
+        one: "Standard"
+        other: "Standard"
+      subject:
+        one: "Soggetto"
+        other: "Soggetti"
+      act:
+        one: "Atto"
+        other: "Atti"
+      copyright_jurisdiction:
+        one: "Giurisdizione del copyright"
+        other: "Giurisdizioni del copyright"
+      copyright_status:
+        one: "Stato del copyright"
+        other: "Stato del copyright"
+      linking_agent_role:
+        one: "Ruolo del referente"
+        other: "Ruoli del referente"
+      rights_basis:
+        one: "Base dei diritti"
+        other: "Basi dei diritti"
+      statute_jurisdiction:
+        one: "Giurisdizione dello statuto"
+        other: "Giurisdizioni dello statuto"
+      departement:
+        one: "Dipartimento"
+        other: "Dipartimenti"
+en:
+  activerecord:
+    models:
+      contributor:
+        one: "Contributor"
+        other: "Contributors"
+      coverage:
+        one: "Coverage"
+        other: "Coverages"
+      creator:
+        one: "Creator"
+        other: "Creators"
+      creator_contributor:
+        one: "Creator contributor"
+        other: "Creator contributors"
+      author:
+        one: "Creator contributor"
+        other: "Creator contributors"
+      format:
+        one: "Format"
+        other: "Formats"
+      publisher:
+        one: "Publisher"
+        other: "Publishers"
+      subject:
+        one: "Subject"
+        other: "Subjects"
+      type:
+        one: "Type"
+        other: "Types"
+      iso3166_country:
+        one: "Country"
+        other: "Countries"
+      country:
+        one: "Country"
+        other: "Countries"
+      language:
+        one: "Language"
+        other: "Languages"
+      object_type:
+        one: "Type"
+        other: "Types"
+      user_tag:
+        one: "User tag"
+        other: "User tags"
+      accrual_method:
+        one: "Accrual method"
+        other: "Accrual methods"
+      accrual_periodicity:
+        one: "Accrual periodicity"
+        other: "Accrual periodicities"
+      accrual_policy:
+        one: "Accrual policy"
+        other: "Accrual policies"
+      civilisation:
+        one: "Civilisation"
+        other: "Civilisations"
+      culture:
+        one: "Culture"
+        other: "Cultures"
+      content_type:
+        one: "Content type"
+        other: "Content types"
+      digital_format:
+        one: "Digital format"
+        other: "Digital formats"
+      digital_type:
+        one: "Digital type"
+        other: "Digital types"
+      digitisation_process:
+        one: "Digitisation process"
+        other: "Digitisation processes"
+      funding:
+        one: "Funding"
+        other: "Fundings"
+      legal_status:
+        one: "Legal status"
+        other: "Legal statuses"
+      period:
+        one: "Period"
+        other: "Periods"
+      project_status:
+        one: "Status"
+        other: "Status"
+      spatial_coverage:
+        one: "Spatial coverage"
+        other: "Spatial coverages"
+      standard:
+        one: "Standard"
+        other: "Standards"
+      subject:
+        one: "Subject"
+        other: "Subjects"
+      act:
+        one: "Act"
+        other: "Acts"
+      copyright_jurisdiction:
+        one: "Copyright jurisdiction"
+        other: "Copyright jurisdictions"
+      copyright_status:
+        one: "Copyright status"
+        other: "Copyright statuses"
+      linking_agent_role:
+        one: "Linking agent role"
+        other: "Linking agent roles"
+      rights_basis:
+        one: "Rights basis"
+        other: "Rights bases"
+      statute_jurisdiction:
+        one: "Statute jurisdiction"
+        other: "Statute jurisdictions"
+      departement:
+        one: "Department"
+        other: "Departments"
+

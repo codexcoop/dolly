@@ -1,0 +1,46 @@
+<% content_layout "t1" %>
+
+<h2><%= t('.page_title') %></h2>
+
+<% if !is_root? && count_for_current_user(:projects) == 0 -%>
+  <div id="intro">
+    <p>
+      <%= t(:my_role, :scope => "application", :role => current_user.role.name) %><br />
+      <%= t(current_user.role.name.to_sym, :scope => [:application, :intro]) %>
+    </p>
+    <div class="ahead">
+      <p><%= t(:generic, :scope => [:application, :intro_projects]) %></p>
+      <% if is_admin? -%>
+        <%= link_to t(:insert_new, :scope => [:projects, :index]), new_project_path, :class => :new %>
+      <% end -%>
+    </div>
+    <div class="ahead">
+      <p><%= t(:generic, :scope => [:application, :intro_original_objects]) %></p>
+      <%= link_to t(:insert_new, :scope => [:original_objects, :new]), new_original_object_path, :class => "new" %>
+      <span><%= t :or_text, :scope => :application %></span>
+      <%= link_to t(:catalogue_search, :scope => [:original_objects, :new]), new_catalogue_search_path, :class => "new" %>
+    </div>
+    <% if is_admin? -%>
+      <div class="ahead">
+        <p><%= t(:generic, :scope => [:application, :intro_users]) %></p>
+        <%= link_to t(:insert_new, :scope => [:users, :index]), new_user_path, :class => :new %>
+      </div>
+    <% end -%>
+  </div>
+<% else -%>
+  <div id="intro">
+    <p>
+      <%= link_to t(:project, :scope => [:activerecord, :models], :count => count_for_current_user(:projects)), projects_path %>
+    </p>
+    <p>
+      <%= link_to t(:digital_collection, :scope => [:activerecord, :models], :count => count_for_current_user(:digital_collections)), digital_collections_path %>
+    </p>
+    <p>
+      <%= link_to t(:original_object, :scope => [:activerecord, :models], :count =>  count_for_current_user(:original_objects)), original_objects_path %>
+    </p>
+    <p>
+      <%= link_to t(:digital_object, :scope => [:activerecord, :models], :count =>  count_for_current_user(:digital_objects)), digital_objects_path %>
+    </p>
+  </div>
+<% end -%>
+

@@ -1,0 +1,24 @@
+  <li class="property_<%= property.id %> already-assigned-terms">
+    <% f.fields_for :entity_terms, entity_term do |entity_term_form| -%>
+
+      <%# NEW VERSION WITH MEMOIZATION -%>
+      <% if property.vocabulary_is_user_editable && entity_term.term_is_new_record -%>
+        <%= entity_term_form.hidden_field :term_is_new_record, :value => '1' %>
+        <% entity_term_form.fields_for :term, entity_term.build_term do |term_form| %>
+          <%= term_form.hidden_field :vocabulary_id, :value => entity_term.term_vocabulary_id %>
+          <%= term_form.hidden_field :it, :value => entity_term.term_it %>
+          <%= term_form.hidden_field :en, :value => entity_term.term_en %>
+          <%= term_form.hidden_field :code, :value => entity_term.term_code %>
+          <%= term_form.hidden_field :user_id, :value => entity_term.term_user_id %>
+        <% end -%>
+      <% end -%>
+
+      <%= entity_term_form.hidden_field :term_id %>
+      <%= entity_term_form.hidden_field :vocabulary_id %>
+      <%= entity_term_form.hidden_field :property_id %>
+      <%= entity_term_form.label        :_destroy, (image_tag "icons/remove.png", :alt => "Remove this term") %>
+      <%= entity_term_form.check_box    :_destroy, :class => 'checkbox' %>
+      <%= entity_term_form.label        :_destroy, h(entity_term.term_translation_coalesce) %>
+    <% end -%>
+  </li>
+

@@ -1,0 +1,48 @@
+<% if current_user_can?(:create, :project) && action_name == "index" %>
+  <p>
+    <%= link_to t('.insert_new'), new_project_path, :class => "new" %>
+  </p>
+<% end %>
+
+<% if ["index", "new"].not_include?(action_name) && @project %>
+  <% if @digital_collections_count && @digital_collections_count > 0 %>
+    <p>
+      <%= auth_nested_link  t('.linked_digital_collections', :count => @digital_collections_count),
+                            @project,
+                            :digital_collection,
+                            :index %>
+    </p>
+  <% elsif @digital_collections_count && @digital_collections_count == 0 %>
+    <p><%= t '.no_linked_digital_collections' %></p>
+  <% end %>
+
+<%# FIXME: fa crash per troppi reindirizzamenti! Però poco utile, si può dismettere %>
+<!--
+  <%# if @digital_objects_count &&  @digital_objects_count > 0 %>
+    <p>
+      <%#= auth_nested_link  t('.linked_digital_objects', :count => @digital_objects_count),
+                            @project,
+                            :digital_object,
+                            :index %>
+    </p>
+  <%# elsif @digital_objects_count &&  @digital_objects_count == 0 %>
+    <p><%#= t '.no_linked_digital_objects' %></p>
+  <%# end %>
+-->
+
+<% if action_name == "show" %>
+    <p>
+      <%= auth_nested_link  t('.new_linked_digital_collection'),
+                            @project,
+                            :digital_collection,
+                            :new %>
+    </p>
+  <% end %>
+<% end %>
+
+<% unless action_name == "index" %>
+  <p>
+    <%= link_to t('.back_link'), projects_path  %>
+  </p>
+<% end %>
+

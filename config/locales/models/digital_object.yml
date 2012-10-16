@@ -1,0 +1,98 @@
+---
+en:
+  activerecord:
+    models:
+      digital_object:
+        one: "%{count} Digital Object"
+        other: "%{count} Digital Objects"
+    attributes:
+      digital_object:
+        original_content_type:
+          images:
+            one: "%{count} image"
+            other: "%{count} images"
+          pdf:
+            one: "%{count} PDF"
+            other: "%{count} PDFs"
+        title: 'Title'
+        institution_id: "Institution"
+        institution: "Institution"
+        project_id: "Project"
+        project: "Project"
+        created_at: "Created at"
+        description: "Description"
+        identifier: "Identifier"
+        rights: "Rights"
+        source: "Source"
+        digital_collection_id: "Collection"
+        digital_collection: "Collection"
+        digital_files_count: "Number of digital files"
+        has_related_object: "Has object"
+        is_shown_at: "Is shown at"
+        is_shown_by: "Is shown by"
+        country_id: "Country"
+        country: "Country"
+        language_id: "Language"
+        language: "Language"
+        object: "Object"
+        provider: "Provider"
+        type_id: "Type"
+        type: "Type"
+        unstored: "Unstored features"
+        uri: "URI"
+        year: "Year"
+        original_object_id: "Original object"
+        original_object: "Original object"
+        updated_at: "Updated"
+        user_id: "User"
+        user: "User"
+        completed: "Record status"
+it:
+  activerecord:
+    models:
+      digital_object:
+        one: "%{count} Oggetto digitale"
+        other: "%{count} Oggetti digitali"
+    attributes:
+      digital_object:
+        original_content_type:
+          images:
+            one: "%{count} immagine"
+            other: "%{count} immagini"
+          pdf:
+            one: "%{count} pdf"
+            other: "%{count} pdf"
+        title: "Titolo"
+        institution_id: "Istituzione"
+        institution: "Istituzione"
+        project_id: "Progetto"
+        project: "Progetto"
+        created_at: "Creazione"
+        description: "Descrizione"
+        identifier: "Identificativo"
+        rights: "Diritti"
+        source: "Fonte"
+        digital_collection_id: "Collezione"
+        digital_collection: "Collezione"
+        digital_files_count: "Numero di file digitali"
+        has_related_object: "Oggetto disponinile"
+        is_shown_at: "Disponibile all'indirizzo"
+        is_shown_by: "Disponibile sul sito"
+        country_id: "Paese"
+        country: "Paese"
+        language_id: "Lingua"
+        language: "Lingua"
+        related_object: "Oggetto"
+        provider: "Fornitore"
+        type_id: "Tipo"
+        type: "Tipo"
+        unstored: "Altre informazioni"
+        uri: "URI"
+        year: "Anno"
+        original_object_id: "Oggetto originale"
+        original_object: "Oggetto originale"
+        updated_at: "Modificato"
+        user_id: "Utente"
+        user: "Utente"
+        completed: "Stato del record"
+

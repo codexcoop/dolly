@@ -1,0 +1,52 @@
+<%# TODO: I18n in tutta la pagina %>
+  <table class="show">
+    <tr>
+      <th>Titoli collegati:</th>
+      <td>
+        <% if @original_object.related.present? %>
+          <ul>
+            <% @original_object.related.with_qualifier.each do |related| %>
+              <li>
+                <%= "[#{related.qualifier.description}]" %>
+                <%= link_to("#{related.title}", original_object_path(related)) %>
+                <%= " [#{related.bid}]" if related.bid? %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <span class="blank-record"><%= "[" + t(:blank_record, :scope => :application) + "]" %></span>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+<% if @original_object.pendent_unimarc_links? %>
+  <h4>Relazioni del record UNIMARC non salvate nel database</h4>
+  <table class="show">
+    <% @original_object.pendent_unimarc_links.each do |pendent_unimarc_link| %>
+      <tr>
+        <td>
+          <%= "[#{pendent_unimarc_link.qualifier.description(I18n.locale)}] " %>
+          <%= pendent_unimarc_link.title_and_bid %>
+        </td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<% if @original_object.missing_unimarc_links? %>
+  <h4>Relazioni del record UNIMARC con oggetti non ancora presenti nel database</h4>
+  <table class="show">
+    <% @original_object.missing_unimarc_links.each do |missing_unimarc_link| %>
+      <tr>
+        <td>
+          <%= "[#{missing_unimarc_link.qualifier.description(I18n.locale)}] " %>
+          <%= missing_unimarc_link.title_and_bid %>
+        </td>
+        <td><%= link_to "cerca nell'OPAC", search_z3950_catalogue_search_path("search[bid]" => missing_unimarc_link.bid), :method => 'POST' %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+

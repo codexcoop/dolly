@@ -1,0 +1,27 @@
+<% require 'exifr' -%>
+
+<h3><%= t :technical_metadata, :scope => [:digital_files, :show] %></h3>
+<table style="width: 600px">
+  <tr>
+    <th><%= t :metadatum_name, :scope => [:digital_files, :show] %></th>
+    <th><%= t :metadatum_value, :scope => [:digital_files, :show] %></th>
+  </tr>
+  <% technical_metadata.sort_by{|k,v| k.to_s}.each do |metadatum| -%>
+    <tr>
+      <%
+        parsed_metadatum_value = if metadatum[1].is_a? ::EXIFR::TIFF::Orientation
+          "type: #{metadatum[1].instance_variable_get(:@type).to_s}, value: #{metadatum[1].instance_variable_get(:@value).to_s}"
+        elsif metadatum[1].is_a? Rational
+          h "numerator: #{metadatum[1].numerator}, denominator: #{metadatum[1].denominator}"
+        elsif metadatum[1].is_a? Array
+          h metadatum[1].join(', ')
+        else
+          h metadatum[1].to_s
+        end
+      -%>
+      <td><%= metadatum[0] %></td>
+      <td><span><%= parsed_metadatum_value.split(/(.{100})/).reject(&:blank?).join('<br />') %></span></td>
+    </tr>
+  <% end -%>
+</table>
+

@@ -1,0 +1,58 @@
+---
+it:
+  application:
+    activate_field: "modifica"
+    blank_record: "non compilato"
+    add_new_term: "Aggiungi"
+    new: ""
+    yes_text: "Sì"
+    no_text: "No"
+    or_text: " oppure "
+    boolean_text:
+      true_value: "Sì"
+      false_value: "No"
+    delete: "Elimina"
+    edit: "Modifica"
+    please_select: "- seleziona -"
+    create_and_add: "Crea e aggiungi"
+    require_user: "Devi aver fatto il login per accedere alla pagina"
+    access_denied: "Non hai i privilegi sufficienti per accedere alla pagina"
+    confirm_deletion: "Sei sicuro di voler eliminare il record?"
+    automatic: "Assegnato automaticamente dal sistema"
+    mandatory: "Obbligatorio"
+    optional: "Facoltativo"
+    recommended: "Raccomandato"
+    my_account: "Il mio profilo"
+    logout_text: "Esci"
+    login_text: "Login"
+    user_text: "Utente"
+    login_successful: "Login effettuato con successo"
+    login_failed: "Nome utente o password non corretti. Riprova"
+    logout_successful: "Ti sei scollegato"
+    my_role: "Il tuo ruolo utente è <strong>%{role}</strong>"
+    intro:
+      institution_admin: "Per iniziare crea un progetto oppure descrivi un oggetto originale oppure crea nuovi utenti."
+      editor: "Per iniziare è necessario che l'utente amministratore della tua istituzione crei un progetto.<br />
+Nel frattempo hai facoltà di descrivere gli oggetti originali."
+      end_user: "TODO: Messaggio per end user (ammesso che si mantenga il ruolo)"
+    intro_projects:
+      generic: "Il <strong>progetto</strong> è un insieme di collezioni digitali raccolte sulla base di un criterio individuato dalla tua istituzione."
+      no_link: "Può essere creato dall'utente amministratore."
+    intro_digital_collections:
+      generic: "La <strong>collezione digitale</strong> è un insieme di oggetti digitali raccolti sulla base di un criterio individuato dalla tua istituzione."
+      no_link: "Può essere creata dall'utente amministratore, quando è presente almeno un progetto."
+    intro_digital_objects:
+      generic: "L'<strong>oggetto digitale</strong> è la riproduzione digitale di un oggetto originale.<br />
+Ad esempio un libro potrà essere rappresentato da un insieme di file immagine. L'insieme di questi file immagine costituisce complessivamente l'oggetto digitale."
+      no_link: "Per poter inserire oggetti digitali, è necessario che l'utente amministratore abbia creato una collezione e contemporaneamente sia presente la descrizione di almeno un oggetto originale."
+    intro_original_objects:
+      generic: "L'<strong>oggetto originale</strong> è l'opera fisica che verrà digitalizzata, ad esempio un libro o un manoscritto.<br />
+Ogni oggetto originale è collegato direttamente all'istituzione che lo conserva, non ai suoi progetti o collezioni digitali."
+    intro_users:
+      generic: "Hai facoltà di creare nuovi utenti per la tua istituzione."
+    cancel_ajax_update: "Annulla"
+    submit_ajax_update: "Ok"
+    saving_ajax_update: "Sto salvando.."
+    click_to_edit_ajax_update: "Fai click per modificare..."
+    placeholder_ajax_update: "Aggiungi descrizione"
+

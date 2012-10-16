@@ -1,0 +1,24 @@
+<% if opts[:search_invite] %>
+  <p>
+    <%= t('.search_invite',
+          :available_related => opts[:available_related],
+          :relation_name => t("activerecord.models.#{opts[:related_model_name]}", :count => 1).downcase) %>
+  </p>
+<% end %>
+
+<div class="search-input-area">
+  <div>
+    <span class="ui-icon ui-icon-search search-icon">&nbsp;</span>
+  </div>
+  <div class="search-input-wrap">
+    <% search_placeholder = t('.search_placeholder', :what => t("activerecord.models.#{opts[:related_model_name]}", :count => 1).downcase) if opts[:search_placeholder] %>
+    <%= text_field_tag opts[:foreign_key], "", :id => "#{opts[:related_to]}-autocomplete",
+                      :class => "relation-autocomplete relation-search-input",
+                      :'data-autocompletion-controller' => opts[:autocompletion_controller], # creators
+                      :'data-autocompletion-action' => opts[:autocompletion_action], # list
+                      :'data-excluded-ids' => opts[:excluded_ids].to_json,
+                      :'data-common-search-params' => opts[:through_hidden_fields].to_json,
+                      :'data-placeholder-text' => search_placeholder %>
+  </div>
+</div>
+

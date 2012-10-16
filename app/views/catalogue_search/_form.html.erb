@@ -1,0 +1,42 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'catalogue_search_in_progress'  %>
+<% end %>
+
+<div id="catalogue-search-form" class="form-area">
+  <% form_tag( { :action => 'search_z3950' }, { :method => 'POST' } ) do %>
+
+    <div>
+      <%= label_with_hint(:input_name => 'search[bid]', :label_text => t('.bid'), :hint_text => t('.bid_hint')) %><br />
+      <%= text_field_tag "search[bid]", params[:search][:bid], :size => default_size(:text_field), :class => 'optional' %>
+    </div>
+
+    <div>
+      <strong><%= label_tag "search[author]", t('.author') %></strong><br />
+      <%= text_field_tag "search[author]", params[:search][:author], :size => default_size(:text_field), :class => 'optional' %>
+    </div>
+
+    <div>
+      <strong><%= label_tag "search[title]", t('.title') %></strong><br />
+      <%= text_field_tag "search[title]", params[:search][:title], :size => default_size(:text_field), :class => 'optional' %>
+    </div>
+
+    <div>
+      <strong><%= label_tag "search[publisher]", t('.publisher') %></strong><br />
+      <%= text_field_tag "search[publisher]", params[:search][:publisher], :size => default_size(:text_field), :class => 'optional' %>
+    </div>
+
+    <div>
+      <%= content_with_error_for_association @date_publication_error, label_with_hint(:input_name => 'search[date_publication]', :label_text => t('.date_publication'), :hint_text => t('.date_publication_hint')) %>
+      <%= text_field_tag "search[date_publication]", params[:search][:date_publication], :size => default_size(:text_field), :class => 'optional' %>
+    </div>
+
+    <div>
+      <%= submit_tag "Cerca", :class => "submit" %>
+      <span class="search-throbber">
+        <%= image_tag 'search-throbber.gif' %>&nbsp;<%= t('.searching') %>&nbsp;<%= link_to t('.cancel'), new_catalogue_search_path %>
+      </span>
+    </div>
+
+  <% end %>
+</div>
+

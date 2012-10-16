@@ -1,0 +1,16 @@
+<div id="tabs">
+  <ul>
+    <li><%= link_to "Bacheca", dashboard_path, :class => on?("site") %></li>
+    <li><%= link_to t(:other, :count => "", :scope => [:activerecord, :models, :project]), projects_path, :class => on?("projects") %></li>
+    <li><%= link_to t(:other, :count => nil, :scope => [:activerecord, :models, :digital_collection]), digital_collections_path, :class => on?("digital_collections") %></li>
+    <li><%= link_to t(:other, :count => nil, :scope => [:activerecord, :models, :original_object]), original_objects_path, :class => (on?("original_objects") || on?("catalogue_search")) %></li>
+    <li><%= link_to t(:other, :count => nil, :scope => [:activerecord, :models, :digital_object]), digital_objects_path, :class => (on?("digital_objects") || on?("digital_files")) %></li>
+    <% if is_admin? -%>
+      <li style="float:right"><%= link_to t(:other, :scope => [:activerecord, :models, :user]), users_path, :class => on?("users") %></li>
+    <% end -%>
+    <% if is_root? -%>
+      <li style="float:right"><%= link_to t(:other, :scope => [:activerecord, :models, :institution], :count => nil), institutions_path, :class => on?("institutions") %></li>
+    <% end -%>
+  </ul>
+</div>
+

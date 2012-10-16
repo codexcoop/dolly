@@ -1,0 +1,29 @@
+<% error_on_field = f.object.send(:"#{property.name}_error") %>
+<div class="property" data-property-id="<%= property.id %>">
+  <%= content_with_error_for_association error_on_field, label_tag("", t("activerecord.models.#{property.name}", :count => 1))  %>
+  <%= requirement_marker(property.requirement) %>
+  <%= help_marker :property => property.name.tableize.to_sym %>
+  <div class="terms-selection">
+    <% if entity_terms.any? -%>
+    <ul data-property-id="<%= property.id %>">
+      <%= render  :partial => "shared/assigned_entity_term",
+                  :collection => entity_terms,
+                  :as => :entity_term,
+                  :locals => {:f => f, :property => property} %>
+    </ul>
+    <% end -%>
+    <%= render  :partial => 'shared/entity_term',
+                :locals => {:f => f, :error_on_field => error_on_field, :property => property} %>
+    <p>
+      <a href="#nogo" class="select-value" data-property-id="<%= property.id %>">+ seleziona un altro termine</a>
+    </p>
+  </div>
+  <div class="terms-addition">
+    <%= render  :partial => "shared/fields_for_new_taglike",
+                :locals => {:f => f,
+                            :vocabulary_id => property.vocabulary_id,
+                            :property_id => property.id,
+                            :property => property} %>
+  </div>
+</div>
+

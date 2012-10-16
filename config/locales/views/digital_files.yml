@@ -1,0 +1,72 @@
+---
+en:
+  digital_files:
+    defaults: &defaults
+      insert_new: "New digital file"
+      edit_link: "Edit digital file"
+      show_link: "Digital file's details"
+      back_link: "Back to digital files"
+      digital_file_zoom: "Ingrandisci"
+    index:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Back to digital objects"
+      go_to_toc_editor: "Create TOC"
+      browse: "Browse"
+      bookreader: "Bookreader"
+      restore_positions: "Restore original positions"
+      confirm_restore_positions: "Do you confirm to restore original positions?"
+      <<: *defaults
+    new:
+      page_title: "New digital file"
+      <<: *defaults
+    edit:
+      page_title: "Update digital file"
+      <<: *defaults
+    show:
+      page_title: "%{related_original_object_title}"
+      technical_metadata: "Technical metadata"
+      next_file: "Next"
+      previous_file: "Previous"
+      metadatum_name: "Property"
+      metadatum_value: "Value"
+      <<: *defaults
+    form:
+      update: "Update digital file"
+      save: "Create digital file"
+      <<: *defaults
+it:
+  digital_files:
+    defaults: &defaults
+      insert_new: "Nuovo file"
+      edit_link: "Modifica il file"
+      show_link: "File"
+      back_link: "Torna ai file"
+      digital_file_zoom: "Ingrandisci"
+    index:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Torna agli oggetti digitali"
+      go_to_toc_editor: "Elabora sommario"
+      browse: "Consulta" # ???
+      bookreader: "Sfoglia"
+      restore_positions: "Ripristina posizioni originali"
+      confirm_restore_positions: "Confermi di voler ripristinare le posizioni originali dei file?"
+      <<: *defaults
+    new:
+      page_title: "Nuovo file"
+      <<: *defaults
+    edit:
+      page_title: "Modifica il file"
+      <<: *defaults
+    show:
+      page_title: "%{related_original_object_title}"
+      technical_metadata: "Metadati tecnici"
+      next_file: "Avanti"
+      previous_file: "Indietro"
+      metadatum_name: "Proprietà"
+      metadatum_value: "Valore"
+      <<: *defaults
+    form:
+      update: "Aggiorna il file"
+      save: "Crea un file"
+      <<: *defaults
+

@@ -1,0 +1,17 @@
+<%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, t(:name, :scope => default_i18n_views_scope), :class => 'mandatory' %>
+    <%= requirement_marker('mandatory') %><br />
+    <%= f.text_field :name, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description, t(:description, :scope => default_i18n_views_scope), :class => 'recommended' %>
+    <%= requirement_marker('recommended') %><br />
+    <%= f.text_field :description, :size => default_size(:text_field) %>
+  </p>
+
+  <p>
+    <%= f.submit @updating ? t('.update') : t('.save') %>
+  </p>
+

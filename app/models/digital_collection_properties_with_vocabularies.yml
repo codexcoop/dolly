@@ -1,0 +1,464 @@
+--- 
+- !ruby/object:Property 
+  attributes: 
+    position: "4"
+    vocabulary_id: "37"
+    name: language
+    section: Description
+    entity_id: "1"
+    description_en: The language of the material contained in the digital collection.
+    notes: ""
+    order_terms_by: position
+    id: "4"
+    description_it: Lingua dei materiali contenuti nella collezione digitale.
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: recommended
+    human_en: Language
+    datatype: reference
+    cardinality: many
+    human_it: Lingua
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Rfc5646Language
+      created_at: 2010-01-29 00:11:58.369269
+      uuid: 14a011ec-8fce-434f-9a33-a1690930b265
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.701058
+      description_it: 
+      terms_count: "8272"
+      is_user_editable: f
+      id: "37"
+      human_en: 
+      human_it: Lingua (RFC 5646)
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "5"
+    vocabulary_id: "9"
+    name: digital_format
+    section: Description
+    entity_id: "1"
+    description_en: The digital characteristics of the collection. More specific than the digital type.
+    notes: ""
+    order_terms_by: position
+    id: "5"
+    description_it: "Caratteristiche digitali della collezione, ovvero i formati in essa contenuti. Pi\xC3\xB9 specifico rispetto a \"Tipo di documento digitale\".\r\n"
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: recommended
+    human_en: Digital format
+    datatype: reference
+    cardinality: many
+    human_it: Formato digitale
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: DigitalFormat
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 93ca78fd-dfca-448e-8094-ef2d876557d9
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.891634
+      description_it: 
+      terms_count: "35"
+      is_user_editable: f
+      id: "9"
+      human_en: 
+      human_it: Formato digitale
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "6"
+    vocabulary_id: "10"
+    name: digital_type
+    section: Description
+    entity_id: "1"
+    description_en: "This is the general type of digital collection, for example: a collection of texts, a collection of images, a collection of interactive resources, a collection of sound files. N.B. Includes virtual collections."
+    notes: ""
+    order_terms_by: position
+    id: "6"
+    description_it: "Tipo generale della collezione digitale. Per esempio: una collezione di testi, di immagini, di risorse interattive o di file audio. Include le collezioni virtuali."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: recommended
+    human_en: Digital type
+    datatype: reference
+    cardinality: many
+    human_it: Tipo di documento digitale
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: DigitalType
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 4328f4a0-938c-40e9-ad8d-fe0128623d3c
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.894812
+      description_it: 
+      terms_count: "16"
+      is_user_editable: f
+      id: "10"
+      human_en: 
+      human_it: Tipo digitale
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "7"
+    vocabulary_id: "6"
+    name: content_type
+    section: Description
+    entity_id: "1"
+    description_en: This is the type of content in the digital collection. For example, maps, music scores or manuscripts.
+    notes: ""
+    order_terms_by: position
+    id: "7"
+    description_it: Tipo di contenuto della collezione digitale.
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Content type
+    datatype: reference
+    cardinality: many
+    human_it: Tipologia del contenuto
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: ContentType
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 66420373-dfcd-4d94-a8c2-fce227d4a483
+      description_en: ""
+      updated_at: 2010-05-11 14:03:59.365231
+      description_it: ""
+      terms_count: "8"
+      is_user_editable: f
+      id: "6"
+      human_en: ""
+      human_it: Tipo del contenuto
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "10"
+    vocabulary_id: "31"
+    name: subject
+    section: Subject
+    entity_id: "1"
+    description_en: The subject or concept of the items in the digital collection. Lists of subject keywords will be provided.
+    notes: ""
+    order_terms_by: position
+    id: "14"
+    description_it: Tema o idea comune agli oggetti della collezione digitale.
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: mandatory
+    human_en: Subject
+    datatype: reference
+    cardinality: many
+    human_it: Tema
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Subject
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 5a99dbf2-7b25-4c90-8e10-7d94fcd1cf7b
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.694541
+      description_it: 
+      terms_count: "184"
+      is_user_editable: f
+      id: "31"
+      human_en: 
+      human_it: Tema (Soggetto)
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "11"
+    vocabulary_id: "17"
+    name: period
+    section: Subject
+    entity_id: "1"
+    description_en: The general period(s) spanned by the content of the digital collection, for example Neolithic or Bronze Age.
+    notes: ""
+    order_terms_by: position
+    id: "16"
+    description_it: "Periodo coperto dai materiali contenuti nella collezione digitale, per esempio Neolitico o Et\xC3\xA0 del bronzo.\r\n"
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: mandatory
+    human_en: Period
+    datatype: reference
+    cardinality: many
+    human_it: Periodo
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Period
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: ab6e25ba-086b-424f-89c6-90cfa9fa3658
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.917269
+      description_it: 
+      terms_count: "22"
+      is_user_editable: f
+      id: "17"
+      human_en: 
+      human_it: Periodo
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "12"
+    vocabulary_id: "29"
+    name: spatial_coverage
+    section: Subject
+    entity_id: "1"
+    description_en: The spatial coverage of the items in the digital collection. An international list of countries and regions will be used in the MICHAEL system to provide the basis for multi-national searches. More detailed lists of regional and local administrative areas and places will be provided for each national instance.
+    notes: ""
+    order_terms_by: position
+    id: "15"
+    description_it: "Copertura territoriale degli oggetti della collezione digitale. Il sistema offre un elenco internazionale di paesi e regioni in modo tale da porre le basi per ricerche multinazionali. \xC3\x88 possibile fornire un elenco pi\xC3\xB9 dettagliato di aree amministrative regionali e locali.\r\n"
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: recommended
+    human_en: "Spatial coverage "
+    datatype: reference
+    cardinality: many
+    human_it: Copertura geografica
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: SpatialCoverage
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 52897612-4d57-49e3-b430-13aa9b47cce2
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.688267
+      description_it: 
+      terms_count: "263"
+      is_user_editable: f
+      id: "29"
+      human_en: 
+      human_it: Copertura geografica
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "13"
+    vocabulary_id: "5"
+    name: civilisation
+    section: Subject
+    entity_id: "1"
+    description_en: Culture or people that are the subject of the digital collection, for example Islamic or Jewish.
+    notes: ""
+    order_terms_by: position
+    id: "19"
+    description_it: |
+      Cultura o popolo che costituisce il tema della collezione digitale, per esempio Islamica o Ebraica, Villanoviana o Etrusca.
+
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Culture
+    datatype: reference
+    cardinality: many
+    human_it: "Civilt\xC3\xA0"
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Civilisation
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: da7738b4-d6d1-4cf1-aa4c-c150f5374659
+      description_en: ""
+      updated_at: 2010-05-11 14:03:45.231909
+      description_it: ""
+      terms_count: "13"
+      is_user_editable: f
+      id: "5"
+      human_en: ""
+      human_it: "Civilt\xC3\xA0"
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "14"
+    vocabulary_id: "44"
+    name: accrual_policy
+    section: Description
+    entity_id: "1"
+    description_en: A statement of accrual policy (closed, passive, active, partial/selective). This information is especially important for harvesting purposes, to foresee the evolution of aggregated resources.
+    notes: ""
+    order_terms_by: position
+    id: "142"
+    description_it: "Presentazione della politica di incremento della collezione (chiusa, passiva, attiva, parziale/selettiva). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate.\r\n"
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Accrual policy
+    datatype: reference
+    cardinality: many
+    human_it: Politica di incremento
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: AccrualPolicy
+      created_at: 2010-02-05 00:01:58.889631
+      uuid: 9e3b15e8-12dd-47d7-a20a-1867ba8d1b5f
+      description_en: ""
+      updated_at: 2010-05-11 14:02:05.771723
+      description_it: ""
+      terms_count: "4"
+      is_user_editable: f
+      id: "44"
+      human_en: ""
+      human_it: Politica di acquisizione delle risorse
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "15"
+    vocabulary_id: "45"
+    name: accrual_method
+    section: Description
+    entity_id: "1"
+    description_en: A statement of the accrual method (purchase, deposit). This information is especially important for harvesting purposes, to foresee the evolution of aggregated resources.
+    notes: ""
+    order_terms_by: position
+    id: "141"
+    description_it: "Presentazione del metodo di incremento (acquisto, deposito). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere l\xE2\x80\x99evoluzione delle risorse aggregate."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Accrual method
+    datatype: reference
+    cardinality: many
+    human_it: Metodo di incremento
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: AccrualMethod
+      created_at: 2010-02-05 00:03:27.051415
+      uuid: 916756b7-dd9a-4512-a3bf-dbe49db3b161
+      description_en: ""
+      updated_at: 2010-05-11 14:01:31.724
+      description_it: ""
+      terms_count: "2"
+      is_user_editable: f
+      id: "45"
+      human_en: ""
+      human_it: Metodo di acquisizione delle risorse
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "16"
+    vocabulary_id: "46"
+    name: accrual_periodicity
+    section: Description
+    entity_id: "1"
+    description_en: |
+      Integer elementum dui in lacus adipiscing convallis. Donec eu ante lectus. Fusce vel justo quam, in ullamcorper dui. Vestibulum sed convallis sem. Nullam auctor, quam sit amet hendrerit molestie, metus purus vestibulum turpis, id blandit risus sapien ac leo. Phasellus blandit magna id elit vehicula suscipit. Nullam eget nunc urna? Maecenas posuere.
+
+    notes: ""
+    order_terms_by: position
+    id: "143"
+    description_it: "Presentazione della periodicit\xC3\xA0 di incremento (irregolare, periodico). Queste informazioni sono particolarmente importanti ai fini dello harvesting, per prevedere\r\n\
+      l\xE2\x80\x99evoluzione delle risorse aggregate."
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Accrual periodicity
+    datatype: reference
+    cardinality: many
+    human_it: "Periodicit\xC3\xA0 di incremento"
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: AccrualPeriodicity
+      created_at: 2010-02-05 00:04:57.201783
+      uuid: 71b82aea-f696-4439-8434-8f04c67604f5
+      description_en: ""
+      updated_at: 2010-05-11 14:01:49.341277
+      description_it: ""
+      terms_count: "3"
+      is_user_editable: f
+      id: "46"
+      human_en: ""
+      human_it: "Periodicit\xC3\xA0 di acquisizione delle risorse"
+    attributes_cache: {}
+
+- !ruby/object:Property 
+  attributes: 
+    position: "17"
+    vocabulary_id: "30"
+    name: standard
+    section: Description
+    entity_id: "1"
+    description_en: A statement of any descriptive or terminology standards that were used in creating the item level metadata associated with the digital collection.
+    notes: ""
+    order_terms_by: position
+    id: "10"
+    description_it: |
+      Presentazione degli standard descrittivi o terminologici adottati per la creazione dei metadati associati agli oggetti della collezione digitale.
+
+    vocabulary_is_user_editable: f
+    in_use: t
+    form_field_type: select
+    requirement: optional
+    human_en: Standard
+    datatype: reference
+    cardinality: many
+    human_it: Standard
+    visibility_id: "1"
+  attributes_cache: {}
+
+  vocabulary: !ruby/object:Vocabulary 
+    attributes: 
+      name: Standard
+      created_at: 2010-01-21 16:25:25.939161
+      uuid: 40b14d40-c9b5-4295-9d89-59f1a22ff9fb
+      description_en: 
+      updated_at: 2010-03-20 10:30:09.691324
+      description_it: 
+      terms_count: "11"
+      is_user_editable: f
+      id: "30"
+      human_en: 
+      human_it: Standard di metadati
+    attributes_cache: {}
+

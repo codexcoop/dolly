@@ -1,0 +1,52 @@
+---
+en:
+  application:
+    activate_field: "edit"
+    blank_record: "blank record"
+    add_new_term: "Add new"
+    new: ""
+    yes_text: "Yes"
+    no_text: "No"
+    or_text: " or "
+    delete: "Delete"
+    edit: "Edit"
+    please_select: "Please select"
+    create_and_add: "Create new and add"
+    require_user: "You must be logged in to access this page"
+    access_denied: "You haven't the privileges required for this page"
+    confirm_deletion: "Are you sure?"
+    automatic: "Assigned by the system"
+    mandatory: "Mandatory"
+    optional: "Optional"
+    recommended: "Recommended"
+    my_account: "My account"
+    logout_text: "Logout"
+    login_text: "Login"
+    user_text: "User"
+    login_successful: "Login successful"
+    login_failed: "Login failed. Please retry"
+    logout_successful: "Logout successful"
+    intro:
+      institution_admin: "Message for institution admin"
+      editor: "Message for editor"
+      end_user: "Message for end_user"
+    intro_projects:
+      generic: "Generic message"
+      no_link: "No link"
+    intro_digital_collections:
+      generic: "Generic message"
+      no_link: "No link"
+    intro_digital_objects:
+      generic: "Generic message"
+      no_link: "No link"
+    intro_original_objects:
+      generic: "Generic message"
+      no_link: "No link"
+    intro_users:
+      generic: "Intro users"
+    cancel_ajax_update: "Cancel"
+    submit_ajax_update: "Ok"
+    saving_ajax_update: "Saving..."
+    click_to_edit_ajax_update: "Click to edit..."
+    placeholder_ajax_update: "Add description"
+

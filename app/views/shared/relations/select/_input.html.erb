@@ -1,0 +1,9 @@
+<div class="select-area">
+  <div class="select-wrap">
+    <%= select_tag  opts[:foreign_key],
+                    options_for_select(opts[:options_for_select]),
+                    :id => "#{opts[:related_to]}-select",
+                    :class => "relation-select" %>
+  </div>
+</div>
+

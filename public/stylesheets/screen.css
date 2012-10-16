@@ -1,0 +1,746 @@
+/*
+Title: Dolly screen styles and ie/win fixes
+Author: Codex, Pavia (IT) - http://www.codexcoop.it
+Created: July 2010
+*/
+
+/* TODO:
+- applicare class clearfix dove serve
+- test IE e risoluzione 1024
+*/
+/*
+#content {
+  background: #fff url(/images/12_col.gif) repeat-y 0 0 !important;
+}
+*/
+
+body {
+  margin: 0;
+  padding: 0 0 24px 0 ;
+  font: 12px/18px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #e5e5e5;
+}
+a {
+  text-decoration: none;
+  outline: 0;
+  color: #ba1820;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.mute {
+  color: #999;
+}
+a img {
+  border: 0;
+}
+::-moz-selection{
+  color: #069; background: #edf3fe;
+}
+::selection{
+  color: #069; background: #edf3fe;
+}
+/* self-clearing floats */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* LOGIN
+----------------------------------------------------- */
+#login {
+  padding: 0;
+  background: #e5e5e5;
+}
+#login h1 {
+  text-align: center;
+  margin: 0 0 1em 0;
+  padding: 1em 0 1em 0;
+  font: normal 21px/24px "Lucida Grande", Arial, Helvetica, sans-serif;
+  background: #ccc;
+}
+#login-dialog {
+  width: 24em;
+  margin: 0 auto;
+  padding: 1em 2em;
+  border: 4px solid #d1d5d4;
+  background: #fff;
+}
+#login-dialog h2 {
+  margin: .8em 0 0 0;
+  padding: 0 0 .4em 0;
+  border: 0;
+  font: bold 14px/normal "Lucida Grande", Arial, Helvetica, sans-serif;
+}
+#login-dialog .field input {
+  width: 98%;
+  font-size: 16px;
+}
+
+/* LAYOUT
+----------------------------------------------------- */
+/* header */
+#header {
+  padding: 0 24px;
+  background: #ccc url(/images/overlay.png) repeat-x;
+}
+#header h1 {
+  margin: 0;
+  padding: 16px 0 18px 0;
+  font: normal 16px/16px "Lucida Grande", Arial, Helvetica, sans-serif;
+  color: #444;
+}
+#user-info {
+  position: absolute;
+  top: 4px;
+  right: 24px;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  line-height: 11px;
+  color: #999;
+}
+/* tabs */
+#tabs {
+  margin: 0;
+  padding: 0;
+  height: 27px;
+  background: #ccc;
+}
+#tabs ul {
+  margin: 0 24px;
+  padding: 0;
+}
+#tabs li {
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+#tabs ul a {
+  float: left; /* per IE */
+  margin: 0;
+  padding: 6px 8px 7px 8px;
+  border: 2px solid #ccc;
+  border-bottom: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 12px;
+  color: #fff;
+  background: #999;
+}
+#tabs a:hover {
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+}
+#tabs a.on {
+  font-weight: bold;
+  color: #333;
+  background: #e5e5e5;
+}
+/* content */
+#content-wrap {
+  margin: 12px 24px 0 24px;
+}
+#content {
+  margin: 0;
+  min-width: 894px;
+}
+#main {
+  min-height: 30em;
+  margin: 0;
+  padding: 14px 18px 18px 18px;
+  -moz-box-shadow: 3px 3px 4px #bbb;
+  -webkit-box-shadow: 3px 3px 4px #bbb;
+  box-shadow: 3px 3px 4px #bbb;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  background: #fff;
+}
+#t2 #main {
+  float: left;
+  width: 75%;
+}
+#side {
+  float: left;
+  width: 20%;
+}
+#side-inner {
+  margin: 0 24px;
+}
+
+/* footer */
+#footer {
+  margin: 0 0 0 28px;
+  padding: 6px 0 0 0;
+  font-size: 11px;
+  color: #999;
+}
+#footer p {
+  margin: 0;
+  padding: 0;
+}
+
+/* BASIC TYPOGRAPHY
+----------------------------------------------------- */
+h2 {
+  margin: 0 0 18px 0;
+  padding: 0 0 4px 0;
+  border-bottom: 1px dotted #ccc;
+  font: normal 16px/21px "Lucida Grande", Arial, sans-serif;
+}
+h3.section {
+  position: relative;
+  margin: 18px 0 12px 0;
+  padding: 8px;
+  padding-right: 140px; /* ??? */
+  font: bold 12px/12px "Lucida Grande", Arial, sans-serif;
+  color: #fff;
+  background: #999;
+}
+h4 { /* Usato in associations, non so se necessario */
+  color: #333;
+  font: bold 12px/12px "Lucida Grande", Arial, sans-serif;
+}
+p, ul, ol {
+  line-height: 1.5em;
+}
+pre {
+  width: 800px;
+  min-height: 300px;
+  overflow: auto;
+  padding: 10px;
+  background: #eee;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  vertical-align: top;
+  text-align: left;
+}
+td {
+  vertical-align: top;
+}
+
+/* BUTTONS and CONTEXTUAL LINKS
+----------------------------------------------------- */
+#heading #links {
+  float: right;
+  font-size: 11px;
+  font-weight: bold;
+}
+a.new {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 8px 0;
+  padding: 5px 10px 6px 6px;
+  border-bottom: 1px solid #222;
+  line-height: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+  font-size: 12px;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #222;
+  background: #222 url(/images/overlay.png) repeat-x;
+  color: #fff;
+}
+a.new:before {
+  content: "+ ";
+}
+a.new:hover {
+  color: #fff;
+  background: #ba1820;
+}
+a.del {
+  float: left;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+}
+div.actions {
+  clear: both;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px dotted #ccc;
+}
+div.actions a {
+  font-weight: bold;
+}
+#side div.actions {
+  margin: 0;
+  padding: 12px 0 0 0;
+  border: 0;
+}
+#side a {
+  font-weight: bold;
+}
+#side a.new {
+  font-weight: normal;
+}
+a.edit-link {
+  width: 18px;
+  height: 18px;
+}
+h3.section a {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  margin: 6px 0 0 0;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* DIALOG
+----------------------------------------------------- */
+#intro p {
+  font-size: 14px;
+}
+.ahead {
+  margin-top: 18px;
+  margin-bottom: 24px;
+  border-top: 1px solid #ccc;
+}
+/* notice and errors */
+.notice, .alert {
+  margin: 0 0 1em 0;
+  padding: 6px;
+  font-weight: bold;
+}
+.notice {
+  color: #069;
+  background: #edf3fe;
+}
+.alert {
+  color: #f00;
+  background: #ffffe0;
+}
+.alert .ui-icon {
+  float: left;
+  margin-right: 6px;
+  background-image: url(smoothness/images/ui-icons_cd0a0a_256x240.png);
+}
+#login .notice {
+  margin: 1em 0;
+  color: #f00;
+  background: #ffffe0;
+}
+.fieldWithErrors {
+  display: inline;
+  padding: 1px;
+  color: #f00;
+  background: #ffffe0;
+}
+.fieldWithErrors label {
+  color: #f00;
+  background: #ffffe0;
+}
+
+/* TABLES
+----------------------------------------------------- */
+/* list */
+table.list {
+  width: 98%;
+  margin: 0 0 12px 0;
+}
+table.list th {
+  padding: 6px 3px;
+  border-bottom: 1px solid #ccc;
+  font-size: 11px;
+  line-height: 14px;
+  color: #444;
+  background: #eee;
+}
+table.list th a {
+  text-decoration: none;
+  padding-left: 10px;
+  color: #444;
+  background: url(/images/th-sortable.png) no-repeat 0 3px;
+}
+table.list th a.asc {
+  background-position: 0 -27px;
+}
+table.list th a.desc {
+  background-position: 0 -57px;
+}
+table.list th.updated-cell {
+  width: 80px;
+}
+table.list th.edit-cell, table.list th.delete-cell {
+  width: 20px;
+}
+table.list td {
+  padding: 6px 6px 6px 3px;
+  border-bottom: 1px dotted #999;
+}
+table.list td.cover-cell {
+  width: 200px;
+  text-align: center;
+  background: #f0f0f0;
+}
+table.list td.title-cell {
+  padding-left: 12px;
+}
+table.list td.updated-cell {
+  padding-left: 12px;
+  color: #333;
+}
+/* OPTIMIZE: tabelle di associations dovrebbero avere classe list (NON show). Adeguare css di conseguenze.
+Qui il selettore dovrebbe essere table.list td.link-cell */
+td.link-cell {
+  width: 8em;
+  text-align: center;
+}
+table.list p {
+  margin: 0;
+  padding: 0;
+  color: #666;
+}
+table.list p.item-title {
+  color: #000;
+}
+table.list p.item-links {
+  margin: 4px 0 8px 0;
+  padding: 0;
+  font-size: 11px;
+  color: #000;
+}
+
+/* show */
+table.show {
+  width: 98%;
+}
+table.show th {
+  width: 25%;
+  padding: 6px 0 0 3px;
+  border-right: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  color: #666;
+/* stile alternativo da valutare */
+/*
+  text-align: right;
+  padding: 6px 6px 0 0;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #f0f0f0;
+*/
+}
+table.show td {
+  padding: 6px 6px 8px 12px;
+  border-bottom: 1px dotted #ccc;
+}
+table.show p {
+  margin: 0;
+  padding: 0;
+}
+table.show ul {
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+
+/* textilize */
+.formatted-text {
+  width: 50em;
+}
+.blank-record {
+  color: #999;
+}
+
+/* BASIC FORMS
+----------------------------------------------------- */
+input, textarea {
+  width: 35em;
+/* OPTIMIZE: impostare a 560px; fa eccezione catalogue-search */
+  font: 12px/18px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+textarea {
+  resize: vertical; /* css-3 */
+}
+input.number {
+  width: 4em;
+}
+input.button, input.checkbox, input.radio {
+  width: auto;
+}
+input.submit {
+  margin: 1.5em 0 0 0;
+  width: auto;
+}
+.marker {
+  font-size: 14px;
+  font-weight: bold;
+  color: blue;
+}
+.radio-list {
+  list-style: none;
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+/* terms management */
+.property a {
+  font-size: 11px;
+}
+.property .terms-selection {
+/*
+  padding: 4px 0;
+  background: #f0f0f0;
+*/
+}
+.property .terms-selection ul {
+  list-style: none;
+  margin: 0 0 12px 0;
+  margin: 0;
+  padding: 0;
+}
+.property .terms-selection p.terms-list {
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+.property .terms-addition {
+  width: 400px;
+  background: #f0f0f0;
+}
+/*
+.full-width {
+  width: 500px;
+}
+*/
+
+/* TOC EDITOR
+----------------------------------------------------- */
+/* OPTIMIZE: rivedere tutto, selettori e istruzioni di stile */
+#browse-area {
+  text-align: center;
+}
+#browse-area {
+  font-weight: bold;
+}
+#toc_editor {
+  height: 570px;
+}
+#toc, #images-list, #toc-read-only {
+  float: left;
+  height: 500px;
+  width: 370px;
+  margin: 0;
+  border: 1px solid #ccc;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+#toc {
+  margin-right: 5px;
+}
+#toc-wrapper {
+  float: left;
+  margin-bottom: 24px;
+}
+#toc-wrapper #handle {
+  float: left;
+  width: 10px;
+  background-color: #cacaca;
+  border: 1px solid #ccc;
+  z-index: 0;
+}
+#toc, #toc-wrapper, #toc-wrapper #handle, #images-list {
+  height: 500px
+}
+#images-list {
+  margin-left: 5px;
+  overflow-x: hidden;
+}
+#images-list img {
+  cursor: move;
+}
+#side-area {
+  width: 260px;
+  float: left;
+}
+#toc-read-only {
+  float: left;
+  width: 260px;
+  overflow: auto;
+  height: auto;
+  margin-right: 20px;
+}
+#content-area {
+  position: relative;
+/*
+  margin-left: 280px;
+*/
+}
+#image-area {
+  width: 620px;
+  height: 620px;
+  float: left;
+  padding: 0 0 0 24px;
+  position: relative;
+}
+#image-area div {
+  margin: 0 auto;
+  position: absolute;
+}
+#technical-metadata {
+  clear: both;
+/*
+  float: left;
+*/
+}
+#images-list {
+  width: 450px;
+  height: 470px;
+  padding: 15px;
+}
+ul.associated-nodes {
+  list-style: none;
+  margin-left: -20px;
+}
+.associated-nodes-container {
+  float: right;
+  width: 290px;
+}
+.toc-images-clear-both {
+  clear: both;
+  width : 400px;
+}
+#toc a:active {
+  background: #ebebeb;
+}
+/* sortable images. OPTIMIZE: può essere ul */
+#sortable-images-list {
+  width: 100%;
+}
+#sortable-images-list div.image {
+  width: 200px;
+  height: 240px;
+  text-align: center;
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 10px 10px 0 10px;
+  border: 1px solid #ccc;
+}
+/*
+#sortable-images-list img {
+  cursor: move;
+}
+*/
+
+/* CATALOGUE SEARCH
+----------------------------------------------------- */
+/* OPTIMIZE html, css, js */
+#catalogue-search {
+  width: 580px;
+  margin: 0 0 18px 0;
+}
+#catalogue-search .toggler {
+  text-align: right;
+  margin: 0;
+  padding: 0 0 6px 0;
+  font-size: 11px;
+}
+#catalogue-search .form-area {
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+}
+.hint {
+  color: #666;
+}
+.pre-textarea {
+  white-space: pre;
+  font-size: 13px;
+  font-family: monospace;
+}
+ol.catalogue-records {
+  margin: 0 0 0 24px;
+  padding: 0;
+}
+ol.catalogue-records li {
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px dotted #999;
+}
+ol.catalogue-records p {
+  margin: 0 0 8px 24px;
+  padding: 0;
+}
+
+/* PAGINATION - da rivedere
+----------------------------------------------------- */
+.pagination:after { /* OPTIMIZE: applicare generico clearfix */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+* html .pagination {
+  height: 1%;
+}
+*:first-child + html .pagination {
+  overflow: hidden;
+}
+.pagination a, .pagination span, .pagination em {
+  float: left;
+  display: block;
+  margin-right: 6px;
+  padding: 0.2em 0.5em;
+  font-size: 11px;
+}
+.pagination .disabled {
+  border: 1px solid #ddd;
+  color: #999;
+}
+.pagination .current {
+  border: 1px solid #000;
+  font-style: normal;
+  font-weight: bold;
+  color: #fff;
+  background: #ba1820;
+}
+.pagination a {
+  text-decoration: none;
+  border: 1px solid #ccc;
+}
+.pagination a:hover, .pagination a:focus {
+  color: #000;
+  border-color: #333;
+}
+
+/* MISC - TODO: ricollocare! */
+/*--------------------------------------------------*/
+.templates-container {
+  display: none;
+}
+.filters {
+  margin: 18px 0;
+  font-size: 11px;
+}
+
+/* TRICKS
+----------------------------------------------------- */
+/* self-clearing floats */
+#content-wrap:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* trigger hasLayout and target ie5+6/win only */
+* html #main {
+  height: 1%;
+}
+/* trigger hasLayout and target ie7/win only */
+*:first-child+html #main {
+}

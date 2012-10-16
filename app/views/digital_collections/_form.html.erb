@@ -1,0 +1,186 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "jquery.autocomplete_setup" %>
+  <%= javascript_include_tag "live_search" %>
+  <%= javascript_include_tag "relations" %>
+<% end %>
+
+<% form_for(@digital_collection) do |f| %>
+
+  <%= generic_error_message_for @digital_collection %>
+
+  <%#= render :partial => "/shared/institution_selection" %>
+
+  <h3 class="section"><%= t('.section_identification') %></h3>
+
+  <p>
+    <%= label_with_markers :property => 'project_id', :f => f, :requirement => 'mandatory'  %><br />
+    <%= f.collection_select :project_id,
+                            @projects,
+                            :id,
+                            :acronym,
+                            options = {:prompt => t(:please_select, :scope => :application)},
+                            html_options = {:disabled => (@projects.empty? or @projects.nil?),
+                                            :selected => @digital_collection.project_id } %>
+  </p>
+
+  <p>
+    <%= label_with_markers(:property => 'title', :f => f, :requirement => 'mandatory', :help => true, :error_message => true) %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <h3 class="section"><%= t('.section_description') %></h3>
+
+  <p>
+    <%= label_with_markers :property => 'description', :f => f, :requirement => 'mandatory', :help => true  %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <%= render_relation_for f, 'languages', @digital_collection_languages,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_languages,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'language',
+    :title_tooltip => t("properties.digital_collection.language.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'digital_formats', @digital_collection_digital_formats,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_digital_formats,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'digital_format',
+    :title_tooltip => t("properties.digital_collection.digital_format.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'digital_types', @digital_collection_digital_types,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_digital_types,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'digital_type',
+    :title_tooltip => t("properties.digital_collection.digital_type.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'content_types', @digital_collection_content_types,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_content_types,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'content_type',
+    :title_tooltip => t("properties.digital_collection.content_type.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'accrual_methods', @digital_collection_accrual_methods,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_accrual_methods,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'accrual_method',
+    :title_tooltip => t("properties.digital_collection.accrual_method.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'accrual_periodicities', @digital_collection_accrual_periodicities,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_accrual_periodicities,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'accrual_periodicity',
+    :title_tooltip => t("properties.digital_collection.accrual_periodicity.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'accrual_policies', @digital_collection_accrual_policies,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_accrual_policies,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'accrual_policy',
+    :title_tooltip => t("properties.digital_collection.accrual_policy.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%= render_relation_for f, 'standards', @digital_collection_standards,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_list => @suggested_standards,
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'standard',
+    :title_tooltip => t("properties.digital_collection.standard.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <p>
+    <%= label_with_markers :property => 'legal_status', :f => f, :requirement => 'mandatory', :help => true  %><br />
+    <%= f.text_area :legal_status, :size => "70x2" %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'database', :f => f, :requirement => 'optional', :help => true  %><br />
+    <%= f.text_area :database, :size => "70x2" %>
+  </p>
+
+  <h3 class="section"><%= t('.section_subject') %></h3>
+
+  <%#= fields_for_property f, :subject %>
+  <%= render_relation_for f, 'subjects', @digital_collection_subjects,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'subject',
+    :title_tooltip => t("properties.digital_collection.subject.description"),
+    :variant => 'autocomplete' %>
+
+  <%#= fields_for_property f, :spatial_coverage %>
+  <%= render_relation_for f, 'spatial_coverages', @digital_collection_spatial_coverages,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'spatial_coverage',
+    :title_tooltip => t("properties.digital_collection.spatial_coverage.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%#= fields_for_property f, :period %>
+  <%= render_relation_for f, 'periods', @digital_collection_periods,
+    :autocompletion_controller => "terms",
+    :selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    :suggested_label => lambda{|term| h term.try(I18n.locale) },
+    :related_model_name => 'period',
+    :title_tooltip => t("properties.digital_collection.period.description"),
+    :variant => 'select',
+    :suggested_threshold => 0 %>
+
+  <%#= fields_for_property f, :civilisation %>
+  <%#= render_relation_for f, 'civilisations', @digital_collection_civilisations,
+    #:autocompletion_controller => "terms",
+    #:selected_label => lambda{|entity_term| h entity_term.term.try(I18n.locale) },
+    #:suggested_label => lambda{|term| h term.try(I18n.locale) },
+    #:related_model_name => 'civilisation',
+    #:title_tooltip => t("properties.digital_collection.civilisation.description"),
+    #:variant => 'select' %>
+
+  <p>
+    <%= label_with_markers :property => 'start_date', :f => f, :requirement => 'optional', :help => true, :error_message => true %><br />
+    <%= f.text_field :start_date, :class => 'number' %>
+  </p>
+
+  <p>
+    <%= label_with_markers :property => 'end_date', :f => f, :requirement => 'optional', :help => true, :error_message => true %><br />
+    <%= f.text_field :end_date, :class => 'number' %>
+  </p>
+
+  <p>
+    <%= f.submit(@digital_collection.new_record? ? t('.save') : t('.update'), :class => "submit") %>
+  </p>
+<% end %>
+
+<div class="templates-container">
+  <%= yield :templates_container %>
+</div>
+

@@ -1,0 +1,89 @@
+---
+en:
+  digital_collections:
+    defaults: &defaults
+      insert_new: "New collection"
+      show_link: "Collection's details"
+      edit_link: "Edit this collection"
+      back_link: "Back to collections"
+      link_to_digital_objects: "%{count} digital objects"
+      list_all: "List all digital_collections"
+      list_selected: "List only collections from your institution"
+      section_identification: "Identity statement area"
+      section_description: "Description area"
+      section_subject: "Subject area"
+      back_link: "Collections' list"
+      new_digital_object: "New digital object"
+      new_linked_digital_object: "New linked digital object"
+      linked_digital_objects:
+        one: "%{count} linked digital object"
+        other: "%{count} linked digital objects"
+      linked_original_objects:
+        one: "%{count} linked original object"
+        other: "%{count} linked original objects"
+      no_linked_original_objects: "No linked original objects"
+    index:
+      page_title: "Collections"
+      list_all: "List all digital collections"
+      <<: *defaults
+    new:
+      page_title: "New collection"
+      <<: *defaults
+    edit:
+      page_title: "Update collection"
+      <<: *defaults
+    show:
+      page_title: "Collection"
+      <<: *defaults
+    form:
+      update: "Update collection"
+      save: "Create collection"
+      button_show_projects_for_this_institution: "Show projects from this institution"
+      <<: *defaults
+    side:
+      <<: *defaults
+it:
+  digital_collections:
+    defaults: &defaults
+      insert_new: "Nuova collezione"
+      show_link: "Anteprima collezione"
+      edit_link: "Modifica collezione"
+      back_link: "Torna alla lista collezioni"
+      link_to_digital_objects: "%{count} oggetti digitali"
+      list_all: "Tutte le collezioni"
+      list_selected: "Mostra sole le collezioni della tua istituzione"
+      section_identification: "Area dell'identificazione"
+      section_description: "Area della descrizione"
+      section_subject: "Area del tema"
+      back_link: "Lista collezioni"  # oppure un generico "Annulla"
+      new_digital_object: "Nuovo oggetto digitale"
+      new_linked_digital_object: "Nuovo oggetto digitale collegato"
+      linked_digital_objects:
+        one: "%{count} oggetto digitale collegato"
+        other: "%{count} oggetti digitali collegati"
+      no_linked_digital_objects: "Nessun oggetto digitale collegato"
+      linked_original_objects:
+        one: "%{count} oggetto originale collegato"
+        other: "%{count} oggetti originali collegati"
+      no_linked_original_objects: "Nessun oggetto originale collegato"
+    index:
+      page_title: "Collezioni"
+      list_all: "Visualizza tutte le collezioni"
+      <<: *defaults
+    new:
+      page_title: "Nuova collezione"
+      <<: *defaults
+    edit:
+      page_title: "Modifica collezione"
+      <<: *defaults
+    show:
+      page_title: "Anteprima collezione"
+      <<: *defaults
+    form:
+      update: "Aggiorna collezione"
+      save: "Crea collezione"
+      button_show_projects_for_this_institution: "Progetti di questa istituzione"
+      <<: *defaults
+    side:
+      <<: *defaults
+

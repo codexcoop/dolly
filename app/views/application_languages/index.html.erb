@@ -1,0 +1,16 @@
+<h2>Listing application_languages</h2>
+
+<p><%= link_to 'New application_language', new_application_language_path, :class => "new" %></p>
+
+<table class="list">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @application_languages.each do |application_language| %>
+  <tr>
+    <td><%= link_to application_language.name, edit_application_language_path(application_language) %></td>
+  </tr>
+<% end %>
+</table>
+

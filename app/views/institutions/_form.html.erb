@@ -1,0 +1,36 @@
+<% form_for(@institution) do |f| %>
+<%= generic_error_message_for @institution %>
+
+  <p>
+    <%= label_with_markers :property => 'name', :f => f, :requirement => 'mandatory' %><br />
+    <%= f.text_field :name, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= label_with_markers :property => 'sbn', :f => f, :requirement => 'optional' %><br />
+    <%= f.text_field :sbn, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= label_with_markers :property => 'address', :f => f, :requirement => 'mandatory' %><br />
+    <%= f.text_field :address, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= label_with_markers :property => 'phone', :f => f, :requirement => 'mandatory' %><br />
+    <%= f.text_field :phone, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= label_with_markers :property => 'email', :f => f, :requirement => 'mandatory', :error_message => true %><br />
+    <%= f.text_field :email, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= label_with_markers :property => 'url', :f => f, :requirement => 'optional', :error_message => true %><br />
+    <%= f.text_field :url, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.submit(@institution.new_record? ? t('.save') : t('.update'), :class => 'submit') %>
+  </p>
+<% end %>
+
+<% if is_root? -%>
+  <div class="actions"><%= link_to t('.back_link'), institutions_path %></div>
+<% end -%>
+

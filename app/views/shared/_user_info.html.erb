@@ -1,0 +1,6 @@
+<p id="user-info">
+  <em><%= t(:user_text, :scope => [:application]) %></em>: <%= current_user.full_name %>
+  (<%= current_user.role.name %>) |
+  <%= link_to t(:my_account, :scope => [:application]), edit_user_path(current_user.id) %> |
+  <%= link_to t(:logout_text, :scope => [:application]), logout_path %>
+</p>

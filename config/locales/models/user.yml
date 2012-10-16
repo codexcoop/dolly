@@ -1,0 +1,50 @@
+---
+en:
+  activerecord:
+    models:
+      user:
+        one: 'User'
+        other: 'Users'
+    attributes:
+      user:
+        id: "ID"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        first_name: "First name"
+        last_name: "Last name"
+        full_name: "Full name"
+        institution_id: "Institution"
+        institution: "Institution"
+        my_institution: "My institution"
+        email: "E-mail"
+        uuid: "Unique identifier"
+        login: "Login"
+        role_id: "Role"
+        old_role: "Role"
+        created_at: "Created at"
+        updated_at: "Updated at"
+it:
+  activerecord:
+    models:
+      user:
+        one: 'Utente'
+        other: 'Utenti'
+    attributes:
+      user:
+        id: "ID"
+        password: "Password"
+        password_confirmation: "Conferma password"
+        first_name: "Nome"
+        last_name: "Cognome"
+        full_name: "Nome e cognome"
+        institution_id: "Istituzione"
+        institution: "Istituzione"
+        my_institution: "La mia istituzione"
+        email: "E-mail"
+        uuid: "Identificativo univoco"
+        login: "Nome utente"
+        role_id: "Ruolo"
+        old_role: "Ruolo"
+        created_at: "Creazione"
+        updated_at: "Aggiornamento"
+

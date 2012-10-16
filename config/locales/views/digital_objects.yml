@@ -1,0 +1,143 @@
+---
+en:
+  digital_objects:
+    defaults: &defaults
+      insert_new: "New digital object"
+      edit_link: "Edit digital object"
+      show_link: "Digital object's details"
+      back_link: "Back to digital objects"
+      link_to_digital_files: "%{count} files"
+      link_to_edit_digital_object: "Edit this digital object"
+      no_digital_files: "Nessun file disponibile"
+      go_to_toc_editor: "Create TOC"
+      go_to_index: "Index"
+      browse: "Browse"
+      bookreader: "Bookreader"
+      go: "Go"
+    title_search:
+      <<: *defaults
+      see: "See"
+      submit_tag: "search"
+      all_records_link: "all digital objects"
+      no_records_found: "No digital objects correspond to the query"
+      records_found:
+        one: "%{count} digital object found"
+        other: "%{count} digital objects found"
+    index:
+      page_title: "Digital objects"
+      list_all: "List all digital objects"
+      <<: *defaults
+    new:
+      page_title: "New digital object"
+      <<: *defaults
+    edit:
+      page_title: "Update digital object"
+      <<: *defaults
+    show:
+      page_title: "Digital object"
+      <<: *defaults
+    form:
+      update: "Update digital object"
+      save: "Create digital object"
+      button_show_projects_and_original_works_for_this_institution: "Show projects and original works from this institution"
+      button_show_digital_collections_for_this_project: "Show collections for the selected project"
+      <<: *defaults
+    digital_file_description:
+      insert_digital_file_description: "- - insert new description - -"
+      <<: *defaults
+    toc_index:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Back to digital objects"
+      link_to_digital_files: "See and browse files (%{count})"
+      create: "Create node"
+      rename: "Edit description"
+      remove: "Remove node"
+      remove_assignment: "- remove"
+      digital_file_zoom: "Zoom"
+      <<: *defaults
+    browse:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Back to digital objects"
+      digital_file_zoom: "Zoom"
+      next_file: "Next"
+      previous_file: "Previous"
+      <<: *defaults
+    destroy_with_assets:
+      page_title: "Permanent destruction of <em>%{digital_object_title}</em> and all linked resources"
+      confirmation_request: "Do you confirm you want permanently destroy the digital object <em>%{digital_object_title}</em>, and all its files - master and derivatives - and the whole table of contents? <br /> <strong>Warning</strong>: you will not able to restore any of those elements"
+      confirm_submit: "Confirm and destroy all the linked resources"
+      cancel: "cancel"
+    side:
+      <<: *defaults
+it:
+  digital_objects:
+    defaults: &defaults
+      insert_new: "Nuovo oggetto digitale"
+      edit_link: "Modifica oggetto digitale"
+      show_link: "Anteprima oggetto digitale"
+      back_link: "Lista oggetti digitali"
+      link_to_digital_files: "%{count} file"
+      link_to_edit_digital_object: "Modifica l'oggetto digitale"
+      no_digital_files: "Nessun file disponibile"
+      go_to_toc_editor: "Elabora sommario"
+      browse: "Consulta"
+      bookreader: "Sfoglia"
+      go_to_index: "Indice"
+      go: "Vai"
+    title_search:
+      <<: *defaults
+      see: "Vedi"
+      submit_tag: "cerca"
+      all_records_link: "tutti gli oggetti digitali"
+      no_records_found: "Nessun oggetto digitale corrisponde ai criteri scelti"
+      records_found:
+        one: "Trovato %{count} oggetto digitale"
+        other: "Trovati %{count} oggetti digitali"
+    index:
+      page_title: "Oggetti digitali"
+      list_all: "Visualizza tutti gli oggetti digitali"
+      <<: *defaults
+    new:
+      page_title: "Nuovo oggetto digitale"
+      <<: *defaults
+    edit:
+      page_title: "Modifica oggetto digitale"
+      <<: *defaults
+    show:
+      page_title: "Anteprima oggetto digitale"
+      <<: *defaults
+    form:
+      update: "Aggiorna oggetto digitale"
+      save: "Crea oggetto digitale"
+      button_show_projects_and_original_works_for_this_institution: "Progetti e oggetti originali di questa istituzione"
+      button_show_digital_collections_for_this_project: "Collezioni di questo progetto"
+      <<: *defaults
+    digital_file_description:
+      insert_digital_file_description: "- - inserisci una descrizione - -"
+      <<: *defaults
+    toc_index:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Torna agli oggetti digitali"
+      link_to_digital_files: "Visualizza i file (%{count})"
+      create: "Crea nodo"
+      rename: "Modifica descrizione"
+      remove: "Elimina nodo"
+      remove_assignment: "- rimuovi"
+      digital_file_zoom: "Ingrandisci"
+      <<: *defaults
+    browse:
+      page_title: "%{related_original_object_title}"
+      back_to_digital_objects: "Torna agli oggetti digitali"
+      link_to_digital_files: "Visualizza i file (%{count})"
+      digital_file_zoom: "Ingrandisci"
+      next_file: "Avanti &rsaquo;"
+      previous_file: "&lsaquo; Indietro"
+      <<: *defaults
+    destroy_with_assets:
+      page_title: "Eliminazione definitiva di <em>%{digital_object_title}</em> e delle risorse collegate"
+      confirmation_request: "Confermi di volere rimuovere dal sistema l'oggetto <em>%{digital_object_title}</em>, compresi tutti i file originali e elaborati, e la descrizione completa del sommario? <br /> <strong>Attenzione</strong>: non sarà più possibile recuperare nessuno di questi elementi"
+      confirm_submit: "Conferma l'eliminazione di tutte le risorse collegate"
+      cancel: "annulla"
+    side:
+      <<: *defaults
+

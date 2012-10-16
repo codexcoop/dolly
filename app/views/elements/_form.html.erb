@@ -1,0 +1,94 @@
+<% form_for [@metadata_standard, @element] do |f| %>
+  <%= generic_error_message_for @element %>
+
+  <% prompt_text = '-- choose one --' -%>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :section %><br />
+    <%= f.text_field :section, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :section_description %><br />
+    <%= f.text_area :section_description, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :entity_id %><br />
+    <%= f.collection_select :entity_id, @entities, :id, :name, options = {:include_blank => 'Select'}, html_options = {} %>
+  </p>
+  <p>
+    <%= f.label :vocabulary_id %><br />
+    <%= f.collection_select :vocabulary_id, @vocabularies, :id, :name, options = {:include_blank => 'Select'}, html_options = {} %>
+  </p>
+  <p>
+    <%= f.label :cardinality %><br />
+    <%= f.select :cardinality, options_for_select(Property.cardinalities, @element.cardinality), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :datatype %><br />
+    <%= f.select :datatype, options_for_select(Property.data_types, @element.datatype), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :requirement %><br />
+    <%= f.select :requirement, options_for_select(Property.requirements, @element.requirement), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :visibility_id, 'Visibility (user role)' %><br />
+    <%= f.select :visibility_id, options_for_select(Role.all.map{|r| [r.name, r.id]}, @element.visibility_id), :include_blank => prompt_text %>
+  </p>
+  <p>
+    <%= f.label :human_en %><br />
+    <%= f.text_field :human_en, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_en %><br />
+    <%= f.text_area :description_en, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :human_it %><br />
+    <%= f.text_field :human_it, :size => default_size(:text_field) %>
+  </p>
+  <p>
+    <%= f.label :description_it %><br />
+    <%= f.text_area :description_it, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :is_user_editable %><br />
+    <%= f.check_box :is_user_editable %>
+  </p>
+  <p>
+    <%= f.label :example %><br />
+    <%= f.text_area :example, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :italian_version_notes %><br />
+    <%= f.text_area :italian_version_notes, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :official_vocabulary_lists %><br />
+    <%= f.text_area :official_vocabulary_lists, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :other_suggested_lookups %><br />
+    <%= f.text_area :other_suggested_lookups, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.label :user_tags %><br />
+    <%= f.text_area :user_tags, :size => default_size(:text_area) %>
+  </p>
+  <p>
+    <%= f.submit(if @element.new_record? then "Save element" else "Update element" end) %>
+  </p>
+<% end %>
+

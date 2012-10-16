@@ -1,0 +1,32 @@
+<%# partial rendered via response to ajax call %>
+<% if results.empty? %>
+  <p>
+    <em><%= t('.no_results') %></em>
+  </p>
+<% else %>
+  <div>
+    <div>
+      <%= content_tag :div, link_to(t('.clear_results'), '#', :class => "hide-livesearch-results-cmd"), :class => "hide-livesearch-results" %>
+    </div>
+    <%# content_tag :table, :class => 'show results-list', :'data-excluded-ids' => opts[:excluded_ids].to_json do %>
+    <% content_tag :table, :class => 'show livesearch-results', :'data-excluded-ids' => opts[:excluded_ids].to_json do %>
+      <% results.each do |result| %>
+        <% content_tag :tr, :'data-related-id' => result.id.to_json,
+                            :class => "choice-item suggested-item" do %>
+          <td>
+            <span class="choice-item-label-full"><%= opts[:selected_label_full].call(result, self) %></span>
+            <!--<br />-->&nbsp;-&nbsp;
+            <span class="choice-item-label-short"><%= opts[:selected_label_short].call(result) %></span>
+          </td>
+          <td  class="choice-item-actions-wrap">
+            <%= link_to t('.link_item'), "#", :class => "item-action-add-suggested",
+                                              :'data-selected-id' => result.id.to_json,
+                                              :'data-selected-value-short' => opts[:selected_label_short].call(result),
+                                              :'data-selected-value-full' => opts[:selected_label_full].call(result, self) %>
+          </td>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+

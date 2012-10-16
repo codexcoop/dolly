@@ -1,0 +1,38 @@
+<h2><%= t '.page_title' %></h2>
+
+<p><%= link_to t('.insert_new'), new_user_path, :class => "new "%></p>
+
+<table class="list">
+  <tr>
+    <th><%= t :id, :scope => default_i18n_views_scope %></th>
+    <%= admin_tag :th, t(:institution, :scope => default_i18n_views_scope) -%>
+    <th><%= t :full_name, :scope => default_i18n_views_scope %></th>
+    <th><%= t :login, :scope => default_i18n_views_scope %></th>
+    <th><%= t :role_id, :scope => default_i18n_views_scope %></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <%= admin_tag :td, user.institution_name -%>
+    <td>
+      <% if is_owner?(:authorizable_action => "edit", :authorizable_object => user)  -%>
+        <%= link_to user.full_name, edit_user_path(user) %>
+      <% else -%>
+        <%= user.full_name %>
+      <% end -%>
+    </td>
+    <td><%= user.login %></td>
+    <td><%= user.role_name %></td>
+    <td>
+<%# TODO: [very low] spostare il test nel modello e ottimizzarlo %>
+<%# La domanda a cui rispondere è: l'utente ha un qualsiasi oggetto associato? Idealmente il test ritorna true appena trova il primo oggetto associato ed evita di testare i successivi. NON vale la pena montare i counter cache. Lo scopo del test è di minima importanza: mostrare o no l'icona destroy. %>
+      <% associated_objects = [:projects, :digital_collections, :original_objects, :digital_objects].map{|association| user.send(association).exists?} -%>
+      <% if is_owner?(:authorizable_action => "destroy", :authorizable_object => user) and associated_objects.none?{|existing| existing } -%>
+        <%= delete_link(user) %>
+      <% end -%>
+    </td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,95 @@
+<% content_layout "t1" if @digital_objects.size == 0 && !params[:title] && !params[:status] %>
+
+<div id="heading">
+  <div id="links">
+  <%= link_to_all :condition => (params.values_at(:digital_collection_id, :original_object_id, :project_id).any?(&:present?)) %>
+  </div>
+  <h2>
+    <%= t '.page_title' %>
+    <%= "&bull; #{@digital_collection.title}" if params[:digital_collection_id].present? %>
+    <%= "&bull; #{@original_object.title}" if params[:original_object_id].present? %>
+    <%= "&bull; #{@project.title}" if params[:project_id].present? %>
+  </h2>
+</div>
+
+<% check_for_link = count_for_current_user(:digital_collections) > 0 &&
+                    count_for_current_user(:original_objects) > 0 &&
+                    current_user_can?(:create, :digital_object) %>
+
+<% if @count_by_status['all'].to_i == 0 %>
+  <div id="intro">
+    <p><%= t('application.intro_digital_objects.generic') %></p>
+    <% unless check_for_link && @count_by_status['all'].to_i > 0 %>
+      <p><%= t('application.intro_digital_objects.no_link') %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if check_for_link && @count_by_status['all'].to_i == 0 %>
+  <p><%= link_to t('.insert_new'), new_digital_object_path, :class => "new" %></p>
+<% end %>
+
+<div id="digital-objects-search">
+  <%= render :partial => "shared/title_search", :locals => { :collection => @digital_objects, :total_count => @count_by_status['all'] } %>
+</div>
+
+<% if @count_by_status['all'].to_i > 0 && !params[:title] %>
+  <div class="filters">
+    Vedi:
+    <%= filter_links_by :status,
+                        { :all => {:txt => 'Tutti', :count => @count_by_status['all']},
+                          :alternatives => [
+                            {:txt => 'In lavorazione', :value => 'draft', :count => @count_by_status['draft']},
+                            {:txt => 'Completi', :value => 'complete', :count => @count_by_status['complete']}
+                          ]
+                        } %>
+  </div>
+<% end %>
+
+<% if @digital_objects.size > 0 %>
+  <table class="list">
+    <tr>
+      <th>&nbsp;</th>
+      <th><%= sort_link_to :ordering_title, t(:title, :scope => default_i18n_views_scope), :default => true %></th>
+      <th class="updated-cell"><%= sort_link_to :updated_at, t(:updated_at, :scope => default_i18n_views_scope) %></th>
+      <th class="edit-cell">&nbsp;</th>
+      <th class="delete-cell">&nbsp;</th>
+    </tr>
+
+  <% @digital_objects.each do |digital_object| %>
+    <tr>
+      <td class="cover-cell">
+        <% if digital_object.key_image.present? %>
+          <%= link_to (image_tag (digital_object.key_image.absolute_path(:institution_id => digital_object.institution_id, :variant => 'S')),
+              :width => digital_object.key_image.width_small,
+              :height => digital_object.key_image.height_small), digital_object.key_image.absolute_path(:institution_id => digital_object.institution_id, :variant => 'M'),
+              :class => "zoom",
+              :title => "Ingrandisci" %>
+        <% else %>
+          Img non disponibile
+        <% end %>
+      </td>
+      <td class="title-cell">
+        <p class="item-title"><%= digital_object_row_title(digital_object) %></p>
+        <%= digital_object_row_collection(digital_object) %>
+        <%= admin_tag :p, digital_object.institution_name unless params[:digital_collection_id].present? || params[:original_object_id].present? %>
+        <p class="item-links"><%= digital_object_list_links(digital_object) %></p>
+      </td>
+      <td class="updated-cell"><%= l digital_object.updated_at, :format => :medium %></td>
+      <td><%= edit_link(digital_object) %></td>
+      <td>
+        <% if current_user_can?(:destroy, :digital_object, digital_object) %>
+          <%= link_to image_tag("trash.png"), destroy_with_assets_digital_object_path(digital_object) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<% if @digital_objects.total_entries > 0 || params[:title] %>
+  <p>
+    <%= will_paginate @digital_objects, :previous_label => "&laquo; precedente", :next_label => "successiva &raquo;" %>
+  </p>
+<% end %>
+

@@ -1,0 +1,57 @@
+<% content_layout "t1" if @digital_collections.size == 0 %>
+
+<div id="heading">
+  <div id="links">
+    <%= link_to_all :condition => params[:project_id].present? %>
+  </div>
+  <h2>
+  <%= t '.page_title' %>
+  <%= "&bull; #{@digital_collections.first.project.title}" if params[:project_id].present?  %>
+  <%= " - #{@digital_collections.first.project.institution.name}" if (params[:project_id].present? and current_user.role.included_in? [admin, end_user])  %>
+  </h2>
+</div>
+
+<% check_for_link = count_for_current_user(:projects) > 0 && current_user_can?(:create, :digital_collection) -%>
+
+<% if @digital_collections.size == 0 -%>
+  <div id="intro">
+    <p><%= t(:generic, :scope => [:application, :intro_digital_collections]) %></p>
+    <% unless check_for_link -%>
+      <p><%= t(:no_link, :scope => [:application, :intro_digital_collections]) %></p>
+    <% end -%>
+  </div>
+<% end -%>
+
+<% if check_for_link && @digital_collections.size == 0 -%>
+  <p><%= link_to t('.insert_new'), new_digital_collection_path, :class => "new" %></p>
+<% end -%>
+
+<% unless @digital_collections.size == 0 -%>
+  <table class="list">
+    <tr>
+      <th><%= t :title, :scope => default_i18n_views_scope %></th>
+      <th>&nbsp;</th>
+      <th class="edit-cell">&nbsp;</th>
+      <th class="delete-cell">&nbsp;</th>
+    </tr>
+
+  <% @digital_collections.each do |digital_collection| %>
+    <tr>
+      <td>
+        <%= link_to digital_collection.title, digital_collection_path(digital_collection) %>
+        <%= content_tag :p, "<em>#{t(:project_id, :scope => default_i18n_views_scope)}</em>: " + digital_collection.project.title unless params[:project_id].present? %>
+        <%= admin_tag :p, digital_collection.project.institution.name unless params[:project_id].present? %>
+     </td>
+      <td><%= link_to_digital_objects_for_digital_collection(digital_collection) %></td>
+      <td><%= edit_link(digital_collection) %></td>
+      <td>
+        <%= delete_link(digital_collection) do |dig_coll|
+              current_user_can?(:destroy, :digital_collection, dig_coll) &&
+              dig_coll.digital_objects.size == 0
+            end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end -%>
+
